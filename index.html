@@ -1425,6 +1425,187 @@
   .slide[data-layout="S20"] .email-strip .asset-slot{height:22vh;min-height:0;background:#fff;border:1px solid rgba(255,255,255,.2);border-top:3px solid var(--brand-green)}
   .slide[data-layout="S20"] .email-strip .asset-slot img{object-fit:contain;object-position:center;padding:1.2vh .8vw}
   .slide[data-layout="S20"] .email-strip .slot-label{padding:1.1vh .6vw;font-size:max(12px,.68vw);line-height:1.35}
+  .slide[data-layout="S20"] .s20-main-grid{
+    display:grid;
+    grid-template-columns:minmax(0,.9fr) minmax(0,1.35fr);
+    gap:2.4vw;
+    flex:1;
+    min-height:0;
+    margin-top:2.5vh;
+    padding-bottom:var(--nav-safe-bottom);
+    align-items:stretch;
+  }
+  .slide[data-layout="S20"] .s20-title{
+    font-size:min(4.25vw,7.2vh);
+    line-height:1.05;
+  }
+  .slide[data-layout="S20"] .s20-metrics{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:repeat(4,minmax(0,1fr));
+    gap:0;
+    min-height:0;
+    height:100%;
+    margin-top:0!important;
+    align-content:stretch;
+  }
+  .slide[data-layout="S20"] .s20-metrics .result-row{
+    grid-template-columns:minmax(112px,.95fr) minmax(0,1.7fr);
+    gap:1.1vw;
+    min-height:0;
+    padding:1.05vh 0;
+    align-items:center;
+  }
+  .slide[data-layout="S20"] .s20-metrics .result-row:nth-last-child(-n+2){border-bottom:0}
+  .slide[data-layout="S20"] .s20-metrics .result-row:last-child{border-bottom:1px solid rgba(255,255,255,.22)}
+  .slide[data-layout="S20"] .s20-metrics .ledger-num{font-size:min(4.3vw,6.4vh)}
+  .slide[data-layout="S20"] .s20-metrics .ledger-label{font-size:max(16px,1.05vw)}
+  .slide[data-layout="S20"] .s20-metrics .ledger-note{font-size:max(13px,.74vw);line-height:1.35}
+  .slide[data-layout="S20"] .s20-gallery{
+    min-width:0;
+    min-height:0;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    overflow:hidden;
+  }
+  .slide[data-layout="S20"] .s20-gallery .email-strip.accordion-gallery{
+    width:100%;
+    height:min(68vh,620px);
+    max-height:68vh;
+    margin-top:0;
+    gap:.75vw;
+  }
+  .slide[data-layout="S20"] .s20-gallery .accordion-gallery .ag-panel.is-active{flex-grow:1.2}
+  .slide[data-layout="S20"] .s20-gallery .accordion-gallery .ag-panel__media img{
+    object-fit:contain;
+    object-position:center;
+    padding:.6vh 0;
+    background:#fff;
+  }
+  .slide[data-layout="S20"] .s20-gallery .accordion-gallery .ag-panel.is-active .ag-panel__media{transform:scale(1.005)}
+  .slide[data-layout="S20"] .s20-gallery .accordion-gallery .ag-panel.is-active .ag-panel__overlay{opacity:.38}
+  .slide[data-layout="S20"] .s20-gallery .accordion-gallery .ag-panel__text{font-size:max(11px,.64vw)}
+  /* AccordionGallery: 四张 EDM 截图在同一行内按焦点展开，沿用 Streamax 品牌色。 */
+  .slide[data-layout="S20"] .email-strip.accordion-gallery{
+    display:flex;
+    align-items:stretch;
+    gap:1vw;
+    width:100%;
+    height:22vh;
+    min-height:0;
+    margin-top:1.8vh;
+    overflow:visible;
+    perspective:1400px;
+  }
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel{
+    position:relative;
+    display:block;
+    flex:1 1 0;
+    min-width:0;
+    min-height:0;
+    height:100%;
+    overflow:hidden;
+    padding:0;
+    border:1px solid rgba(255,255,255,.2);
+    border-top:3px solid var(--brand-green);
+    border-radius:0;
+    background:#fff;
+    cursor:pointer;
+    outline:none;
+    transform:rotateY(0deg);
+    transform-style:preserve-3d;
+    transition:flex-grow .6s var(--ease-exp), transform .6s var(--ease-exp), box-shadow .25s var(--ease-prod);
+    will-change:flex-grow,transform;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel.is-active{flex-grow:3.25}
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel:focus-visible{
+    box-shadow:0 0 0 2px var(--brand-green),0 8px 24px rgba(0,0,0,.28);
+  }
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel:active{transform:scale(.992)}
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel__frame{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    border-radius:inherit;
+  }
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel__media{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    filter:none;
+    transition:filter .6s var(--ease-exp),transform .6s var(--ease-exp);
+    will-change:filter,transform;
+  }
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel.is-active .ag-panel__media{
+    filter:none;
+    transform:scale(1.015);
+  }
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel__media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top center;
+    display:block;
+    user-select:none;
+    -webkit-user-drag:none;
+  }
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel__overlay{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:linear-gradient(180deg,rgba(11,32,58,.04) 22%,rgba(11,32,58,.88) 100%);
+    display:none;
+    opacity:0;
+    transition:opacity .6s var(--ease-exp);
+  }
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel.is-active .ag-panel__overlay{display:none;opacity:0}
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel__label{
+    position:absolute;
+    left:1vw;
+    right:1vw;
+    bottom:1.15vh;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    gap:.65vw;
+    pointer-events:none;
+    opacity:0;
+    transform:translateX(-12px);
+    transition:opacity .42s var(--ease-exp),transform .42s var(--ease-exp);
+  }
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel.is-active .ag-panel__label{
+    opacity:1;
+    transform:translateX(0);
+  }
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel__bar{
+    flex:0 0 auto;
+    width:3px;
+    height:2.6vh;
+    min-height:18px;
+    background:var(--brand-green);
+  }
+  .slide[data-layout="S20"] .accordion-gallery .ag-panel__text{
+    min-width:0;
+    overflow:hidden;
+    color:#fff;
+    font-family:var(--mono);
+    font-size:max(12px,.72vw);
+    font-weight:600;
+    letter-spacing:.07em;
+    line-height:1.2;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    text-shadow:0 2px 12px rgba(0,0,0,.55);
+  }
+  @media (prefers-reduced-motion:reduce){
+    .slide[data-layout="S20"] .accordion-gallery .ag-panel,
+    .slide[data-layout="S20"] .accordion-gallery .ag-panel__media,
+    .slide[data-layout="S20"] .accordion-gallery .ag-panel__overlay,
+    .slide[data-layout="S20"] .accordion-gallery .ag-panel__label{transition:none}
+  }
   .attribution-image{min-height:25vh;height:25vh}
   .network-body{padding:3.2vh 0 0!important;gap:2vw!important}
   .network-title-block{min-width:0}
@@ -1576,14 +1757,47 @@
   <div class="canvas-card">
     <div class="chrome-min"><div class="l">模块一 · EDM 用户经营</div><div class="r">03 / 12</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
-    <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="brand-context"><span class="salesforce-logo-frame"><img class="salesforce-logo" src="images/salesforce-logo-cloud.png" alt="Salesforce" data-image-slot="brand-salesforce-edm"></span><span>PARDOT / EDM 成效复盘</span></div><h2 class="page-title">第一阶段已跑通：<br>EDM 开始产生用户沉淀</h2></div>
-    <div class="result-ledger" data-anim="ledger">
-      <div class="result-row"><div class="ledger-num">近 8,000</div><div><div class="ledger-label">累计发送邮件</div><div class="ledger-note">覆盖订阅邀请与 3 封不同主题的 Welcome 邮件</div></div></div>
-      <div class="result-row"><div class="ledger-num">1,613</div><div><div class="ledger-label">外部订阅用户</div><div class="ledger-note">不含内部员工；Contact 892 人，Lead 453 人</div></div></div>
-      <div class="result-row"><div class="ledger-num">约 30%</div><div><div class="ledger-label">整体订阅率</div><div class="ledger-note">高于上线前预期，说明订阅邀请具备继续运营的基础</div></div></div>
-      <div class="result-row"><div class="ledger-num">3 封</div><div><div class="ledger-label">Welcome 自动培育</div><div class="ledger-note">每隔一周发送一封，形成持续触达而非一次性群发</div></div></div>
+    <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="brand-context"><span class="salesforce-logo-frame"><img class="salesforce-logo" src="images/salesforce-logo-cloud.png" alt="Salesforce" data-image-slot="brand-salesforce-edm"></span><span>PARDOT / EDM 成效复盘</span></div><h2 class="page-title s20-title">EDM一阶段：用户沉淀</h2></div>
+    <div class="s20-main-grid">
+      <div class="result-ledger s20-metrics" data-anim="ledger">
+        <div class="result-row"><div class="ledger-num">近 8,000</div><div><div class="ledger-label">累计发送邮件</div><div class="ledger-note">覆盖订阅邀请与 3 封不同主题的 Welcome 邮件</div></div></div>
+        <div class="result-row"><div class="ledger-num">1,613</div><div><div class="ledger-label">外部订阅用户</div><div class="ledger-note">不含内部员工；Contact 892 人，Lead 453 人</div></div></div>
+        <div class="result-row"><div class="ledger-num">约 30%</div><div><div class="ledger-label">整体订阅率</div><div class="ledger-note">高于上线前预期，说明订阅邀请具备继续运营的基础</div></div></div>
+        <div class="result-row"><div class="ledger-num">3 封</div><div><div class="ledger-label">Welcome 自动培育</div><div class="ledger-note">每隔一周发送一封，形成持续触达而非一次性群发</div></div></div>
+      </div>
+      <div class="s20-gallery">
+        <div class="email-strip accordion-gallery" data-anim="evidence" data-default-index="0" aria-label="四封 EDM 邮件截图">
+      <button class="ag-panel is-active" type="button" aria-label="Subscription invitation" aria-pressed="true">
+        <span class="ag-panel__frame">
+          <span class="ag-panel__media"><img src="images/email-style-screenshots/subscription-invitation-final.png" alt="Subscription invitation 邮件截图" data-image-slot="s20-subscription-invitation"></span>
+          <span class="ag-panel__overlay" aria-hidden="true"></span>
+        </span>
+        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">Subscription invitation</span></span>
+      </button>
+      <button class="ag-panel" type="button" aria-label="Welcome week 1" aria-pressed="false">
+        <span class="ag-panel__frame">
+          <span class="ag-panel__media"><img src="images/email-style-screenshots/welcome-week1.png" alt="Welcome week 1 邮件截图" data-image-slot="s20-welcome-week1"></span>
+          <span class="ag-panel__overlay" aria-hidden="true"></span>
+        </span>
+        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">Welcome week 1</span></span>
+      </button>
+      <button class="ag-panel" type="button" aria-label="Welcome week 2" aria-pressed="false">
+        <span class="ag-panel__frame">
+          <span class="ag-panel__media"><img src="images/email-style-screenshots/welcome-week2.png" alt="Welcome week 2 邮件截图" data-image-slot="s20-welcome-week2"></span>
+          <span class="ag-panel__overlay" aria-hidden="true"></span>
+        </span>
+        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">Welcome week 2</span></span>
+      </button>
+      <button class="ag-panel" type="button" aria-label="Welcome week 3" aria-pressed="false">
+        <span class="ag-panel__frame">
+          <span class="ag-panel__media"><img src="images/email-style-screenshots/welcome-week3.png" alt="Welcome week 3 邮件截图" data-image-slot="s20-welcome-week3"></span>
+          <span class="ag-panel__overlay" aria-hidden="true"></span>
+        </span>
+        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">Welcome week 3</span></span>
+      </button>
+        </div>
+      </div>
     </div>
-    <div class="email-strip" data-anim="evidence" aria-label="邮件截图占位"><div class="asset-slot"><img class="placeholder-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-asset-src="images/03-email-01.png" alt="" data-image-slot="s15-grid-21x9"><span class="slot-label">放入邮件截图 01</span></div><div class="asset-slot"><img class="placeholder-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-asset-src="images/03-email-02.png" alt="" data-image-slot="s15-grid-21x9"><span class="slot-label">放入邮件截图 02</span></div><div class="asset-slot"><img class="placeholder-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-asset-src="images/03-email-03.png" alt="" data-image-slot="s15-grid-21x9"><span class="slot-label">放入邮件截图 03</span></div><div class="asset-slot"><img class="placeholder-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-asset-src="images/03-email-04.png" alt="" data-image-slot="s15-grid-21x9"><span class="slot-label">可选邮件截图 04</span></div></div>
   </div>
 </section>
 
@@ -1802,6 +2016,42 @@
         close();
       }
     },true);
+  })();
+  /* AccordionGallery 交互：悬停、点击、聚焦和方向键均可切换展开面板。 */
+  (function(){
+    const gallery = document.querySelector('.accordion-gallery');
+    if(!gallery) return;
+    const panels = [...gallery.querySelectorAll('.ag-panel')];
+    if(!panels.length) return;
+    let active = Math.min(Math.max(Number(gallery.dataset.defaultIndex) || 0, 0), panels.length - 1);
+
+    const setActive = index => {
+      active = (index + panels.length) % panels.length;
+      panels.forEach((panel, i) => {
+        const selected = i === active;
+        panel.classList.toggle('is-active', selected);
+        panel.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      });
+    };
+
+    panels.forEach((panel, i) => {
+      panel.addEventListener('mouseenter', () => setActive(i));
+      panel.addEventListener('focus', () => setActive(i));
+      panel.addEventListener('click', () => setActive(i));
+      panel.addEventListener('keydown', event => {
+        let next = null;
+        if(event.key === 'ArrowRight' || event.key === 'ArrowDown') next = i + 1;
+        if(event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = i - 1;
+        if(event.key === 'Home') next = 0;
+        if(event.key === 'End') next = panels.length - 1;
+        if(next === null) return;
+        event.preventDefault();
+        event.stopPropagation();
+        setActive(next);
+        panels[active].focus();
+      });
+    });
+    setActive(active);
   })();
 </script>
 

@@ -1642,6 +1642,59 @@
   .combined-arrangement{margin-top:auto;padding:1.3vh 1.1vw;border-top:3px solid var(--brand-green);background:var(--brand-navy);color:#fff}
   .combined-arrangement .t-meta{color:var(--brand-green);font-size:14px}
   .combined-arrangement p{font-family:var(--sans),var(--sans-zh);font-size:max(15px,.88vw);line-height:1.4;margin-top:.7vh;color:rgba(255,255,255,.82)}
+  /* 模块四能力建设页：把两个 headcount 决策放进同一套“岗位请求—业务输出”结构。 */
+  .capacity-page .canvas-card{padding-bottom:4.4vh}
+  .capacity-head{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:3.2vw;align-items:end;margin-top:1.6vh}
+  .capacity-head .page-title{font-size:min(5vw,8.4vh);line-height:.94;margin-top:1.7vh}
+  .capacity-lead{font-family:var(--sans),var(--sans-zh);font-size:max(17px,1vw);line-height:1.5;color:var(--text-secondary);max-width:38ch;padding-bottom:.45vh}
+  .slide.dark .capacity-lead{color:rgba(255,255,255,.78)}
+  .capacity-body{display:grid;grid-template-columns:minmax(240px,.68fr) minmax(0,1.32fr);gap:2.5vw;flex:1;min-height:0;margin-top:5vh;padding-bottom:var(--nav-safe-bottom);align-items:stretch}
+  .capacity-request{display:flex;flex-direction:column;justify-content:space-between;min-width:0;padding:2.4vh 1.7vw;border-top:3px solid var(--brand-green);background:rgba(16,42,77,.06)}
+  .capacity-request .t-meta{color:var(--brand-navy);font-size:14px}
+  .capacity-request h3{font-family:var(--sans),var(--sans-zh);font-size:min(2.45vw,4.2vh);line-height:1.05;font-weight:400;color:var(--brand-navy);margin:2vh 0 1.2vh}
+  .capacity-request p{font-family:var(--sans),var(--sans-zh);font-size:max(15px,.9vw);line-height:1.48;color:var(--text-secondary);max-width:28ch}
+  .capacity-request .request-foot{font-family:var(--mono);font-size:13px;line-height:1.35;letter-spacing:.08em;color:var(--brand-navy);border-top:1px solid var(--border-subtle);padding-top:1.4vh}
+  .slide.dark .capacity-request{background:rgba(255,255,255,.08)}
+  .slide.dark .capacity-request .t-meta,.slide.dark .capacity-request h3,.slide.dark .capacity-request .request-foot{color:var(--brand-green)}
+  .slide.dark .capacity-request p{color:rgba(255,255,255,.78)}
+  .capacity-outcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.35vw;min-width:0}
+  .capacity-outcome{display:flex;flex-direction:column;justify-content:space-between;min-width:0;padding:2vh 0;border-top:1px solid var(--border-subtle)}
+  .slide.dark .capacity-outcome{border-color:rgba(255,255,255,.24)}
+  .capacity-outcome .num{font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:.12em;color:var(--brand-green)}
+  .capacity-outcome h3{font-family:var(--sans),var(--sans-zh);font-size:min(2.15vw,3.6vh);line-height:1.08;font-weight:400;color:var(--text-primary);margin:2.2vh 0 1vh}
+  .slide.dark .capacity-outcome h3{color:var(--paper)}
+  .capacity-outcome p{font-family:var(--sans),var(--sans-zh);font-size:max(15px,.86vw);line-height:1.48;color:var(--text-secondary)}
+  .slide.dark .capacity-outcome p{color:rgba(255,255,255,.72)}
+  .capacity-decision{margin-top:1.2vh!important;background:transparent!important;border-top:1px solid var(--border-subtle);padding:1.2vh 0!important;color:var(--brand-navy)!important;font-size:max(16px,1vw)!important;line-height:1.35!important}
+  .slide.dark .capacity-decision{border-color:rgba(255,255,255,.25);color:var(--paper)!important}
+  .market-research-page .capacity-body{grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr)}
+  .market-research-page .capacity-request h3{font-size:min(2.2vw,3.8vh)}
+  .market-impact{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));min-height:0}
+  .market-impact-row{display:grid;grid-template-columns:5.2vw minmax(0,1fr);gap:1.1vw;align-items:start;padding:1.6vh 0;border-top:1px solid rgba(255,255,255,.24)}
+  .market-impact-row:last-child{border-bottom:1px solid rgba(255,255,255,.24)}
+  .market-impact-row .num{font-family:var(--mono);font-size:13px;line-height:1.35;letter-spacing:.08em;color:var(--brand-green);font-weight:600}
+  .market-impact-row h3{font-family:var(--sans),var(--sans-zh);font-size:max(19px,1.35vw);line-height:1.12;font-weight:400;color:var(--paper);margin:0 0 .65vh}
+  .market-impact-row p{font-family:var(--sans),var(--sans-zh);font-size:max(15px,.88vw);line-height:1.45;color:rgba(255,255,255,.72);max-width:48ch}
+  @media (max-width:900px){
+    .capacity-head{grid-template-columns:1fr;gap:1.8vh}
+    .capacity-head .page-title{font-size:10vw}
+    .capacity-body,.market-research-page .capacity-body{display:flex;flex-direction:column;gap:1vh;margin-top:2.8vh;padding-bottom:0;flex:none}
+    .capacity-request{min-height:0;padding:1.25vh 4vw}
+    .capacity-request h3{font-size:5.9vw;line-height:.96;margin:.65vh 0 .45vh}
+    .market-research-page .capacity-request h3{font-size:5.9vw}
+    .capacity-request p{max-width:42ch;font-size:12.5px;line-height:1.25}
+    .capacity-request .request-foot{padding-top:.65vh;font-size:10px}
+    .capacity-outcomes{grid-template-columns:1fr;gap:0}
+    .capacity-outcome{display:grid;grid-template-columns:21vw minmax(0,1fr);gap:3vw;padding:.7vh 0}
+    .capacity-outcome h3{font-size:4.6vw;line-height:1.02;margin:0 0 .35vh}
+    .capacity-outcome p{font-size:12.5px;line-height:1.25}
+    .market-impact-row{grid-template-columns:17vw minmax(0,1fr);gap:3vw}
+    .market-impact{grid-template-rows:none}
+    .market-impact-row{min-height:0;padding:.8vh 0}
+    .market-impact-row h3{font-size:4.5vw;line-height:1.02;margin:0 0 .35vh}
+    .market-impact-row p{font-size:12.5px;line-height:1.24}
+    .capacity-decision{font-size:12.5px!important;line-height:1.22!important;margin-top:.35vh!important}
+  }
   #image-lightbox{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(11,32,58,.96);padding:6vh 6vw}
   #image-lightbox.is-open{display:flex}
   #image-lightbox img{max-width:88vw;max-height:88vh;object-fit:contain;background:#fff}
@@ -1660,6 +1713,91 @@
   .slide[data-layout="S08"] .duo-compare .col-list li{font-size:max(14px,.8vw);line-height:1.3}
   .slide[data-layout="S08"] .attribution-image{min-height:16vh;height:16vh}
   .slide[data-layout="S08"] .network-label{font-size:max(13px,.76vw);line-height:1.3;margin-top:.6vh}
+  /* 模块总起页：沿用 S09 点阵幕封，以统一章节节奏并让领导快速定位当前主题。 */
+  .module-divider .canvas-card{padding:5.6vh 5vw 4.4vh}
+  .module-divider-body{flex:1;display:grid;grid-template-columns:minmax(180px,.46fr) minmax(0,1.54fr);align-items:center;gap:3.2vw;min-height:0;position:relative;z-index:1}
+  .module-divider-index{font-family:var(--mono);font-size:min(18vw,29vh);line-height:.76;letter-spacing:-.09em;font-weight:300;color:var(--brand-green);font-feature-settings:"tnum";opacity:.96}
+  .module-divider-copy{border-left:1px solid rgba(255,255,255,.26);padding-left:3.2vw;min-width:0}
+  .module-divider-copy .brand-green-line{width:92px;margin-bottom:2.5vh;background:var(--brand-green)}
+  .module-divider-copy .t-meta{font-size:14px;color:rgba(255,255,255,.72);letter-spacing:.18em}
+  .module-divider-title{font-family:var(--sans),var(--sans-zh);font-size:min(7.8vw,12.8vh);line-height:.91;letter-spacing:-.045em;font-weight:200;color:#fff;margin-top:1.6vh;white-space:nowrap}
+  .module-divider-title span{font-style:italic;font-weight:300}
+  .module-divider-copy p{font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.1vw);line-height:1.45;color:rgba(255,255,255,.82);font-weight:400;margin-top:2.6vh;max-width:42ch}
+  .module-divider-foot{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,.22);padding-top:1.7vh;position:relative;z-index:1;font-family:var(--mono);font-size:14px;letter-spacing:.14em;color:rgba(255,255,255,.68)}
+  .module-divider-foot span:last-child{color:rgba(255,255,255,.9)}
+  @media (max-width:900px){
+    .module-divider-body{grid-template-columns:1fr;gap:4vh;align-content:center}
+    .module-divider-index{font-size:20vw}
+    .module-divider-copy{padding-left:4vw}
+    .module-divider-title{font-size:11vw}
+    .module-divider-copy p{font-size:16px}
+  }
+  /* 模块三拆页：当前局面强调“流入可见、转化与来源不可见”，右侧保留真实决策树截图。 */
+  .attribution-current-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:2.6vw;flex:1;min-height:0;margin-top:3.6vh;padding-bottom:var(--nav-safe-bottom);align-items:stretch}
+  .attribution-current-copy{display:flex;flex-direction:column;min-width:0}
+  .attribution-current-copy .page-title{font-size:min(4.7vw,7.8vh);line-height:1.02;margin-top:1.5vh}
+  .attribution-current-intro{font-family:var(--sans),var(--sans-zh);font-size:max(17px,1vw);line-height:1.5;color:var(--text-secondary);max-width:32ch;margin-top:1.8vh}
+  .attribution-issue-list{display:grid;gap:0;margin-top:auto;border-top:1px solid var(--border-subtle)}
+  .attribution-issue{display:grid;grid-template-columns:3.7vw minmax(0,1fr);gap:1vw;align-items:start;padding:1.45vh 0;border-bottom:1px solid var(--border-subtle)}
+  .attribution-issue .num{font-family:var(--sans);font-size:min(3.2vw,5.5vh);font-weight:200;line-height:.88;color:var(--brand-green)}
+  .attribution-issue h3{font-family:var(--sans),var(--sans-zh);font-size:max(19px,1.35vw);line-height:1.16;font-weight:400;margin:0 0 .5vh;color:var(--text-primary)}
+  .attribution-issue p{font-family:var(--sans),var(--sans-zh);font-size:max(15px,.9vw);line-height:1.4;color:var(--text-secondary)}
+  .attribution-current-note{margin-top:1.6vh;padding:1.3vh 1.1vw;border-top:3px solid var(--brand-green);background:var(--brand-navy);color:#fff;font-family:var(--sans),var(--sans-zh);font-size:max(15px,.9vw);line-height:1.42}
+  .current-tree-figure{height:100%;min-height:0;background:#f8f7f2;border:1px solid var(--border-subtle);border-top:3px solid var(--brand-green)}
+  .current-tree-figure > img{object-fit:contain!important;object-position:center;padding:1.1vh .8vw;background:#fff}
+  .current-tree-figure .img-cap{padding:0 1vw 1vh;margin-top:.7vh;font-size:max(12px,.72vw);letter-spacing:.1em}
+  /* 模块三拆页：上线后的能力与参考收入看板同页呈现，便于领导从字段到业务结果连续阅读。 */
+  .attribution-outcome-page [data-anim="head"]{gap:.65vh!important}
+  .attribution-outcome-page .brand-green-line{margin-bottom:2.2vh!important}
+  .attribution-outcome-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:1.7vw;flex:1;min-height:0;margin-top:.6vh;padding-bottom:var(--nav-safe-bottom);align-items:stretch}
+  .attribution-outcome-copy{display:flex;flex-direction:column;min-width:0}
+  .attribution-outcome-copy .page-title{font-size:min(3.2vw,5.2vh);line-height:1.04;margin-top:1vh}
+  .attribution-outcome-copy .page-desc{font-size:max(15px,.82vw);line-height:1.4;margin-top:.8vh}
+  .attribution-outcome-page [data-anim="head"] .page-desc{white-space:nowrap}
+  .outcome-points{display:grid;gap:0;margin-top:auto;border-top:1px solid var(--border-subtle)}
+  .outcome-point{display:grid;grid-template-columns:3vw minmax(0,1fr);gap:.9vw;padding:1.55vh 0;border-bottom:1px solid var(--border-subtle)}
+  .outcome-point .num{font-family:var(--sans);font-size:min(2.8vw,4.8vh);font-weight:200;line-height:.9;color:var(--brand-green)}
+  .outcome-point h3{font-family:var(--sans),var(--sans-zh);font-size:max(17px,1.15vw);line-height:1.16;font-weight:500;margin:0 0 .35vh;color:var(--text-primary);white-space:nowrap}
+  .outcome-point p{font-family:var(--sans),var(--sans-zh);font-size:max(14px,.82vw);line-height:1.35;color:var(--text-secondary);white-space:nowrap}
+  .outcome-note{margin-top:1.3vh;padding-top:1vh;border-top:3px solid var(--brand-green);font-family:var(--sans),var(--sans-zh);font-size:max(15px,.86vw);line-height:1.4;color:var(--text-secondary)}
+  .attribution-dashboard-stack{display:grid;grid-template-rows:.9fr 1.1fr;gap:.5vw;min-width:0;min-height:0}
+  .dashboard-card{min-width:0;min-height:0;background:var(--grey-1);border-top:3px solid var(--brand-green);padding:.85vh .8vw;overflow:hidden}
+  .dashboard-head{display:flex;align-items:baseline;justify-content:space-between;gap:.7vw;border-bottom:1px solid var(--border-subtle);padding-bottom:.55vh;margin-bottom:.6vh}
+  .dashboard-head h3{font-family:var(--sans),var(--sans-zh);font-size:max(15px,.96vw);line-height:1.12;font-weight:500;color:var(--text-primary);white-space:nowrap}
+  .dashboard-head span{font-family:var(--mono);font-size:max(10px,.56vw);letter-spacing:.04em;color:var(--text-helper);white-space:nowrap}
+  .dashboard-dual{display:grid;grid-template-columns:1.1fr .9fr;gap:.8vw;height:calc(100% - 2.25vh)}
+  .dashboard-panel{min-width:0;min-height:0;border-left:1px solid var(--border-subtle);padding-left:.85vw}
+  .dashboard-panel:first-child{border-left:0;padding-left:0}
+  .dashboard-panel-title{font-family:var(--sans),var(--sans-zh);font-size:max(12px,.7vw);line-height:1.15;font-weight:500;color:var(--text-primary);margin-bottom:.4vh}
+  .dashboard-panel-sub{font-family:var(--sans),var(--sans-zh);font-size:max(10px,.54vw);line-height:1.22;color:var(--text-helper);margin-bottom:.55vh}
+  .dashboard-bar-row{display:grid;grid-template-columns:minmax(66px,.9fr) 1.55fr auto;gap:.4vw;align-items:center;margin:.35vh 0}
+  .dashboard-bar-label{font-family:var(--sans),var(--sans-zh);font-size:max(10px,.6vw);color:var(--text-secondary);white-space:nowrap}
+  .dashboard-bar-track{height:1.1vh;min-height:8px;background:#e6e9e7;overflow:hidden}
+  .dashboard-bar-fill{display:block;height:100%;background:var(--brand-navy)}
+  .dashboard-bar-value{font-family:var(--mono);font-size:max(10px,.58vw);color:var(--text-primary);text-align:right}
+  .dashboard-stack-row{display:grid;grid-template-columns:32px 1fr 30px;gap:.35vw;align-items:center;margin:.45vh 0}
+  .dashboard-stack-row .dashboard-bar-label{font-family:var(--mono);font-size:max(10px,.58vw)}
+  .dashboard-stack-track{display:flex;height:1.1vh;min-height:8px;background:#dce1e4;overflow:hidden}
+  .dashboard-stack-digital{height:100%;background:var(--brand-green)}
+  .dashboard-stack-other{height:100%;background:#b8c4d2}
+  .dashboard-stack-pct{font-family:var(--mono);font-size:max(10px,.58vw);color:var(--text-secondary);text-align:right}
+  .dashboard-legend{display:flex;gap:.7vw;flex-wrap:wrap;margin-top:.4vh;font-family:var(--sans),var(--sans-zh);font-size:max(10px,.54vw);color:var(--text-helper)}
+  .dashboard-legend i{display:inline-block;width:8px;height:8px;margin-right:4px;background:var(--brand-green)}
+  .dashboard-legend i.other{background:#b8c4d2}
+  .detail-dashboard-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:.8vw;height:calc(100% - 2.25vh)}
+  .detail-table{width:100%;border-collapse:collapse;font-family:var(--sans),var(--sans-zh);font-size:max(10px,.56vw);line-height:1.15;color:var(--text-secondary)}
+  .detail-table th{font-weight:500;color:var(--text-helper);text-align:left;padding:0 .2vw .3vh;border-bottom:1px solid var(--border-strong);white-space:nowrap}
+  .detail-table td{padding:.38vh .2vw;border-bottom:1px solid var(--border-subtle);white-space:nowrap}
+  .detail-table td:last-child,.detail-table th:last-child{text-align:right}
+  .detail-table tr.group td{font-weight:600;color:var(--text-primary)}
+  .split-summary{border-top:2px solid var(--brand-green);padding-top:.55vh;margin-top:.15vh}
+  .split-summary-title{font-family:var(--mono);font-size:max(10px,.58vw);color:var(--text-helper);margin-bottom:.45vh}
+  .split-summary-bar{display:flex;height:2.7vh;min-height:19px;background:#dce1e4;overflow:hidden}
+  .split-summary-bar span{display:flex;align-items:center;padding:0 .35vw;font-family:var(--sans),var(--sans-zh);font-size:max(9px,.52vw);white-space:nowrap}
+  .split-summary-bar .split-one{background:var(--brand-navy);color:#fff;width:60%}
+  .split-summary-bar .split-two{background:var(--brand-green);color:var(--brand-navy);width:40%}
+  .split-summary-table{margin-top:.45vh}
+  .dashboard-footnote{font-family:var(--sans),var(--sans-zh);font-size:max(10px,.54vw);line-height:1.2;color:var(--text-helper);margin-top:.5vh}
   @media (max-width:900px){
     .capability-grid,.edm-grid,.screening-flow{grid-template-columns:1fr 1fr}
     .edm-focus-grid{grid-template-rows:repeat(2,minmax(0,1fr))}
@@ -1678,6 +1816,9 @@
     .combined-loop-figure{height:28vh}
     .combined-loop-copy{gap:1.5vh}
     .combined-arrangement{margin-top:1.5vh}
+    .attribution-current-grid,.attribution-outcome-grid{grid-template-columns:1fr}
+    .current-tree-figure{height:30vh}
+    .attribution-dashboard-stack{min-height:42vh}
   }
 
 </style>
@@ -1732,7 +1873,7 @@
       <span class="brand-divider" aria-hidden="true"></span>
       <span class="salesforce-logo-frame"><img class="salesforce-logo" src="images/salesforce-logo-cloud.png" alt="Salesforce" data-image-slot="brand-salesforce-cover"></span>
       <span class="brand-label">数字营销 / 执行汇报</span>
-    </div><div class="r">01 / 12</div></div>
+    </div><div class="r">01 / 17</div></div>
     <div style="flex:1;padding:0;display:grid;grid-template-rows:auto 1fr auto;gap:2.6vh">
       <div data-anim="kicker" class="t-meta" style="color:rgba(255,255,255,.76)">管理层执行简报 · 2026.08</div>
       <h1 data-anim="title" style="align-self:start;margin-top:10vh;font-family:var(--sans),var(--sans-zh);font-weight:200;font-size:min(10.8vw,18vh);line-height:.94;letter-spacing:-.035em;color:#fff">从触达走向<br><span style="font-style:italic;font-weight:300">转化与决策</span></h1>
@@ -1747,7 +1888,7 @@
 
 <section class="slide light" data-layout="S19" data-animate="four-cards">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">01 · 管理层结论</div><div class="r">02 / 12</div></div>
+    <div class="chrome-min"><div class="l">01 · 管理层结论</div><div class="r">02 / 17</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
     <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="t-meta">管理层结论</div><h2 class="page-title">数字营销已从单点触达<br>走向客户旅程经营</h2></div>
     <div class="capability-grid" data-anim="up" aria-label="四项数字营销能力">
@@ -1760,15 +1901,32 @@
   </div>
 </section>
 
+<section class="slide accent hero module-divider" data-layout="S09" data-animate="manifesto">
+  <div class="canvas-card">
+    <canvas class="ascii-bg" aria-hidden="true"></canvas>
+    <div class="chrome-min"><div class="l">模块一 · EDM 用户经营</div><div class="r">03 / 17</div></div>
+    <div class="module-divider-body" data-anim="line">
+      <div class="module-divider-index">01</div>
+      <div class="module-divider-copy">
+        <div class="brand-green-line" aria-hidden="true"></div>
+        <div class="t-meta">EDM / Salesforce Pardot</div>
+        <h1 class="module-divider-title">EDM<br><span>用户经营</span></h1>
+        <p>从订阅沉淀开始，把一次触达变成持续经营。</p>
+      </div>
+    </div>
+    <div class="module-divider-foot" data-anim="up"><span>本章重点</span><span>成效复盘 · 场景扩展</span></div>
+  </div>
+</section>
+
 <section class="slide dark" data-layout="S20" data-animate="stacked-ledger">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">模块一 · EDM 用户经营</div><div class="r">03 / 12</div></div>
+    <div class="chrome-min"><div class="l">模块一 · EDM 用户经营</div><div class="r">04 / 17</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
     <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="brand-context"><span class="salesforce-logo-frame"><img class="salesforce-logo" src="images/salesforce-logo-cloud.png" alt="Salesforce" data-image-slot="brand-salesforce-edm"></span><span>PARDOT / EDM 成效复盘</span></div><h2 class="page-title s20-title">EDM一阶段：用户沉淀</h2></div>
     <div class="s20-main-grid">
       <div class="result-ledger s20-metrics" data-anim="ledger">
         <div class="result-row"><div class="ledger-num">近 8,000</div><div><div class="ledger-label">累计发送邮件</div><div class="ledger-note">覆盖订阅邀请与 3 封不同主题的 Welcome 邮件</div></div></div>
-        <div class="result-row"><div class="ledger-num">1,613</div><div><div class="ledger-label">外部订阅用户</div><div class="ledger-note">不含内部员工；Contact 892 人，Lead 453 人</div></div></div>
+        <div class="result-row"><div class="ledger-num">1,613 位</div><div><div class="ledger-label">外部订阅用户</div><div class="ledger-note">不含内部员工；Contact 892 人，Lead 453 人</div></div></div>
         <div class="result-row"><div class="ledger-num">约 30%</div><div><div class="ledger-label">整体订阅率</div><div class="ledger-note">高于上线前预期，说明订阅邀请具备继续运营的基础</div></div></div>
         <div class="result-row"><div class="ledger-num">3 封</div><div><div class="ledger-label">Welcome 自动培育</div><div class="ledger-note">每隔一周发送一封，形成持续触达而非一次性群发</div></div></div>
       </div>
@@ -1810,7 +1968,7 @@
 
 <section class="slide light" data-layout="S16" data-animate="field-notes">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">03 · EDM 下一阶段</div><div class="r">04 / 12</div></div>
+    <div class="chrome-min"><div class="l">03 · EDM 下一阶段</div><div class="r">05 / 17</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
     <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="t-meta">下一阶段场景</div><h2 class="page-title">从“发出去”走向<br>“带着业务场景触达”</h2></div>
     <div class="edm-grid edm-focus-grid" data-anim="up">
@@ -1826,12 +1984,29 @@
   </div>
 </section>
 
+<section class="slide accent hero module-divider" data-layout="S09" data-animate="manifesto">
+  <div class="canvas-card">
+    <canvas class="ascii-bg" aria-hidden="true"></canvas>
+    <div class="chrome-min"><div class="l">模块二 · 官网 AI Agent</div><div class="r">06 / 17</div></div>
+    <div class="module-divider-body" data-anim="line">
+      <div class="module-divider-index">02</div>
+      <div class="module-divider-copy">
+        <div class="brand-green-line" aria-hidden="true"></div>
+        <div class="t-meta">AI Agent</div>
+        <h1 class="module-divider-title">AI Agent<br><span>需求理解</span></h1>
+        <p>从信息展示入口，走向需求理解与销售承接。</p>
+      </div>
+    </div>
+    <div class="module-divider-foot" data-anim="up"><span>本章重点</span><span>需求理解 · 销售承接</span></div>
+  </div>
+</section>
+
 <section class="slide split" data-layout="S03" data-animate="split-statement">
   <div class="canvas-card">
     <div class="split-half">
       <div class="half b-accent" style="padding:5.6vh 3.6vw 4.4vh;justify-content:space-between;position:relative;overflow:hidden">
         <canvas class="ascii-bg" aria-hidden="true"></canvas>
-        <div class="chrome-min" style="margin-bottom:0;position:relative;z-index:1"><div class="l">模块二 · 官网 AI Agent</div><div class="r">05 / 12</div></div>
+        <div class="chrome-min" style="margin-bottom:0;position:relative;z-index:1"><div class="l">模块二 · 官网 AI Agent</div><div class="r">07 / 17</div></div>
         <div data-anim="manifesto" style="display:flex;flex-direction:column;gap:2vh;position:relative;z-index:1"><div class="t-meta">AI Agent</div><h2 style="font-family:var(--sans),var(--sans-zh);font-size:min(7.2vw,12.8vh);line-height:.94;letter-spacing:-.035em;font-weight:200;color:#fff">客户不会<br>按你的<br><span style="font-style:italic;font-weight:300">栏目找答案</span></h2><p style="font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.12vw);line-height:1.55;color:rgba(255,255,255,.82);font-weight:400;max-width:30ch">网站有内容，不代表客户能快速找到与自己业务相关的答案。</p></div>
       </div>
       <div class="half" style="padding:5.6vh 3.6vw 4.4vh;justify-content:space-between;position:relative;background:var(--paper)">
@@ -1849,7 +2024,7 @@
 
 <section class="slide dark" data-layout="S05" data-animate="sub-stack">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">05 · AI Agent 项目范围</div><div class="r">06 / 12</div></div>
+    <div class="chrome-min"><div class="l">05 · AI Agent 项目范围</div><div class="r">08 / 17</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
     <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="t-meta">一个入口 · 三个模块</div><h2 class="page-title">一个入口，连接<br>售前、销售与售后</h2></div>
     <div class="stack-row" data-anim="cards" style="margin-top:6vh">
@@ -1863,7 +2038,7 @@
 
 <section class="slide light" data-layout="S15" data-animate="matrix-fill">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">06 · AI Agent 经营输出</div><div class="r">07 / 12</div></div>
+    <div class="chrome-min"><div class="l">06 · AI Agent 经营输出</div><div class="r">09 / 17</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
     <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="t-meta">经营输出</div><h2 class="page-title">真正需要的<br>不是聊天量</h2></div>
     <div class="agent-output-grid" data-anim="up">
@@ -1877,62 +2052,146 @@
   </div>
 </section>
 
-<section class="slide light" data-layout="S08" data-animate="duo-mirror">
+<section class="slide accent hero module-divider" data-layout="S09" data-animate="manifesto">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">模块三 · Salesforce 线索归因与筛查</div><div class="r">08 / 12</div></div>
-    <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
-    <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="t-meta">从来源到商机</div><h2 class="page-title">让每笔商机都有<br>来源起点</h2></div>
-    <div class="duo-compare attribution-compare" style="margin-top:5.5vh;flex:1;min-height:0" data-anim="compare">
-      <div class="col" data-anim="left">
-        <div class="col-tag"><span class="num">当前</span>当前无法完整回答</div>
-        <div class="attribution-copy"><div class="big-line">知道有 Lead，<br>但不清楚它从哪里来。</div><p class="body-line">难以判断潜在商机来自终端用户还是经销商，也难以判断销售自拓、线下展会和线上数字渠道对成单的贡献。</p></div>
-        <ul class="col-list"><li>来源记录分散，首触主体不清晰</li><li>Lead 转成 Account / Opportunity 后上下文容易断开</li><li>无法把投入、渠道和业务结果放在同一张图里判断</li></ul>
-      </div>
-      <span class="vrule" aria-hidden="true"></span>
-      <div class="col" data-anim="right">
-        <div class="col-tag"><span class="num">目标</span>上线后的归因起点</div>
-        <div class="attribution-copy"><div class="big-line" style="color:var(--accent)">首触主体<br>→ 来源 → 商机</div><p class="body-line">记录终端用户 EU / 经销商 SI 的首触主体，衔接 Lead Source，并逐步补充 Campaign、UTM 与 Opportunity 结果。</p></div>
-        <div class="asset-slot attribution-image"><img class="placeholder-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-asset-src="images/08-attribution-decision-tree.png" alt="" data-image-slot="s15-grid-21x9"><span class="slot-label">放入渠道归因决策树图片</span></div>
-        <div class="network-label">业务价值：判断哪些渠道带来有效客户，支持预算、内容和战区投入决策。</div>
+    <canvas class="ascii-bg" aria-hidden="true"></canvas>
+    <div class="chrome-min"><div class="l">模块三 · 线索归因与筛查</div><div class="r">10 / 17</div></div>
+    <div class="module-divider-body" data-anim="line">
+      <div class="module-divider-index">03</div>
+      <div class="module-divider-copy">
+        <div class="brand-green-line" aria-hidden="true"></div>
+        <div class="t-meta">Salesforce / 线索归因</div>
+        <h1 class="module-divider-title">线索归因<br><span>与有效交付</span></h1>
+        <p>让来源、转化路径和交付质量真正可见。</p>
       </div>
     </div>
+    <div class="module-divider-foot" data-anim="up"><span>本章重点</span><span>来源识别 · 线索筛查 · 销售承接</span></div>
   </div>
 </section>
 
-<section class="slide dark" data-layout="S11" data-animate="field-notes">
+<section class="slide light attribution-current-page" data-layout="S08" data-animate="duo-mirror">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">08 · 线索筛查机制</div><div class="r">09 / 12</div></div>
+    <div class="chrome-min"><div class="l">模块三 · Salesforce 线索归因与筛查</div><div class="r">11 / 17</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
-    <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="t-meta">交付前筛查</div><h2 class="page-title">系统分配不等于有效交付</h2><p class="page-desc">新增 Lead 进入后，先由专员完成筛查与信息补全，再交给战区负责人和销售。</p></div>
-    <div class="screening-flow" data-anim="timeline" aria-label="线索筛查与交付流程">
-      <div class="screening-step" data-anim="step"><div class="num">01 · 进入</div><h3>新 Lead<br>统一接入</h3><p>记录来源、首触主体和基础联系人信息，避免线索一进入就失去上下文。</p></div>
-      <div class="screening-step" data-anim="step"><div class="num">02 · 筛查</div><h3>专员<br>线索筛查</h3><p>核实客户类型、项目状态、规模、紧急程度、客户角色和竞争情况。</p></div>
-      <div class="screening-step" data-anim="step"><div class="num">03 · 补全</div><h3>形成<br>初筛结论</h3><p>补齐需求摘要、购买力、下一步动作，并判断是否具备有效跟进条件。</p></div>
-      <div class="screening-step" data-anim="step"><div class="num">04 · 交付</div><h3>交给<br>战区负责人</h3><p>系统首期自动分配到战区负责人，战区内部再由人工向下分配。</p></div>
-    </div>
-    <div data-anim="note" class="decision-bar" style="margin-top:2vh;background:transparent;border-top:1px solid rgba(255,255,255,.25);padding-left:0;color:var(--paper)">业务输出：给到战区负责人的线索信息更全、需求更清晰，销售首次沟通不再从零开始。</div>
-  </div>
-</section>
-
-<section class="slide light" data-layout="S22" data-animate="image-hero">
-  <div class="canvas-card">
-    <div class="chrome-min"><div class="l">模块四 · 市场研究与增长闭环</div><div class="r">10 / 12</div></div>
-    <div class="combined-head" data-anim="title-block">
-      <div><div class="t-meta">市场研究分析</div><h2 class="page-title">把零散信息变成<br>可执行情报，形成增长闭环</h2></div>
-      <p>建立国内外竞争对手与潜在客户的情报网络，持续捕捉真实用户痛点和产品需求。</p>
-    </div>
-    <div class="combined-loop-grid" data-anim="up">
-      <figure class="frame-img combined-loop-figure" data-anim="img"><img src="images/10-market-research-growth-loop-brand.png" alt="市场研究与数字营销增长闭环概念图" data-image-slot="s22-hero-21x9"><figcaption class="img-cap">概念示意 · 非业务数据</figcaption></figure>
-      <div class="combined-loop-copy" data-anim="kpi">
-        <div class="combined-loop-steps">
-          <div class="combined-loop-step"><span>01</span><div><h3>发现市场信号</h3><p>持续收集竞争对手、潜在客户和真实用户痛点。</p></div></div>
-          <div class="combined-loop-step"><span>02</span><div><h3>转成可用主题</h3><p>整理为市场变化、客户需求和产品、内容机会。</p></div></div>
-          <div class="combined-loop-step"><span>03</span><div><h3>进入营销动作</h3><p>反哺 EDM、官网内容、活动和线索承接的重点选择。</p></div></div>
-          <div class="combined-loop-step"><span>04</span><div><h3>复盘再输入</h3><p>结合触达、线索和业务反馈，更新下一轮情报。</p></div></div>
+    <div data-anim="head" style="display:flex;flex-direction:column;gap:1.2vh"><div class="t-meta">当前局面</div><h2 class="page-title">线索进入了，但结果<br>仍然不可见</h2><p class="attribution-current-intro">当前能看到潜在商机流入，却无法快速回答转化效果与渠道贡献。</p></div>
+    <div class="attribution-current-grid" data-anim="up">
+      <div class="attribution-current-copy">
+        <div class="attribution-issue-list">
+          <article class="attribution-issue"><div class="num">01</div><div><h3>知道潜在商机流入</h3><p>知道系统里创建了潜在商机，但不清楚后续转化到了哪一步。</p></div></article>
+          <article class="attribution-issue"><div class="num">02</div><div><h3>不清楚转化效果</h3><p>缺少从 Lead 到 Contact / Account / Opportunity 的连续转化观察。</p></div></article>
+          <article class="attribution-issue"><div class="num">03</div><div><h3>不知道客户从哪里来</h3><p>销售自拓、线下展会和线上数字渠道的来源贡献无法放在同一张图里判断。</p></div></article>
         </div>
-        <div class="combined-arrangement"><div class="t-meta">之后安排</div><p>建立固定情报来源与更新节奏，定期输出竞品、潜客和用户痛点简报，并同步反哺战区、产品线和内容营销。</p></div>
+        <div class="attribution-current-note">当前断点：只有“线索流入”记录，没有把“首触主体—渠道来源—转化结果”串成可复盘链路。</div>
+      </div>
+      <figure class="frame-img fit-contain current-tree-figure" data-anim="img"><img class="placeholder-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-asset-src="images/08-attribution-decision-tree.png" alt="渠道归因决策树图片" data-image-slot="s15-grid-21x9"><figcaption class="img-cap">渠道归因决策树 · 当前业务判断路径</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide light attribution-outcome-page" data-layout="S08" data-animate="duo-mirror">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块三 · Salesforce 线索归因与筛查</div><div class="r">12 / 17</div></div>
+    <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
+    <div data-anim="head" style="display:flex;flex-direction:column;gap:1.1vh"><div class="t-meta">上线后的归因内容</div><h2 class="page-title">从“知道有线索”走向<br>“知道谁、从哪来、转化到哪”</h2><p class="page-desc">把首触主体、线索转化和潜在商机来源分类接到同一条数据链路。</p></div>
+    <div class="attribution-outcome-grid" data-anim="up">
+      <div class="attribution-outcome-copy">
+        <div class="outcome-points">
+          <article class="outcome-point"><div class="num">01</div><div><h3>记录新建潜客线索的首触主体</h3><p>区分终端用户 EU 与经销商 SI，明确首触主体。</p></div></article>
+          <article class="outcome-point"><div class="num">02</div><div><h3>打通线索 → 联系人的转化</h3><p>追踪 Lead → Contact / Account / Opportunity 转化节点。</p></div></article>
+          <article class="outcome-point"><div class="num">03</div><div><h3>形成潜在商机来源分类</h3><p>区分销售自拓、线下展会和线上数字渠道，判断渠道贡献。</p></div></article>
+        </div>
+        <div class="outcome-note">业务价值：让销售接手时既知道客户是谁，也知道客户从哪里来、目前转化到了哪一步。</div>
+      </div>
+      <div class="attribution-dashboard-stack" data-anim="kpi">
+        <article class="dashboard-card">
+          <div class="dashboard-head"><h3>海外实际成交额分析</h3><span>示意数据 · 金额单位：万元</span></div>
+          <div class="dashboard-dual">
+            <div class="dashboard-panel"><div class="dashboard-panel-title">Top N EU 累计产出</div><div class="dashboard-panel-sub">按实际成交额排序，观察主要客户贡献</div>
+              <div class="dashboard-bar-row"><span class="dashboard-bar-label">EU A · 官网</span><span class="dashboard-bar-track"><i class="dashboard-bar-fill" style="width:100%"></i></span><span class="dashboard-bar-value">840</span></div>
+              <div class="dashboard-bar-row"><span class="dashboard-bar-label">EU B · 活动</span><span class="dashboard-bar-track"><i class="dashboard-bar-fill" style="width:74%"></i></span><span class="dashboard-bar-value">620</span></div>
+              <div class="dashboard-bar-row"><span class="dashboard-bar-label">EU C · 自拓</span><span class="dashboard-bar-track"><i class="dashboard-bar-fill" style="width:57%"></i></span><span class="dashboard-bar-value">480</span></div>
+              <div class="dashboard-bar-row"><span class="dashboard-bar-label">EU D · 公众号</span><span class="dashboard-bar-track"><i class="dashboard-bar-fill" style="width:37%"></i></span><span class="dashboard-bar-value">310</span></div>
+            </div>
+            <div class="dashboard-panel"><div class="dashboard-panel-title">Top N SI 年度产出</div><div class="dashboard-panel-sub">展示 digital 金额占比</div>
+              <div class="dashboard-stack-row"><span class="dashboard-bar-label">SI 1</span><span class="dashboard-stack-track"><i class="dashboard-stack-digital" style="width:60%"></i><i class="dashboard-stack-other" style="width:40%"></i></span><span class="dashboard-stack-pct">60%</span></div>
+              <div class="dashboard-stack-row"><span class="dashboard-bar-label">SI 2</span><span class="dashboard-stack-track"><i class="dashboard-stack-digital" style="width:40%"></i><i class="dashboard-stack-other" style="width:60%"></i></span><span class="dashboard-stack-pct">40%</span></div>
+              <div class="dashboard-stack-row"><span class="dashboard-bar-label">SI 3</span><span class="dashboard-stack-track"><i class="dashboard-stack-digital" style="width:30%"></i><i class="dashboard-stack-other" style="width:70%"></i></span><span class="dashboard-stack-pct">30%</span></div>
+              <div class="dashboard-legend"><span><i></i>digital 金额</span><span><i class="other"></i>其他来源金额</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="dashboard-card">
+          <div class="dashboard-head"><h3>海外收入明细分析</h3><span>示意数据 · 金额单位：万元</span></div>
+          <div class="detail-dashboard-grid">
+            <div class="dashboard-panel"><div class="dashboard-panel-title">SI → EU 下钻明细</div><table class="detail-table"><tr><th>SI / EU</th><th>来源</th><th>成交额</th></tr><tr class="group"><td>SI 1</td><td>—</td><td>1,000</td></tr><tr><td>↳ EU A</td><td>官网</td><td>420</td></tr><tr><td>↳ EU B</td><td>活动</td><td>350</td></tr><tr><td>↳ EU C</td><td>自拓</td><td>230</td></tr><tr class="group"><td>SI 2</td><td>—</td><td>800</td></tr></table></div>
+            <div class="dashboard-panel"><div class="dashboard-panel-title">单商机多 SI 拆分</div><div class="split-summary"><div class="split-summary-title">Opportunity OPP-001 · Sales Order：500 万</div><div class="split-summary-bar"><span class="split-one">SI 1 · 60% · 300 万</span><span class="split-two">SI 2 · 40% · 200 万</span></div></div><table class="detail-table split-summary-table"><tr><th>拆分 SI</th><th>占比</th><th>金额</th></tr><tr><td>SI 1</td><td>60%</td><td>300</td></tr><tr><td>SI 2</td><td>40%</td><td>200</td></tr><tr class="group"><td>合计</td><td>100%</td><td>500</td></tr></table></div>
+          </div>
+        </article>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="slide accent hero module-divider capacity-module-divider" data-layout="S09" data-animate="manifesto">
+  <div class="canvas-card">
+    <canvas class="ascii-bg" aria-hidden="true"></canvas>
+    <div class="chrome-min"><div class="l">模块四 · 营销经营能力建设</div><div class="r">13 / 17</div></div>
+    <div class="module-divider-body" data-anim="line">
+      <div class="module-divider-index">04</div>
+      <div class="module-divider-copy">
+        <div class="brand-green-line" aria-hidden="true"></div>
+        <div class="t-meta">模块四 / 能力建设</div>
+        <h1 class="module-divider-title">从线索经营<br><span>到市场判断</span></h1>
+        <p>新增两项专职能力，让每条线索有人经营，让每项活动有据可判。</p>
+      </div>
+    </div>
+    <div class="module-divider-foot" data-anim="up"><span>本章重点</span><span>两项新增能力</span></div>
+  </div>
+</section>
+
+<section class="slide light capacity-page lead-management-page" data-layout="S11" data-animate="field-notes">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块四 · 营销经营能力建设</div><div class="r">14 / 17</div></div>
+    <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
+    <div class="capacity-head" data-anim="head">
+      <div><div class="t-meta">01 / Lead Management 岗位</div><h2 class="page-title">让每条新线索<br>有人经营</h2></div>
+      <p class="capacity-lead">新增专职 Lead Management，承接筛查、信息补全和交付质量，减少线索从进入到销售承接之间的断点。</p>
+    </div>
+    <div class="capacity-body" data-anim="up">
+      <div class="capacity-request">
+        <div><div class="t-meta">岗位请求</div><h3>配置专职<br>Lead Management</h3><p>让线索入口有明确责任人，持续维护线索质量与交付节奏。</p></div>
+        <div class="request-foot">岗位配置 / LEAD MANAGEMENT</div>
+      </div>
+      <div class="capacity-outcomes" aria-label="Lead Management 业务输出">
+        <article class="capacity-outcome"><div class="num">01 / 筛查</div><div><h3>先判断是否值得跟进</h3><p>核实客户类型、项目状态、规模、紧急程度和竞争情况。</p></div></article>
+        <article class="capacity-outcome"><div class="num">02 / 补全</div><div><h3>再形成清晰需求</h3><p>补齐需求摘要、购买力、下一步动作，形成初筛结论。</p></div></article>
+        <article class="capacity-outcome"><div class="num">03 / 交付</div><div><h3>最后交给销售承接</h3><p>把信息完整、需求清晰的线索交给战区负责人和销售。</p></div></article>
+      </div>
+    </div>
+    <div data-anim="note" class="decision-bar capacity-decision">需要决策：配置专职 Lead Management，承担线索筛查、信息补全与交付质量责任。</div>
+  </div>
+</section>
+
+<section class="slide dark capacity-page market-research-page" data-layout="S11" data-animate="field-notes">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块四 · 营销经营能力建设</div><div class="r">15 / 17</div></div>
+    <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
+    <div class="capacity-head" data-anim="head">
+      <div><div class="t-meta">02 / Market Research 岗位</div><h2 class="page-title">让市场活动<br>有依据地发生</h2></div>
+      <p class="capacity-lead">新增专职 Market Research，把竞争、客户和真实用户痛点转成市场部可直接使用的判断依据，并第一时间同步战区。</p>
+    </div>
+    <div class="capacity-body" data-anim="up">
+      <div class="capacity-request">
+        <div><div class="t-meta">岗位请求</div><h3>配置专职<br>Market Research</h3><p>让市场研究不再是临时信息搜集，而是持续服务活动判断和战区执行的能力。</p></div>
+        <div class="request-foot">岗位配置 / MARKET RESEARCH</div>
+      </div>
+      <div class="market-impact" aria-label="Market Research 业务价值">
+        <article class="market-impact-row"><div class="num">市场部</div><div><h3>活动判断更有依据</h3><p>用竞争变化、客户需求和真实痛点支撑活动主题、内容重点与目标市场选择。</p></div></article>
+        <article class="market-impact-row"><div class="num">战区</div><div><h3>市场洞察第一时间到达</h3><p>将最新竞品变化、潜客需求和用户痛点及时同步战区，支持本地客户沟通与跟进。</p></div></article>
+        <article class="market-impact-row"><div class="num">闭环</div><div><h3>让洞察持续进入下一轮动作</h3><p>沉淀为可复用的市场洞察，结合活动与线索反馈，持续更新下一轮市场动作。</p></div></article>
+      </div>
+    </div>
+    <div data-anim="note" class="decision-bar capacity-decision">需要决策：配置专职 Market Research，让市场部做更有依据的市场活动判断，让战区更快获得一线市场洞察。</div>
   </div>
 </section>
 
@@ -1941,7 +2200,7 @@
     <div class="split-half">
       <div class="half b-accent" style="padding:5.6vh 3.6vw 4.4vh;justify-content:space-between;position:relative;overflow:hidden">
         <canvas class="ascii-bg" aria-hidden="true"></canvas>
-        <div class="chrome-min" style="margin-bottom:0;position:relative;z-index:1"><div class="l">11 / 下一阶段</div><div class="r">11 / 12</div></div>
+        <div class="chrome-min" style="margin-bottom:0;position:relative;z-index:1"><div class="l">16 / 下一阶段</div><div class="r">16 / 17</div></div>
         <div data-anim="manifesto" style="display:flex;flex-direction:column;gap:2vh;position:relative;z-index:1"><div class="t-meta">下一步</div><h2 style="font-family:var(--sans),var(--sans-zh);font-size:min(7.2vw,12.8vh);line-height:.94;letter-spacing:-.035em;font-weight:200;color:#fff">让每一次<br>触达都能<br><span style="font-style:italic;font-weight:300">走向结果</span></h2><p style="font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.12vw);line-height:1.55;color:rgba(255,255,255,.82);font-weight:400;max-width:30ch">下一阶段重点是补齐数据口径、项目边界和跨部门承接责任。</p></div>
       </div>
       <div class="half" style="padding:5.6vh 3.6vw 4.4vh;justify-content:space-between;position:relative;background:var(--paper)">
@@ -1950,7 +2209,7 @@
           <div class="action-row"><div>01</div><div><h3>统一口径</h3><p class="body">先确认订阅、来源、首触主体、Lead 质量和业务结果的定义。</p></div></div>
           <div class="action-row"><div>02</div><div><h3>推进试点</h3><p class="body">支持 AI Agent 与渠道归因先行试点，建立首期效果基线。</p></div></div>
           <div class="action-row"><div>03</div><div><h3>建立筛查机制</h3><p class="body">支持筛查专员机制，让战区拿到信息更完整、需求更清晰的线索。</p></div></div>
-          <div class="action-row"><div style="color:var(--accent)">04</div><div><h3 style="color:var(--accent)">配置市场研究分析</h3><p class="body">把竞争、客户和真实痛点转成可以被战区、产品线和内容营销采用的输入。</p></div></div>
+          <div class="action-row"><div style="color:var(--accent)">04</div><div><h3 style="color:var(--accent)">配置 Market Research</h3><p class="body">让市场部活动判断更有依据，并把市场洞察第一时间同步给战区。</p></div></div>
         </div>
         <div data-anim="foot" class="t-meta" style="color:var(--text-helper);text-align:right">下一阶段 · 2026.08</div>
       </div>
@@ -1961,7 +2220,7 @@
 <section class="slide accent hero" data-layout="S09" data-animate="manifesto">
   <div class="canvas-card">
     <canvas class="ascii-bg" aria-hidden="true"></canvas>
-    <div class="chrome-min" style="margin-bottom:0"><div class="l">12 / 12</div><div class="r">提问交流</div></div>
+    <div class="chrome-min" style="margin-bottom:0"><div class="l">17 / 17</div><div class="r">提问交流</div></div>
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;padding:0 0 4vh">
       <div data-anim="line" style="display:flex;flex-direction:column;gap:1.8vh">
         <div class="brand-green-line" style="margin-bottom:1.2vh"></div>

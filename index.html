@@ -1483,6 +1483,13 @@
     padding:.6vh 0;
     background:#fff;
   }
+  .slide[data-layout="S20"] .s20-gallery .accordion-gallery .ag-panel:nth-child(1) .ag-panel__media img,
+  .slide[data-layout="S20"] .s20-gallery .accordion-gallery .ag-panel:nth-child(3) .ag-panel__media img,
+  .slide[data-layout="S20"] .s20-gallery .accordion-gallery .ag-panel:nth-child(4) .ag-panel__media img{
+    transform:scale(1.08);
+    transform-origin:center center;
+    transition:transform .6s var(--ease-exp);
+  }
   .slide[data-layout="S20"] .s20-gallery .accordion-gallery .ag-panel.is-active .ag-panel__media{transform:scale(1.005)}
   .slide[data-layout="S20"] .s20-gallery .accordion-gallery .ag-panel.is-active .ag-panel__overlay{opacity:.38}
   .slide[data-layout="S20"] .s20-gallery .accordion-gallery .ag-panel__text{font-size:max(11px,.64vw)}
@@ -1590,7 +1597,7 @@
   .slide[data-layout="S20"] .accordion-gallery .ag-panel__text{
     min-width:0;
     overflow:hidden;
-    color:#fff;
+    color:var(--brand-green);
     font-family:var(--mono);
     font-size:max(12px,.72vw);
     font-weight:600;
@@ -1598,7 +1605,7 @@
     line-height:1.2;
     white-space:nowrap;
     text-overflow:ellipsis;
-    text-shadow:0 2px 12px rgba(0,0,0,.55);
+    text-shadow:none;
   }
   @media (prefers-reduced-motion:reduce){
     .slide[data-layout="S20"] .accordion-gallery .ag-panel,
@@ -1767,33 +1774,33 @@
       </div>
       <div class="s20-gallery">
         <div class="email-strip accordion-gallery" data-anim="evidence" data-default-index="0" aria-label="四封 EDM 邮件截图">
-      <button class="ag-panel is-active" type="button" aria-label="Subscription invitation" aria-pressed="true">
+      <button class="ag-panel is-active" type="button" aria-label="邀请邮件" aria-pressed="true">
         <span class="ag-panel__frame">
           <span class="ag-panel__media"><img src="images/email-style-screenshots/subscription-invitation-final.png" alt="Subscription invitation 邮件截图" data-image-slot="s20-subscription-invitation"></span>
           <span class="ag-panel__overlay" aria-hidden="true"></span>
         </span>
-        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">Subscription invitation</span></span>
+        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">邀请邮件</span></span>
       </button>
-      <button class="ag-panel" type="button" aria-label="Welcome week 1" aria-pressed="false">
+      <button class="ag-panel" type="button" aria-label="欢迎邮件 week1" aria-pressed="false">
         <span class="ag-panel__frame">
           <span class="ag-panel__media"><img src="images/email-style-screenshots/welcome-week1.png" alt="Welcome week 1 邮件截图" data-image-slot="s20-welcome-week1"></span>
           <span class="ag-panel__overlay" aria-hidden="true"></span>
         </span>
-        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">Welcome week 1</span></span>
+        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">欢迎邮件 week1</span></span>
       </button>
-      <button class="ag-panel" type="button" aria-label="Welcome week 2" aria-pressed="false">
+      <button class="ag-panel" type="button" aria-label="欢迎邮件 week2" aria-pressed="false">
         <span class="ag-panel__frame">
           <span class="ag-panel__media"><img src="images/email-style-screenshots/welcome-week2.png" alt="Welcome week 2 邮件截图" data-image-slot="s20-welcome-week2"></span>
           <span class="ag-panel__overlay" aria-hidden="true"></span>
         </span>
-        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">Welcome week 2</span></span>
+        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">欢迎邮件 week2</span></span>
       </button>
-      <button class="ag-panel" type="button" aria-label="Welcome week 3" aria-pressed="false">
+      <button class="ag-panel" type="button" aria-label="欢迎邮件 week3" aria-pressed="false">
         <span class="ag-panel__frame">
           <span class="ag-panel__media"><img src="images/email-style-screenshots/welcome-week3.png" alt="Welcome week 3 邮件截图" data-image-slot="s20-welcome-week3"></span>
           <span class="ag-panel__overlay" aria-hidden="true"></span>
         </span>
-        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">Welcome week 3</span></span>
+        <span class="ag-panel__label" aria-hidden="true"><span class="ag-panel__bar"></span><span class="ag-panel__text">欢迎邮件 week3</span></span>
       </button>
         </div>
       </div>
@@ -1862,7 +1869,7 @@
     <div class="agent-output-grid" data-anim="up">
       <article class="agent-output-card"><div class="num">01</div><h3>高频需求与产品兴趣</h3><p>知道客户正在问什么、关注什么，以及哪些行业场景正在升温。</p></article>
       <article class="agent-output-card"><div class="num">02</div><h3>内容缺口与检索缺口</h3><p>区分官网没有内容，还是已有内容没有被系统找到。</p></article>
-      <article class="agent-output-card"><div class="num">03</div><h3>带上下文的 Lead</h3><p>把场景、兴趣产品、项目阶段和对话摘要交给销售。</p></article>
+      <article class="agent-output-card"><div class="num">03</div><h3>带上下文的潜客线索</h3><p>把场景、兴趣产品、项目阶段和对话摘要交给销售。</p></article>
       <article class="agent-output-card"><div class="num">04</div><h3>重复线索与跟进提醒</h3><p>减少重复 Lead，识别已留资但未及时跟进的客户。</p></article>
       <article class="agent-output-card"><div class="num">05</div><h3>售后问题趋势</h3><p>发现可自助解决的问题和需要补充的服务知识。</p></article>
       <article class="agent-output-card baseline-card"><div class="num">指标基线</div><h3>先建立可衡量的客户旅程</h3><p>有依据回答率、留资接受率、AI 辅助 Lead、字段完整率、首次跟进时间、重复 Lead 率和售后自助解决率。</p></article>

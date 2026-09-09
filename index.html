@@ -2015,6 +2015,15 @@
   .wb-summary-shift-copy h3{font-family:var(--sans),var(--sans-zh);font-size:min(2.05vw,3.5vh);font-weight:420;line-height:1.15;letter-spacing:-.02em;color:var(--brand-navy);text-wrap:balance}
   .wb-summary-shift-copy h3 strong{font-weight:700}
   .wb-summary-shift-copy p{font-family:var(--sans),var(--sans-zh);font-size:max(14px,.84vw);line-height:1.42;margin-top:1.15vh;color:var(--text-secondary);text-wrap:pretty}
+  .webinar-summary-page .wb-summary-shift-label{justify-content:center;align-items:center;gap:1.1vh;text-align:center}
+  .webinar-summary-page .wb-summary-shift-right{display:grid;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:.8vw;min-width:0;min-height:0}
+  .webinar-summary-page .wb-summary-case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.78vw;min-width:0;min-height:0}
+  .webinar-summary-page .wb-summary-case{display:flex;min-width:0;min-height:0;flex-direction:column;justify-content:center;padding:1.05vh .8vw .9vh;background:var(--grey-1);border-top:2px solid var(--border-strong);border-bottom:1px solid var(--border-subtle);overflow:hidden}
+  .webinar-summary-page .wb-summary-case:nth-child(2){border-top-color:var(--brand-green)}
+  .webinar-summary-page .wb-summary-case h3{font-family:var(--sans),var(--sans-zh);font-size:max(14px,.92vw);font-weight:650;line-height:1.18;color:var(--brand-navy);white-space:nowrap}
+  .webinar-summary-page .wb-summary-case .eyebrow{margin-top:.85vh;font-family:var(--mono);font-size:max(9px,.56vw);font-weight:600;line-height:1.15;letter-spacing:.06em;color:var(--brand-green);white-space:nowrap}
+  .webinar-summary-page .wb-summary-case .metric{margin-top:.85vh;font-family:var(--sans),var(--sans-zh);font-size:max(11px,.67vw);font-weight:650;line-height:1.2;color:var(--brand-navy);white-space:nowrap}
+  .webinar-summary-page .wb-summary-case p{margin-top:.55vh;font-family:var(--sans),var(--sans-zh);font-size:max(10px,.62vw);line-height:1.25;color:var(--text-secondary);text-wrap:balance}
   .webinar-case-page [data-anim="head"]{gap:.65vh}
   .webinar-case-page [data-anim="head"]>.t-meta{align-self:flex-start;padding:.5vh .78vw .55vh;background:var(--brand-green);color:var(--brand-navy);font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.08vw);font-weight:700;line-height:1.1;letter-spacing:.035em}
   .webinar-case-page .page-title{font-size:min(3.65vw,6.1vh);line-height:1.02;margin-top:.25vh}
@@ -2118,6 +2127,55 @@
   .wb-ds-note{margin-top:1.1vh;font-family:var(--sans),var(--sans-zh);font-size:max(11px,.66vw);line-height:1.35;color:var(--text-helper)}
   .wb-ds-visual{display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--brand-green);overflow:hidden}
   .wb-ds-visual img{display:block;width:100%;height:100%;min-height:0;object-fit:contain!important;object-position:center!important;background:#fff}
+
+  /* DS100 Product Launch 单页重排：只作用于该案例页，沿用当前 deck 的轻量证据层级。 */
+  .ds100-launch-redesign .ds100-launch-body{display:flex;flex:1;min-height:0;flex-direction:column;gap:1.7vh;margin-top:1.9vh;padding-bottom:var(--nav-safe-bottom)}
+  .ds100-launch-redesign .page-desc{max-width:none;white-space:nowrap}
+  .ds100-launch-redesign .ds100-launch-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1vw;flex:0 0 auto}
+  .ds100-launch-redesign .ds100-launch-kpi{display:flex;min-width:0;flex-direction:column;padding:1.2vh .95vw 1.05vh;background:var(--grey-1);border-top:3px solid var(--brand-green);border-bottom:1px solid var(--border-subtle)}
+  .ds100-launch-redesign .ds100-launch-kpi strong{font-family:var(--sans);font-size:min(3.15vw,5.4vh);font-weight:250;line-height:.9;letter-spacing:-.045em;color:var(--brand-navy);white-space:nowrap}
+  .ds100-launch-redesign .ds100-launch-kpi h3{margin-top:.85vh;font-family:var(--sans),var(--sans-zh);font-size:max(13px,.78vw);font-weight:600;line-height:1.2;color:var(--brand-navy)}
+  .ds100-launch-redesign .ds100-launch-kpi p{margin-top:.35vh;font-family:var(--sans),var(--sans-zh);font-size:max(11px,.62vw);line-height:1.25;color:var(--text-helper)}
+  .ds100-launch-redesign .ds100-launch-method{display:flex;flex:1;min-height:0;flex-direction:column;justify-content:center;gap:.85vh}
+  .ds100-launch-redesign .ds100-launch-method-title{font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.12vw);font-weight:650;line-height:1.1;color:var(--brand-navy)}
+  .ds100-launch-redesign .ds100-launch-method-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.12vw;flex:0 0 17vh;height:17vh;min-height:0}
+  .ds100-launch-redesign .ds100-launch-step{position:relative;display:flex;min-width:0;min-height:0;align-items:center;justify-content:center;flex-direction:column;padding:1.25vh .95vw;background:var(--grey-1);border-top:3px solid var(--border-strong);border-bottom:1px solid var(--border-subtle);color:var(--brand-navy);text-align:center}
+  .ds100-launch-redesign .ds100-launch-step.emphasis{background:rgba(var(--accent-rgb),.1);border-top-color:var(--brand-green)}
+  .ds100-launch-redesign .ds100-launch-step:not(:last-child)::after{content:"→";position:absolute;right:-.72vw;top:50%;transform:translate(50%,-50%);font-family:var(--sans);font-size:max(18px,1.25vw);font-weight:500;line-height:1;color:var(--brand-green);z-index:2}
+  .ds100-launch-redesign .ds100-launch-step .num{position:absolute;top:1.25vh;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:max(11px,.66vw);font-weight:600;line-height:1.2;letter-spacing:.1em;color:var(--brand-green)}
+  .ds100-launch-redesign .ds100-launch-step h3{margin:0 0 .55vh;font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.18vw);font-weight:550;line-height:1.15;color:var(--brand-navy);text-wrap:balance}
+  .ds100-launch-redesign .ds100-launch-step span{font-family:var(--sans);font-size:max(11px,.68vw);font-style:normal;line-height:1.25;color:var(--text-helper);overflow-wrap:anywhere}
+  .ds100-launch-redesign .ds100-launch-efficiency{display:grid;grid-template-columns:minmax(125px,.8fr) minmax(0,1fr) minmax(0,1fr) auto;gap:1.25vw;align-items:center;flex:0 0 auto;padding:1.05vh 1.1vw;background:rgba(var(--accent-rgb),.09);border:1px solid rgba(var(--accent-rgb),.45);border-left:4px solid var(--brand-green);color:var(--brand-navy)}
+  .ds100-launch-redesign .ds100-launch-efficiency .label{font-family:var(--sans),var(--sans-zh);font-size:max(14px,.86vw);font-weight:700;line-height:1.2}
+  .ds100-launch-redesign .ds100-launch-efficiency .metric{display:flex;align-items:baseline;gap:.4vw;min-width:0;white-space:nowrap}
+  .ds100-launch-redesign .ds100-launch-efficiency .metric strong{font-family:var(--sans);font-size:min(2.15vw,3.65vh);font-weight:300;line-height:.95;letter-spacing:-.035em;white-space:nowrap;color:var(--brand-navy)}
+  .ds100-launch-redesign .ds100-launch-efficiency .metric span{font-family:var(--sans),var(--sans-zh);font-size:max(12px,.72vw);line-height:1.25;color:var(--text-secondary);white-space:nowrap}
+  .ds100-launch-redesign .ds100-launch-efficiency .note{font-family:var(--sans),var(--sans-zh);font-size:max(11px,.66vw);line-height:1.2;color:var(--text-helper);white-space:nowrap}
+  .ds100-launch-redesign .ds100-launch-footnote{flex:0 0 auto;margin-top:-.65vh;font-family:var(--sans),var(--sans-zh);font-size:max(10px,.62vw);line-height:1.25;color:var(--text-helper);text-align:left}
+  @media (max-width:900px){
+    .ds100-launch-redesign .ds100-launch-body{gap:1.15vh;margin-top:1.45vh}
+    .ds100-launch-redesign .page-desc{white-space:normal}
+    .ds100-launch-redesign .ds100-launch-kpis{gap:.6vw}
+    .ds100-launch-redesign .ds100-launch-kpi{padding:.95vh .65vw .85vh}
+    .ds100-launch-redesign .ds100-launch-kpi strong{font-size:min(3vw,4.8vh)}
+    .ds100-launch-redesign .ds100-launch-kpi h3{font-size:max(11px,.68vw)}
+    .ds100-launch-redesign .ds100-launch-kpi p{font-size:max(9px,.54vw)}
+    .ds100-launch-redesign .ds100-launch-method{gap:.6vh}
+    .ds100-launch-redesign .ds100-launch-method-title{font-size:max(15px,.92vw)}
+    .ds100-launch-redesign .ds100-launch-method-flow{gap:.48vw}
+    .ds100-launch-redesign .ds100-launch-method-flow{flex-basis:16vh;height:16vh}
+    .ds100-launch-redesign .ds100-launch-step{padding:1vh .62vw}
+    .ds100-launch-redesign .ds100-launch-step:not(:last-child)::after{right:-.45vw;font-size:max(14px,1vw)}
+    .ds100-launch-redesign .ds100-launch-step .num{top:1vh;font-size:max(10px,.58vw)}
+    .ds100-launch-redesign .ds100-launch-step h3{font-size:max(15px,.9vw)}
+    .ds100-launch-redesign .ds100-launch-step span{font-size:max(9px,.54vw)}
+    .ds100-launch-redesign .ds100-launch-efficiency{grid-template-columns:minmax(88px,.8fr) minmax(0,1fr) minmax(0,1fr) auto;gap:.65vw;padding:.8vh .7vw}
+    .ds100-launch-redesign .ds100-launch-efficiency .label{font-size:max(11px,.68vw)}
+    .ds100-launch-redesign .ds100-launch-efficiency .metric{gap:.2vw}
+    .ds100-launch-redesign .ds100-launch-efficiency .metric strong{font-size:min(1.9vw,3.2vh)}
+    .ds100-launch-redesign .ds100-launch-efficiency .metric span{font-size:max(9px,.56vw)}
+    .ds100-launch-redesign .ds100-launch-efficiency .note{font-size:max(9px,.52vw)}
+  }
 
   .wb-regional-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:2vw;flex:1;min-height:0;margin-top:1.8vh;padding-bottom:var(--nav-safe-bottom)}
   .wb-region-table{display:grid;grid-template-rows:auto repeat(7,minmax(0,1fr));min-height:0;border-top:1px solid var(--border-strong)}
@@ -2270,6 +2328,13 @@
     .wb-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .webinar-summary-page .wb-kpi-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
     .wb-summary-shift{grid-template-columns:minmax(120px,.34fr) minmax(0,1.66fr)}
+    .webinar-summary-page .wb-summary-shift-right{gap:.55vw}
+    .webinar-summary-page .wb-summary-case-grid{gap:.45vw}
+    .webinar-summary-page .wb-summary-case{padding:.8vh .5vw .7vh}
+    .webinar-summary-page .wb-summary-case h3{font-size:max(12px,.76vw)}
+    .webinar-summary-page .wb-summary-case .eyebrow{font-size:max(8px,.46vw)}
+    .webinar-summary-page .wb-summary-case .metric{font-size:max(9px,.54vw)}
+    .webinar-summary-page .wb-summary-case p{font-size:max(8px,.5vw)}
     .wb-proof-grid,.wb-feedback-grid,.wb-case-grid,.wb-image-split,.wb-ds-layout,.wb-regional-layout{grid-template-columns:1fr}
     .wb-chain{grid-template-columns:repeat(3,minmax(0,1fr))}
     .wb-cycle{grid-template-columns:repeat(5,minmax(0,1fr));overflow:auto}
@@ -2334,9 +2399,9 @@
   .distill-lowbridge .lowbridge-account-row strong{display:block;color:var(--brand-navy);font-size:max(13px,.78vw)}
   .distill-lowbridge .lowbridge-account-row span{display:block;margin-top:.35vh;color:var(--text-helper);font-size:max(10px,.6vw)}
 
-  .distill-anz [data-anim="head"]>.t-meta{align-self:flex-start;padding:0;background:transparent;color:var(--brand-green);font-size:max(13px,.72vw);font-weight:600;letter-spacing:.12em}
-  .distill-anz .page-title{max-width:none;font-size:min(3.4vw,5.7vh)}
-  .distill-anz .page-desc{color:rgba(255,255,255,.72)}
+  .distill-anz [data-anim="head"]>.t-meta{align-self:flex-start;padding:.5vh .78vw .55vh;background:var(--brand-green);color:var(--brand-navy);font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.08vw);font-weight:700;line-height:1.1;letter-spacing:.035em}
+  .distill-anz .page-title{max-width:27ch;font-size:min(3.65vw,6.1vh);line-height:1.02;margin-top:.25vh}
+  .distill-anz .page-desc{color:var(--text-secondary)}
   .anz-ppt-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.72fr);gap:1.35vw;flex:1;min-height:0;margin-top:1.8vh}
   .anz-funnel-column{display:flex;min-width:0;min-height:0;flex-direction:column}
   .anz-budget-strip{display:flex;flex-wrap:wrap;gap:.7vw;margin-bottom:1.25vh}
@@ -2364,9 +2429,14 @@
     .lowbridge-main-grid{grid-template-columns:minmax(0,1.25fr) minmax(230px,.75fr)}
     .lowbridge-blocks{gap:.45vw}
     .lowbridge-blocks span{min-height:6.8vh}
-    .anz-ppt-layout{grid-template-columns:1fr;flex:0 0 auto;gap:1.4vh}
-    .anz-funnel-column{min-height:38vh}
-    .anz-result-card{min-height:27vh}
+    .anz-ppt-layout{grid-template-columns:1fr;flex:1;min-height:0;gap:1.4vh}
+    .anz-funnel-column{min-height:0}
+    .distill-anz .anz-budget-strip{margin-bottom:.7vh}
+    .distill-anz .anz-funnel{gap:.65vh}
+    .distill-anz .funnel-step{min-height:5.1vh;padding:.45vh 1vw}
+    .distill-anz .funnel-step strong{font-size:min(2.8vw,4.5vh)}
+    .distill-anz .funnel-step span{font-size:max(11px,.72vw)}
+    .anz-result-card{min-height:0}
   }
 
   .editor-toolbar{position:fixed;right:2vw;top:2vh;z-index:180;display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid rgba(16,42,77,.22);background:rgba(255,255,255,.94);box-shadow:0 8px 24px rgba(16,42,77,.12);font-family:var(--sans),var(--sans-zh);font-size:13px;color:var(--brand-navy);backdrop-filter:blur(8px)}
@@ -3009,18 +3079,25 @@
   <div class="canvas-card">
     <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar</div><div class="r">03 / 28</div></div>
     <div class="brand-green-line" data-anim="line"></div>
-    <div data-anim="head"><div class="t-meta">阶段结论 / EXECUTIVE READOUT</div><h2 class="page-title">我们不再只是交付活动<br>增长闭环已经开始运转</h2><p class="page-desc">Webinar 已从单次线上活动，走向区域化触达、需求识别、销售承接与复盘反馈。</p></div>
+    <div data-anim="head"><div class="t-meta">阶段结论 / EXECUTIVE READOUT</div><h2 class="page-title">我们不再只是交付活动<br>三大案例已经跑出可比较的前端增长证据</h2><p class="page-desc">Webinar 已从单次线上活动，走向区域化触达、需求识别、销售承接与复盘反馈。</p></div>
     <div class="wb-kpi-grid" data-anim="up" aria-label="Webinar 核心数据">
       <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-1">4</strong><h3>战区参与协同</h3></article>
       <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-2">9</strong><h3>区域及语言场次</h3></article>
-      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-3">360</strong><h3>累计报名人次</h3></article>
+      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-3">360</strong><h3>注册人次</h3></article>
       <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-4">235</strong><h3>正式参会人次</h3></article>
-      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-5">≈186h</strong><h3>客户集中教育时长</h3><p>按各场观看数据计算</p></article>
-      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-6">¥150,671</strong><h3>已知外部投入</h3><p>投放与已提供制作费用</p></article>
+      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-5">≈186h</strong><h3>集中客户教育时长</h3></article>
+      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-6">¥150,671</strong><h3>已知外部制作与广告投入</h3></article>
     </div>
     <div class="wb-summary-shift" data-anim="up" aria-label="Webinar 最大变化">
       <div class="wb-summary-shift-label"><div class="t-meta">THE BIGGEST CHANGE</div><strong>最大的变化</strong></div>
-      <div class="wb-summary-shift-copy"><h3>GTM与内容开始<strong>发起增长</strong>，而不是被动接收营销任务。</h3><p>前端GTM与内容负责发起增长；数字营销与线索运营负责持续经营、销售承接与价值验证。</p></div>
+      <div class="wb-summary-shift-right">
+        <div class="wb-summary-shift-copy"><h3>GTM与内容开始<strong>发起增长</strong>，而不是被动接收营销任务。</h3><p>前端GTM与内容负责发起增长；数字营销与线索运营负责持续经营、销售承接与价值验证。</p></div>
+        <div class="wb-summary-case-grid" aria-label="三大 Webinar 案例">
+          <article class="wb-summary-case"><h3>1. 矮桥 Low Bridge</h3><div class="eyebrow">SOLUTION ACTIVATION</div><div class="metric">27注册 · 18出席 · 10个账户推进</div><p>拉新 + 老客户新方案激活</p></article>
+          <article class="wb-summary-case"><h3>2. 澳新公交 ANZ</h3><div class="eyebrow">MARKET EDUCATION</div><div class="metric">22注册 · 13出席 · 8家参会企业</div><p>为新市场建立第一轮教育基线</p></article>
+          <article class="wb-summary-case"><h3>3. DS100</h3><div class="eyebrow">PRODUCT LAUNCH</div><div class="metric">311注册 · 204出席 · 52个Demo信号</div><p>7个区域 / 语言场次复制</p></article>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -3082,7 +3159,7 @@
     <div class="chrome-min"><div class="l">05 / LOW BRIDGE</div><div class="r">07 / 11</div></div>
     <div class="brand-green-line" data-anim="line"></div>
     <div data-anim="head">
-      <div class="t-meta">SOLUTION ACTIVATION / LOW BRIDGE</div>
+      <div class="t-meta">案例一 / LOW BRIDGE</div>
       <h2 class="page-title">矮桥：6家老客户讨论新方案，3家新客户进入推进</h2>
       <p class="page-desc">23,264元投入后，12个BD回填账户中10个仍在推进。这场战役同时完成拉新与存量激活。</p>
     </div>
@@ -3114,12 +3191,12 @@
   </div>
 </section>
 
-<section class="slide dark webinar-page webinar-case-page distill-page distill-anz" data-sequence="anz-v2" data-layout="WB15" data-animate="four-cards">
+<section class="slide light webinar-page webinar-case-page distill-page distill-anz" data-sequence="anz-v2" data-layout="WB15" data-animate="four-cards">
   <div class="canvas-card">
     <div class="chrome-min"><div class="l">06 / ANZ</div><div class="r">08 / 11</div></div>
     <div class="brand-green-line" data-anim="line"></div>
     <div data-anim="head">
-      <div class="t-meta">MARKET EDUCATION / ANZ BUS WEBINAR</div>
+      <div class="t-meta">案例二 / ANZ BUS WEBINAR</div>
       <h2 class="page-title">ANZ：为新市场建立第一轮认知与投放基线</h2>
       <p class="page-desc">这场战役验证了目标受众、内容响应和真实问题，为后续账户经营建立起点。</p>
     </div>
@@ -3149,26 +3226,35 @@
 
 
 
-<section class="slide light webinar-page webinar-case-page" data-sequence="webinar-ds100" data-layout="WB08" data-animate="four-cards">
+<section class="slide light webinar-page webinar-case-page ds100-launch-redesign" data-sequence="webinar-ds100" data-layout="WB08" data-animate="four-cards">
   <div class="canvas-card">
     <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar / DS100</div><div class="r">10 / 28</div></div>
     <div class="brand-green-line" data-anim="line"></div>
-    <div data-anim="head"><div class="t-meta">案例三 / DS100 PRODUCT LAUNCH</div><h2 class="page-title">同一产品叙事<br>完成跨区域复制</h2><p class="page-desc">两轮Launch覆盖7个区域及语言场次，验证了规模化复制能力，也需要统一Demo信号与实际完成口径。</p></div>
-    <div class="wb-ds-layout" data-anim="up">
-      <div class="wb-ds-copy">
-        <div class="wb-ds-total" aria-label="DS100 总体数据">
-          <article class="wb-compact-kpi"><strong data-edit-key="wb-ds-kpi-1">311</strong><span>报名人次</span></article>
-          <article class="wb-compact-kpi"><strong data-edit-key="wb-ds-kpi-2">204</strong><span>参会人次</span></article>
-          <article class="wb-compact-kpi"><strong data-edit-key="wb-ds-kpi-3">65.6%</strong><span>整体到会率</span></article>
-          <article class="wb-compact-kpi"><strong data-edit-key="wb-ds-kpi-4">¥104,406.87</strong><span>已知外部投入</span></article>
-        </div>
-        <div class="wb-region-split">
-          <article class="wb-region-card"><h3>APAC</h3><div class="region-metric">220 / 142</div><p>报名 / 参会，覆盖5个区域及语言场次。</p><div class="signal">25 DEMO SIGNALS</div></article>
-          <article class="wb-region-card"><h3>LATAM</h3><div class="region-metric">91 / 62</div><p>报名 / 参会，覆盖2个区域及语言场次。</p><div class="signal">27 DEMO SIGNALS</div></article>
-        </div>
-        <div class="wb-ds-note">52个Demo意向信号与11家已完成Demo公司属于不同口径，不能直接等同；其中视频制作投入为 ¥52,600。</div>
+    <div data-anim="head"><div class="t-meta">案例三 / DS100 PRODUCT LAUNCH</div><h2 class="page-title">同一产品叙事<br>完成跨区域复制</h2><p class="page-desc">中央GTM把产品定位、Launch资产与区域化组织在一起，再用客户反应校准下一轮产品与市场动作。</p></div>
+    <div class="ds100-launch-body" data-anim="up">
+      <div class="ds100-launch-kpis" aria-label="DS100 核心指标">
+        <article class="ds100-launch-kpi"><strong>2 / 7</strong><h3>Launch轮次 / 区域语言场次</h3><p>APAC 5场 + LATAM 2场</p></article>
+        <article class="ds100-launch-kpi"><strong>311 / 204</strong><h3>注册 / 正式出席</h3><p>整体出席率65.6%</p></article>
+        <article class="ds100-launch-kpi"><strong>52</strong><h3>Demo意向信号</h3><p>APAC 25 + LATAM 27</p></article>
+        <article class="ds100-launch-kpi"><strong>¥104,407</strong><h3>已知项目投入</h3><p>含视频制作¥52,600</p></article>
       </div>
-      <figure class="wb-ds-visual"><img src="images/email-style-screenshots/ds100-product-launch-webinar.png" alt="DS100 Webinar 邀请邮件完整长图，未裁切" data-image-slot="webinar-ds100-email"></figure>
+      <section class="ds100-launch-method" aria-label="可复制的产品Launch方法">
+        <h3 class="ds100-launch-method-title">可复制的产品Launch方法</h3>
+        <div class="ds100-launch-method-flow">
+          <article class="ds100-launch-step"><div class="num">01</div><h3>定位</h3><span>Positioning</span></article>
+          <article class="ds100-launch-step"><div class="num">02</div><h3>内容资产</h3><span>Video / LP / Social</span></article>
+          <article class="ds100-launch-step emphasis"><div class="num">03</div><h3>区域化</h3><span>Language / Story</span></article>
+          <article class="ds100-launch-step"><div class="num">04</div><h3>产品发布</h3><span>Live education</span></article>
+          <article class="ds100-launch-step"><div class="num">05</div><h3>信号与反馈</h3><span>Demo / Objection</span></article>
+        </div>
+      </section>
+      <div class="ds100-launch-efficiency" aria-label="投入效率参考">
+        <div class="label">投入效率参考</div>
+        <div class="metric"><strong>≈ ¥512</strong><span>/ 正式出席人次</span></div>
+        <div class="metric"><strong>≈ ¥2,008</strong><span>/ Demo意向信号</span></div>
+        <div class="note">口径参考，非CAC</div>
+      </div>
+      <div class="ds100-launch-footnote">注：Demo为活动意向信号；需与预约Demo、完成Demo及Opportunity分层管理。</div>
     </div>
   </div>
 </section>
@@ -3330,7 +3416,7 @@
       <h2 class="page-title" data-edit-key="edm-home-title-v2"><strong>邮件营销：</strong>从订阅沉淀走向持续用户经营</h2>
     </div>
     <div class="edm-launch-band" data-anim="note" aria-label="邮件营销上线概况">
-      <p class="edm-launch-statement" data-edit-key="edm-home-launch-statement-v2">经过一个半月的敏捷开发，在总投入 <strong>20 万元</strong>的情况下，邮件营销已运行一个月。</p>
+      <p class="edm-launch-statement" data-edit-key="edm-home-launch-statement-v2">邮件营销已完成从能力建设到实际运营的切换，开始持续沉淀可触达、可培育的用户资产。</p>
       <div class="edm-launch-metrics">
         <div class="edm-launch-metric" data-edit-key="edm-home-metric-build-v2"><strong>1.5 个月</strong><span>敏捷开发周期</span></div>
         <div class="edm-launch-metric" data-edit-key="edm-home-metric-cost-v2"><strong>20 万元</strong><span>10 万 License + 10 万开发费</span></div>

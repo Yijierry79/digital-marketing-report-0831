@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>数字营销阶段性复盘与战略动作 · Streamax</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Noto+Sans+SC:wght@200;300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
     /* ============ Streamax 品牌色 ============
@@ -40,9 +37,9 @@
     --border-strong:#7A8997;       /* gray 40, 强分隔 */
 
     /* ============ 字体(跨主题固定) ============ */
-    --sans:"HarmonyOS Sans","Inter","Helvetica Neue","Helvetica","Arial","Segoe UI Variable","Segoe UI",system-ui,-apple-system,sans-serif;
-    --sans-zh:"HarmonyOS Sans","PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei UI","Microsoft YaHei","微软雅黑",sans-serif;
-    --mono:"JetBrains Mono","IBM Plex Mono","SF Mono","Cascadia Code","Consolas","Courier New",ui-monospace,monospace;
+    --sans:"Helvetica",Arial,sans-serif;
+    --sans-zh:"Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    --mono:"Helvetica",Arial,"Microsoft YaHei","微软雅黑",sans-serif;
 
     /* ============ Carbon 2x Grid 间距模数 (基础 8px) ============
        参考: https://carbondesignsystem.com/elements/2x-grid/overview/
@@ -1363,10 +1360,35 @@
   .asset-slot img.placeholder-image{display:none}
   .slide.dark .asset-slot{background:rgba(255,255,255,.08);color:rgba(255,255,255,.62)}
   .capability-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2vw;flex:1;align-items:stretch;margin-top:6vh;padding-bottom:var(--nav-safe-bottom)}
+  .summary-three-card-page .capability-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .capability-card{display:flex;flex-direction:column;justify-content:space-between;min-width:0;padding:2vh 1.25vw;background:var(--grey-1);border-top:3px solid var(--accent)}
   .capability-card .num{font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:.14em;color:var(--accent)}
   .capability-card h3{font-family:var(--sans),var(--sans-zh);font-size:min(2.1vw,3.8vh);line-height:1.12;font-weight:300;margin:2vh 0 1.4vh}
   .capability-card p{font-family:var(--sans),var(--sans-zh);font-size:max(16px,.96vw);line-height:1.5;color:var(--text-secondary)}
+  .edm-overview-page .brand-green-line{margin-bottom:2.2vh!important}
+  .edm-overview-page [data-anim="head"]{gap:.8vh!important}
+  .edm-overview-page .page-title{font-size:min(4.55vw,7.35vh);line-height:1.02;font-weight:300;letter-spacing:-.035em}
+  .edm-overview-page .page-title strong{font-weight:650;color:var(--brand-navy)}
+  .edm-launch-band{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:2.2vw;align-items:center;margin-top:2.15vh;padding:1.45vh 0 1.3vh;border-top:1px solid var(--border-strong);border-bottom:1px solid var(--border-subtle)}
+  .edm-launch-statement{font-family:var(--sans),var(--sans-zh);font-size:max(17px,1.08vw);line-height:1.45;color:var(--text-primary);max-width:49ch}
+  .edm-launch-statement strong{font-weight:650;color:var(--brand-navy)}
+  .edm-launch-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1vw;min-width:0}
+  .edm-launch-metric{min-width:0;padding-left:1vw;border-left:2px solid var(--brand-green)}
+  .edm-launch-metric strong{display:block;font-family:var(--sans),var(--sans-zh);font-size:min(2.25vw,3.8vh);font-weight:300;line-height:1;color:var(--brand-navy);white-space:nowrap}
+  .edm-launch-metric span{display:block;margin-top:.45vh;font-family:var(--sans),var(--sans-zh);font-size:max(11px,.68vw);line-height:1.25;color:var(--text-helper)}
+  .edm-journey-label{display:flex;align-items:center;margin-top:2vh;font-family:var(--mono);font-size:max(11px,.66vw);letter-spacing:.11em;color:var(--text-helper)}
+  .edm-journey-flow{display:grid;grid-template-columns:minmax(0,1fr) 2.5vw minmax(0,1fr) 2.5vw minmax(0,1fr) 2.5vw minmax(0,1fr);gap:.55vw;flex:1;min-height:0;margin-top:1.2vh;padding-bottom:var(--nav-safe-bottom);align-items:stretch}
+  .edm-journey-step.capability-card{position:relative;display:flex;flex-direction:column;justify-content:flex-start;min-width:0;padding:1.65vh 1.15vw 1.45vh;background:var(--grey-1);border-top:3px solid var(--brand-green);overflow:hidden}
+  .edm-journey-step.capability-card::after{content:attr(data-step);position:absolute;right:-.15vw;bottom:-1.1vh;font-family:var(--sans);font-size:min(5.8vw,9.2vh);font-weight:200;line-height:1;color:rgba(10,33,69,.055);pointer-events:none}
+  .edm-journey-step.capability-card .num{font-family:var(--mono);font-size:max(13px,.76vw);font-weight:600;line-height:1;letter-spacing:.14em;color:var(--brand-green);position:relative;z-index:1}
+  .edm-journey-step.capability-card h3{font-family:var(--sans),var(--sans-zh);font-size:min(1.7vw,3vh);font-weight:450;line-height:1.12;margin:2.1vh 0 1.2vh;color:var(--text-primary);position:relative;z-index:1}
+  .edm-journey-step.capability-card p{font-family:var(--sans),var(--sans-zh);font-size:max(15px,.84vw);line-height:1.46;color:var(--text-secondary);position:relative;z-index:1}
+  .edm-journey-step.capability-card:last-child{background:var(--brand-navy)}
+  .edm-journey-step.capability-card:last-child h3{color:#fff}
+  .edm-journey-step.capability-card:last-child p{color:rgba(255,255,255,.76)}
+  .edm-journey-step.capability-card:last-child::after{color:rgba(255,255,255,.06)}
+  .edm-journey-arrow{display:grid;place-items:center;align-self:center;font-family:var(--sans);font-size:min(2.6vw,4.4vh);font-weight:200;line-height:1;color:var(--brand-green);transform:translateY(-.3vh)}
+  .slide[data-sequence="edm-content-2"] .page-title{font-size:min(4.3vw,7.6vh)}
   .edm-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:1.2vw;flex:1;min-height:0;margin-top:5vh;padding-bottom:var(--nav-safe-bottom)}
   .edm-focus-grid{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:1fr;gap:1vw;margin-top:4vh;padding-bottom:0}
   .edm-card{display:flex;flex-direction:column;min-width:0;padding:1.8vh 1.25vw;background:var(--grey-1);border-top:3px solid var(--accent)}
@@ -1648,7 +1670,7 @@
   .combined-arrangement{margin-top:auto;padding:1.3vh 1.1vw;border-top:3px solid var(--brand-green);background:var(--brand-navy);color:#fff}
   .combined-arrangement .t-meta{color:var(--brand-green);font-size:14px}
   .combined-arrangement p{font-family:var(--sans),var(--sans-zh);font-size:max(15px,.88vw);line-height:1.4;margin-top:.7vh;color:rgba(255,255,255,.82)}
-  /* 模块四能力建设页：把两个 headcount 决策放进同一套“岗位请求—业务输出”结构。 */
+  /* 模块三能力建设页：四个 headcount 复用同一套“岗位请求—业务输出”结构。 */
   .capacity-page .canvas-card{padding-bottom:4.4vh}
   .capacity-head{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:3.2vw;align-items:end;margin-top:1.6vh}
   .capacity-head .page-title{font-size:min(5vw,8.4vh);line-height:.94;margin-top:1.7vh}
@@ -1659,6 +1681,10 @@
   .lead-management-right{display:flex;flex-direction:column;min-width:0;min-height:0}
   .lead-management-summary{max-width:none;flex:0 0 auto;margin:0}
   .lead-management-right .capacity-outcomes{flex:1;min-height:0;margin-top:3.4vh}
+  .role-outcome-head{grid-template-columns:1fr}
+  .role-outcome-right{display:flex;flex-direction:column;min-width:0;min-height:0}
+  .role-summary{max-width:none;flex:0 0 auto;margin:0}
+  .role-outcome-right .capacity-outcomes{flex:1;min-height:0;margin-top:3.1vh}
   .capacity-request{display:flex;flex-direction:column;justify-content:space-between;min-width:0;padding:2.4vh 1.7vw;border-top:3px solid var(--brand-green);background:rgba(16,42,77,.06)}
   .capacity-request .t-meta{color:var(--brand-navy);font-size:14px}
   .capacity-request h3{font-family:var(--sans),var(--sans-zh);font-size:min(2.45vw,4.2vh);line-height:1.05;font-weight:400;color:var(--brand-navy);margin:2vh 0 1.2vh}
@@ -1681,16 +1707,23 @@
   .slide.dark .capacity-outcome h3{color:var(--paper)}
   .capacity-outcome p{font-family:var(--sans),var(--sans-zh);font-size:max(15px,.86vw);line-height:1.48;color:var(--text-secondary)}
   .slide.dark .capacity-outcome p{color:rgba(255,255,255,.72)}
+  .martech-page .capacity-request h3,.content-growth-page .capacity-request h3{font-size:min(2.05vw,3.55vh)}
   .capacity-decision{margin-top:1.2vh!important;background:transparent!important;border-top:1px solid var(--border-subtle);padding:1.2vh 0!important;color:var(--brand-navy)!important;font-size:max(16px,1vw)!important;line-height:1.35!important}
   .slide.dark .capacity-decision{border-color:rgba(255,255,255,.25);color:var(--paper)!important}
   .capacity-module-divider .module-divider-copy>p{white-space:nowrap}
-  .market-research-page .capacity-body{grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr)}
+  .module2-divider .module-divider-copy>p{white-space:nowrap;max-width:none}
+  .module2-divider .module-divider-title{font-size:min(6.5vw,10.5vh)}
+  .market-research-page .capacity-body{grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);margin-top:2vh}
   .market-research-page .capacity-head{grid-template-columns:1fr}
   .market-research-page .capacity-request h3{font-size:min(2.2vw,3.8vh)}
   .market-research-right{display:flex;flex-direction:column;min-width:0;min-height:0}
-  .market-research-summary{font-family:var(--sans),var(--sans-zh);font-size:max(17px,1vw);line-height:1.42;color:rgba(255,255,255,.78);padding-left:calc(5.2vw + 1.1vw);margin:0 0 2.2vh;flex:0 0 auto}
+  .market-research-summary{font-family:var(--sans),var(--sans-zh);font-size:max(17px,1vw);line-height:1.42;color:rgba(255,255,255,.78);padding-left:calc(5.2vw + 1.1vw);margin:-3.9vh 0 3.1vh;flex:0 0 auto}
   .market-research-right .market-impact{flex:1;min-height:0}
   .market-impact{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));min-height:0}
+  .market-impact.is-four-rows{grid-template-rows:repeat(3,minmax(0,.9fr)) minmax(0,1.3fr)}
+  .market-impact.is-four-rows .market-impact-row{padding:1.35vh 0}
+  .market-impact.is-four-rows .market-impact-row h3{font-size:max(17px,1.18vw)}
+  .market-impact.is-four-rows .market-impact-row p{font-size:max(14px,.78vw);line-height:1.5;max-width:none}
   .market-impact-row{display:grid;grid-template-columns:5.2vw minmax(0,1fr);gap:1.1vw;align-items:start;padding:1.6vh 0;border-top:1px solid rgba(255,255,255,.24)}
   .market-impact-row:last-child{border-bottom:1px solid rgba(255,255,255,.24)}
   .market-impact-row .num{font-family:var(--mono);font-size:13px;line-height:1.35;letter-spacing:.08em;color:var(--brand-green);font-weight:600}
@@ -1701,6 +1734,8 @@
     .capacity-head .page-title{font-size:10vw}
     .capacity-body,.market-research-page .capacity-body{display:flex;flex-direction:column;gap:1vh;margin-top:2.8vh;padding-bottom:0;flex:none}
     .lead-management-right .capacity-outcomes{margin-top:1.8vh}
+    .role-outcome-right .capacity-outcomes{margin-top:1.4vh}
+    .role-summary{font-size:12.5px;line-height:1.32;margin-bottom:.2vh}
     .capacity-request{min-height:0;padding:1.25vh 4vw}
     .capacity-request h3{font-size:5.9vw;line-height:.96;margin:.65vh 0 .45vh}
     .market-research-page .capacity-request h3{font-size:5.9vw}
@@ -1717,7 +1752,31 @@
     .market-impact-row{min-height:0;padding:.8vh 0}
     .market-impact-row h3{font-size:4.5vw;line-height:1.02;margin:0 0 .35vh}
     .market-impact-row p{font-size:12.5px;line-height:1.24}
+    .market-impact.is-four-rows .market-impact-row{padding:.45vh 0}
+    .market-impact.is-four-rows .market-impact-row h3{font-size:4.05vw;line-height:1.02;margin-bottom:.25vh}
+    .market-impact.is-four-rows .market-impact-row p{font-size:11.5px;line-height:1.18}
     .capacity-decision{font-size:12.5px!important;line-height:1.22!important;margin-top:.35vh!important}
+    /* 新增岗位在手机视口保持完整可见：压缩装饰性留白，正文信息不删减。 */
+    .martech-page .brand-green-line,.content-growth-page .brand-green-line,.market-research-page .brand-green-line{margin-bottom:.7vh!important}
+    .martech-page .capacity-head,.content-growth-page .capacity-head,.market-research-page .capacity-head{margin-top:.35vh}
+    .martech-page .capacity-head .page-title,.content-growth-page .capacity-head .page-title,.market-research-page .capacity-head .page-title{font-size:8.35vw;line-height:.92;margin-top:.8vh}
+    .martech-page .capacity-body,.content-growth-page .capacity-body,.market-research-page .capacity-body{margin-top:1.15vh}
+    .martech-page .capacity-request,.content-growth-page .capacity-request,.market-research-page .capacity-request{padding:.75vh 4vw}
+    .martech-page .capacity-request h3,.content-growth-page .capacity-request h3,.market-research-page .capacity-request h3{font-size:5vw;line-height:.94;margin:.35vh 0 .3vh}
+    .martech-page .capacity-role-tags,.content-growth-page .capacity-role-tags,.market-research-page .capacity-role-tags{gap:.3vw;margin-top:.65vh}
+    .martech-page .capacity-role-tag,.content-growth-page .capacity-role-tag,.market-research-page .capacity-role-tag{padding:.28vh 1.15vw;font-size:10.5px;line-height:1.12}
+    .martech-page .capacity-request .request-foot,.content-growth-page .capacity-request .request-foot,.market-research-page .capacity-request .request-foot{padding-top:.45vh;font-size:9.5px;line-height:1.15}
+    .martech-page .role-summary,.content-growth-page .role-summary{font-size:11.5px;line-height:1.2;margin:0}
+    .martech-page .role-outcome-right .capacity-outcomes,.content-growth-page .role-outcome-right .capacity-outcomes{margin-top:.7vh}
+    .martech-page .capacity-outcome,.content-growth-page .capacity-outcome{padding:.38vh 0}
+    .martech-page .capacity-outcome h3,.content-growth-page .capacity-outcome h3{font-size:4vw;line-height:1;margin-bottom:.2vh}
+    .martech-page .capacity-outcome p,.content-growth-page .capacity-outcome p{font-size:10.5px;line-height:1.14}
+    .market-research-page .market-research-summary{font-size:10.8px;line-height:1.12;margin-bottom:.35vh}
+    .market-research-page .market-impact.is-four-rows{grid-template-rows:repeat(4,auto)}
+    .market-research-page .market-impact.is-four-rows .market-impact-row{padding:.45vh 0}
+    .market-research-page .market-impact.is-four-rows .market-impact-row:last-child{padding-bottom:1.1vh}
+    .market-research-page .market-impact.is-four-rows .market-impact-row h3{font-size:3.7vw;line-height:1;margin-bottom:.15vh}
+    .market-research-page .market-impact.is-four-rows .market-impact-row p{font-size:10px;line-height:1.08}
   }
   /* EDM 邮件放大层：统一内容宽度，长图通过原生滚动完整查看。 */
   #image-lightbox{position:fixed;inset:0;z-index:200;display:none;align-items:flex-start;justify-content:center;background:rgba(11,32,58,.96);padding:8vh 4vw 6vh;overflow:auto;overflow-anchor:none;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y}
@@ -1767,6 +1826,7 @@
   .module-divider .canvas-card{padding:5.6vh 5vw 4.4vh}
   .module-divider-body{flex:1;display:grid;grid-template-columns:minmax(180px,.46fr) minmax(0,1.54fr);align-items:center;gap:3.2vw;min-height:0;position:relative;z-index:1}
   .module-divider-index{font-family:var(--mono);font-size:min(18vw,29vh);line-height:.76;letter-spacing:-.09em;font-weight:300;color:var(--brand-green);font-feature-settings:"tnum";opacity:.96}
+  .submodule-divider-index{font-size:min(12vw,20vh);letter-spacing:-.11em;white-space:nowrap}
   .module-divider-copy{border-left:1px solid rgba(255,255,255,.26);padding-left:3.2vw;min-width:0}
   .module-divider-copy .brand-green-line{width:92px;margin-bottom:2.5vh;background:var(--brand-green)}
   .module-divider-copy .t-meta{font-size:14px;color:rgba(255,255,255,.72);letter-spacing:.18em}
@@ -1778,11 +1838,12 @@
   @media (max-width:900px){
     .module-divider-body{grid-template-columns:1fr;gap:4vh;align-content:center}
     .module-divider-index{font-size:20vw}
+    .submodule-divider-index{font-size:16vw}
     .module-divider-copy{padding-left:4vw}
     .module-divider-title{font-size:11vw}
     .module-divider-copy p{font-size:16px}
   }
-  /* 模块三拆页：当前局面强调“流入可见、转化与来源不可见”，右侧保留真实决策树截图。 */
+  /* Salesforce 归因页：左侧呈现业务断点，右侧用连续收窄的几何漏斗解释活动 ROI 层级。 */
   .attribution-current-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:2.2vw;flex:1;min-height:0;margin-top:3.6vh;padding-bottom:var(--nav-safe-bottom);align-items:stretch}
   .attribution-current-copy{display:flex;flex-direction:column;min-width:0}
   .attribution-current-copy .page-title{font-size:min(4.7vw,7.8vh);line-height:1.02;margin-top:1.5vh}
@@ -1795,6 +1856,61 @@
   .current-tree-figure{height:100%;min-height:0;background:#f8f7f2;border:1px solid var(--border-subtle);border-top:3px solid var(--brand-green)}
   .current-tree-figure > img{flex:1 1 0;min-height:0;width:100%;height:100%;object-fit:contain!important;object-position:center;padding:.7vh .45vw;background:#fff}
   .current-tree-figure .img-cap{padding:0 1vw 1vh;margin-top:.7vh;font-size:max(12px,.72vw);letter-spacing:.1em}
+  .salesforce-function-page .page-title{font-size:min(4.25vw,7.2vh);line-height:1.02;margin-top:1.2vh}
+  .salesforce-function-page .page-desc{font-size:max(16px,.95vw);line-height:1.4;max-width:58ch;margin-top:.6vh}
+  .salesforce-function-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4vw;flex:1;min-height:0;margin-top:2.6vh;padding-bottom:var(--nav-safe-bottom)}
+  .salesforce-region-card{display:flex;flex-direction:column;min-width:0;min-height:0;position:relative;overflow:hidden;background:var(--grey-1);border-top:3px solid var(--brand-green);padding:2vh 1.45vw 1.8vh}
+  .salesforce-region-card::after{position:absolute;right:-.15vw;bottom:-1.3vh;font-family:var(--sans);font-size:min(5.6vw,9.2vh);font-weight:200;line-height:1;letter-spacing:-.06em;color:rgba(10,33,69,.055);pointer-events:none}
+  .salesforce-region-card:first-child::after{content:"OVERSEAS"}
+  .salesforce-region-card:nth-child(2)::after{content:"DOMESTIC";color:rgba(255,255,255,.065)}
+  .salesforce-region-card:nth-child(2){background:var(--brand-navy);color:#fff;border-top-color:var(--brand-green)}
+  .salesforce-region-card .t-meta{display:flex;justify-content:space-between;align-items:baseline;gap:1vw;color:var(--text-helper);font-size:max(12px,.72vw);letter-spacing:.12em;position:relative;z-index:1}
+  .salesforce-region-card .t-meta > span:first-child{font-family:var(--sans),var(--sans-zh);font-size:max(21px,1.28vw);font-weight:500;line-height:1;letter-spacing:.035em;color:var(--brand-navy)}
+  .salesforce-region-card:nth-child(2) .t-meta > span:first-child{color:var(--brand-green)}
+  .salesforce-region-card:nth-child(2) .t-meta{color:rgba(255,255,255,.72)}
+  .salesforce-region-card h3{font-family:var(--sans),var(--sans-zh);font-size:min(2.4vw,4.1vh);font-weight:300;line-height:1.08;margin:2.2vh 0 1.6vh;color:var(--text-primary)}
+  .salesforce-region-card:nth-child(2) h3{color:#fff}
+  .salesforce-region-stat{font-family:var(--mono);font-size:min(3.8vw,6.2vh);line-height:.94;letter-spacing:-.05em;color:var(--brand-green);margin-bottom:1.8vh}
+  .salesforce-region-stat span{font-family:var(--sans),var(--sans-zh);font-size:max(15px,.9vw);letter-spacing:0;color:var(--text-secondary);margin-left:.35vw}
+  .salesforce-region-card:nth-child(2) .salesforce-region-stat span{color:rgba(255,255,255,.74)}
+  .salesforce-region-card p{font-family:var(--sans),var(--sans-zh);font-size:max(16px,.95vw);line-height:1.5;color:var(--text-secondary);margin-top:1.1vh;position:relative;z-index:1}
+  .salesforce-region-card:nth-child(2) p{color:rgba(255,255,255,.78)}
+  .salesforce-region-foot{margin-top:auto;padding-top:1.5vh;border-top:1px solid var(--border-subtle);font-family:var(--mono);font-size:max(13px,.72vw);letter-spacing:.08em;color:var(--text-helper);position:relative;z-index:1}
+  .salesforce-region-card:nth-child(2) .salesforce-region-foot{border-color:rgba(255,255,255,.24);color:rgba(255,255,255,.72)}
+  .roi-funnel-figure{display:flex;flex-direction:column;min-width:0;min-height:0;height:100%;background:#f8f7f2;border:1px solid var(--border-subtle);border-top:3px solid var(--brand-green);padding:1.35vh 1.05vw 1vh;overflow:hidden}
+  .roi-funnel-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1vw;border-bottom:1px solid var(--border-subtle);padding-bottom:1vh;margin-bottom:1.25vh}
+  .roi-funnel-head .t-meta{font-size:max(11px,.66vw);color:var(--text-helper);letter-spacing:.1em;white-space:nowrap}
+  .roi-funnel-title{font-family:var(--sans),var(--sans-zh);font-size:max(16px,.95vw);font-weight:500;line-height:1.15;color:var(--text-primary);text-align:right}
+  .roi-funnel-stack{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.36vh;flex:1;min-height:0;padding:.2vh 0}
+  .roi-funnel-card{--tier-bg:#fff;--tier-text:var(--text-primary);--tier-muted:var(--text-secondary);position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1vw;align-items:center;min-height:0;padding:1.35vh 2.25vw 1.25vh;isolation:isolate;color:var(--tier-text)}
+  .roi-funnel-card::before{content:"";position:absolute;inset:0;background:var(--tier-bg);clip-path:polygon(0 0,100% 0,94% 100%,6% 100%);z-index:-1}
+  .roi-funnel-card::after{content:"";position:absolute;left:50%;bottom:-.36vh;width:1px;height:.36vh;background:var(--brand-green);transform:translateX(-50%)}
+  .roi-funnel-card:last-child::after{display:none}
+  .roi-funnel-card.top{width:100%;--tier-bg:var(--brand-navy);--tier-text:#fff;--tier-muted:rgba(255,255,255,.72)}
+  .roi-funnel-card.middle{width:84%;--tier-bg:#dce2e5;--tier-text:var(--text-primary);--tier-muted:#52606a}
+  .roi-funnel-card.bottom{width:68%;align-self:center;transform:none;--tier-bg:var(--brand-green);--tier-text:#122310;--tier-muted:#294a24}
+  .roi-funnel-copy{min-width:0;text-align:center}
+  .roi-funnel-card .t-meta{display:block;font-size:max(10px,.6vw);line-height:1.15;color:var(--tier-muted);letter-spacing:.1em;margin-bottom:.42vh}
+  .roi-funnel-card h3{font-family:var(--sans),var(--sans-zh);font-size:max(16px,1.02vw);line-height:1.1;font-weight:500;color:var(--tier-text);white-space:nowrap}
+  .roi-funnel-card p{font-family:var(--sans),var(--sans-zh);font-size:max(12px,.7vw);line-height:1.28;color:var(--tier-muted);margin-top:.45vh}
+  .roi-funnel-status{align-self:center;font-family:var(--mono);font-size:max(10px,.58vw);line-height:1.12;white-space:nowrap;color:var(--tier-text);border-left:1px solid currentColor;padding:.35vh 0 .35vh .7vw;opacity:.78}
+  .roi-funnel-caption{display:flex;justify-content:space-between;align-items:center;gap:1vw;font-family:var(--mono);font-size:max(10px,.61vw);letter-spacing:.07em;color:var(--text-helper);margin-top:.85vh;padding-top:.85vh;border-top:1px solid var(--border-subtle)}
+  .roi-funnel-caption strong{font-weight:500;color:var(--text-primary)}
+  .attribution-visual-stack{position:relative;min-width:0;min-height:0;width:calc(100% - .9vw);height:calc(100% - 1.15vh);margin:0 .9vw 1.15vh 0;cursor:pointer;outline:none;perspective:900px}
+  .attribution-stack-card{position:absolute;inset:0;width:100%;height:100%;transition:transform .42s cubic-bezier(.2,0,.2,1),box-shadow .42s ease,opacity .3s ease;transform-origin:92% 92%;box-shadow:0 12px 28px rgba(10,33,69,.12);will-change:transform}
+  .attribution-stack-card.stack-front{z-index:2;transform:translate(0,0) scale(1) rotate(0deg)}
+  .attribution-stack-card.stack-back{z-index:1;transform:translate(.9vw,1.15vh) scale(.972) rotate(.65deg);box-shadow:0 8px 18px rgba(10,33,69,.08)}
+  .attribution-visual-stack.show-tree .roi-funnel-figure{z-index:1;transform:translate(.9vw,1.15vh) scale(.972) rotate(.65deg);box-shadow:0 8px 18px rgba(10,33,69,.08)}
+  .attribution-visual-stack.show-tree .attribution-tree-card{z-index:3;transform:translate(0,0) scale(1) rotate(0deg);box-shadow:0 12px 28px rgba(10,33,69,.12)}
+  .attribution-tree-card{display:flex;flex-direction:column;min-width:0;min-height:0;background:#f8f7f2;border:1px solid var(--border-subtle);border-top:3px solid var(--brand-green);padding:1.35vh 1.05vw 1vh;overflow:hidden}
+  .attribution-tree-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1vw;border-bottom:1px solid var(--border-subtle);padding-bottom:1vh;margin-bottom:1.25vh}
+  .attribution-tree-head .t-meta{font-size:max(11px,.66vw);color:var(--text-helper);letter-spacing:.1em;white-space:nowrap}
+  .attribution-tree-title{font-family:var(--sans),var(--sans-zh);font-size:max(16px,.95vw);font-weight:500;line-height:1.15;color:var(--text-primary);text-align:right}
+  .attribution-tree-image{display:flex;align-items:center;justify-content:center;flex:1;min-height:0;background:#fff;border:1px solid var(--border-subtle);overflow:hidden}
+  .attribution-tree-image img{display:block;width:100%;height:100%;min-height:0;object-fit:contain;object-position:center;padding:.5vh .35vw;background:#fff}
+  .attribution-tree-caption{display:flex;justify-content:flex-start;align-items:center;gap:1vw;font-family:var(--mono);font-size:max(10px,.61vw);letter-spacing:.07em;color:var(--text-helper);margin-top:.85vh;padding-top:.85vh;border-top:1px solid var(--border-subtle)}
+  .attribution-visual-stack:focus-visible{outline:2px solid var(--brand-green);outline-offset:5px}
+  @media (prefers-reduced-motion:reduce){.attribution-stack-card{transition:none}}
   /* 模块三拆页：上线后的能力与参考收入看板同页呈现，便于领导从字段到业务结果连续阅读。 */
   .attribution-outcome-page [data-anim="head"]{gap:.65vh!important}
   .attribution-outcome-page .brand-green-line{margin-bottom:2.2vh!important}
@@ -1868,7 +1984,322 @@
     .attribution-current-grid,.attribution-outcome-grid{grid-template-columns:1fr}
     .current-tree-figure{height:30vh}
     .attribution-dashboard-stack{min-height:42vh}
+    .salesforce-function-grid{grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible;padding-bottom:0}
+    .salesforce-region-card{min-height:0;padding:1.6vh 1.2vw}
+    .roi-funnel-card{padding-left:2.7vw;padding-right:2.7vw}
+    .attribution-visual-stack{height:40vh;width:calc(100% - 1.2vw);margin-right:1.2vw}
+    .edm-launch-band{grid-template-columns:1fr;gap:1.2vh}
+    .edm-journey-flow{grid-template-columns:repeat(4,minmax(0,1fr));gap:1vw}
+    .edm-journey-arrow{display:none}
   }
+
+  /* Webinar 板块：以证据链为主，沿用备份版本的瑞士网格、细线和单一绿色行动信号。 */
+  .webinar-page .brand-green-line{margin-bottom:2vh!important}
+  .webinar-page [data-anim="head"]{display:flex;flex-direction:column;gap:.8vh}
+  .webinar-page .page-title{font-size:min(4.25vw,7.1vh);line-height:1.01;font-weight:260;letter-spacing:-.038em}
+  .webinar-page .page-desc{font-family:var(--sans),var(--sans-zh);font-size:max(15px,.9vw);line-height:1.42;color:var(--text-secondary);max-width:72ch}
+  .wb-kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.15vw;margin-top:2.6vh}
+  .wb-kpi{min-width:0;padding:1.65vh 1.15vw 1.45vh;background:var(--grey-1);border-top:3px solid var(--brand-green)}
+  .wb-kpi strong{display:block;font-family:var(--sans);font-size:min(3.7vw,6.2vh);font-weight:250;line-height:.92;letter-spacing:-.045em;color:var(--brand-navy);white-space:nowrap}
+  .wb-kpi span{display:block;margin-top:.75vh;font-family:var(--sans),var(--sans-zh);font-size:max(13px,.76vw);line-height:1.32;color:var(--text-helper)}
+  .webinar-summary-page .wb-kpi-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:.78vw;margin-top:2.1vh}
+  .webinar-summary-page .wb-kpi{display:flex;flex-direction:column;justify-content:flex-start;min-height:15.2vh;padding:1.45vh .88vw 1.25vh}
+  .webinar-summary-page .wb-kpi strong{font-size:min(2.85vw,4.8vh);font-weight:320;letter-spacing:-.035em}
+  .webinar-summary-page .wb-kpi h3{font-family:var(--sans),var(--sans-zh);font-size:max(14px,.86vw);font-weight:600;line-height:1.22;margin-top:1.15vh;color:var(--brand-navy)}
+  .webinar-summary-page .wb-kpi p{font-family:var(--sans),var(--sans-zh);font-size:max(10px,.6vw);line-height:1.3;margin-top:.45vh;color:var(--text-helper)}
+  .wb-summary-shift{display:grid;grid-template-columns:minmax(150px,.34fr) minmax(0,1.66fr);flex:1;min-height:0;margin-top:1.35vh;padding-bottom:var(--nav-safe-bottom)}
+  .wb-summary-shift-label{display:flex;flex-direction:column;justify-content:space-between;padding:1.6vh 1.05vw;background:var(--brand-navy);color:#fff;border-top:3px solid var(--brand-green)}
+  .wb-summary-shift-label .t-meta{color:var(--brand-green);font-size:max(11px,.66vw);letter-spacing:.1em}
+  .wb-summary-shift-label strong{font-family:var(--sans),var(--sans-zh);font-size:min(2.15vw,3.7vh);font-weight:430;line-height:1.08;color:#fff}
+  .wb-summary-shift-copy{display:flex;flex-direction:column;justify-content:center;min-width:0;padding:1.7vh 1.55vw;border-top:3px solid var(--brand-green);border-bottom:1px solid var(--border-subtle);background:var(--grey-1)}
+  .wb-summary-shift-copy h3{font-family:var(--sans),var(--sans-zh);font-size:min(2.05vw,3.5vh);font-weight:420;line-height:1.15;letter-spacing:-.02em;color:var(--brand-navy);text-wrap:balance}
+  .wb-summary-shift-copy h3 strong{font-weight:700}
+  .wb-summary-shift-copy p{font-family:var(--sans),var(--sans-zh);font-size:max(14px,.84vw);line-height:1.42;margin-top:1.15vh;color:var(--text-secondary);text-wrap:pretty}
+  .webinar-case-page [data-anim="head"]{gap:.65vh}
+  .webinar-case-page [data-anim="head"]>.t-meta{align-self:flex-start;padding:.5vh .78vw .55vh;background:var(--brand-green);color:var(--brand-navy);font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.08vw);font-weight:700;line-height:1.1;letter-spacing:.035em}
+  .webinar-case-page .page-title{font-size:min(3.65vw,6.1vh);line-height:1.02;margin-top:.25vh}
+  .wb-feedback-one-line{max-width:none!important;white-space:nowrap;font-size:max(14px,.86vw)!important;letter-spacing:-.01em}
+  .wb-proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2vw;flex:1;min-height:0;margin-top:1.35vh;padding-bottom:var(--nav-safe-bottom)}
+  .wb-proof{display:grid;grid-template-columns:4vw minmax(0,1fr);gap:1.1vw;align-items:center;min-width:0;padding:1.45vh 1.25vw;border-top:1px solid var(--border-strong);border-bottom:1px solid var(--border-subtle)}
+  .wb-proof .num{font-family:var(--sans);font-size:min(3.5vw,5.8vh);font-weight:200;line-height:.9;color:var(--brand-green)}
+  .wb-proof h3{font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.22vw);line-height:1.16;font-weight:500;margin-bottom:.45vh}
+  .wb-proof p{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.78vw);line-height:1.38;color:var(--text-secondary)}
+  .wb-footnote{font-family:var(--sans),var(--sans-zh);font-size:max(11px,.66vw);line-height:1.35;color:var(--text-helper);padding-top:.8vh;border-top:1px solid var(--border-subtle)}
+
+  .wb-chain{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.18vw;align-items:stretch;flex:1;min-height:0;margin-top:2.7vh;padding-bottom:1.5vh}
+  .wb-chain-step{position:relative;display:flex;flex-direction:column;min-width:0;padding:1.75vh 1.18vw;background:var(--brand-navy);border:1px solid rgba(16,42,77,.2);border-top:3px solid rgba(171,205,1,.4);border-radius:10px;color:#fff;z-index:1}
+  .wb-chain-step.active{border:2px solid var(--brand-green);border-top-width:3px}
+  .wb-chain-step .num{font-family:var(--mono);font-size:max(11px,.66vw);font-style:italic;letter-spacing:.12em;color:var(--brand-green)}
+  .wb-chain-step h3{font-family:var(--sans),var(--sans-zh);font-size:max(19px,1.28vw);line-height:1.12;font-weight:600;margin:2.6vh 0 1.9vh;padding-bottom:1.45vh;border-bottom:1px solid rgba(255,255,255,.24)}
+  .wb-chain-step p{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.76vw);line-height:1.48;color:rgba(255,255,255,.76)}
+  .wb-chain-step::after{content:"→";position:absolute;right:-.62vw;top:50%;transform:translate(50%,-50%);font-family:var(--sans);font-size:max(18px,1.35vw);font-weight:600;color:var(--brand-green);z-index:3}
+  .wb-chain-step:last-child::after{display:none}
+  .wb-chain-evaluation{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.4vw;align-items:center;margin-bottom:var(--nav-safe-bottom);padding:1.35vh 1.2vw;background:rgba(var(--accent-rgb),.12);border:1px solid rgba(var(--accent-rgb),.5);border-radius:8px;color:var(--brand-navy)}
+  .wb-chain-evaluation .label{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.76vw);font-weight:700;white-space:nowrap}
+  .wb-chain-evaluation p{font-family:var(--sans),var(--sans-zh);font-size:max(14px,.86vw);font-weight:600;line-height:1.35}
+
+  .wb-feedback-grid{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:1.55vh;flex:1;min-height:0;margin-top:2.2vh;padding-bottom:var(--nav-safe-bottom)}
+  .wb-feedback-main{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:2.6vw;min-height:0}
+  .wb-feedback-statement{display:flex;flex-direction:column;justify-content:space-between;min-width:0;padding:2.2vh 1.6vw;background:var(--brand-navy);color:#fff;border-top:4px solid var(--brand-green)}
+  .wb-feedback-statement strong{font-family:var(--sans);font-size:min(6.2vw,10.2vh);font-weight:200;line-height:.82;color:var(--brand-green)}
+  .wb-feedback-statement h3{font-family:var(--sans),var(--sans-zh);font-size:min(2.3vw,3.9vh);line-height:1.12;font-weight:350;margin-top:1.6vh}
+  .wb-feedback-statement p{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.76vw);line-height:1.42;color:rgba(255,255,255,.72);padding-top:1.2vh;border-top:1px solid rgba(255,255,255,.24)}
+  .wb-feedback-flow{display:grid;grid-template-rows:repeat(4,minmax(0,1fr));min-width:0;min-height:0}
+  .wb-feedback-row{display:grid;grid-template-columns:3.35vw minmax(0,.92fr) 2vw minmax(0,1.08fr);gap:.9vw;align-items:center;padding:1.05vh 0;border-top:1px solid var(--border-subtle)}
+  .wb-feedback-row:last-child{border-bottom:1px solid var(--border-subtle)}
+  .wb-feedback-row .num{font-family:var(--sans);font-size:min(2.65vw,4.5vh);font-weight:200;color:var(--brand-green)}
+  .wb-feedback-row h3{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.72vw;align-items:center;font-family:var(--sans),var(--sans-zh);font-size:max(16px,1.02vw);line-height:1.16;font-weight:600}
+  .wb-feedback-source{display:inline-flex;align-items:center;justify-content:center;min-width:3.7vw;padding:.55vh .48vw;background:var(--brand-navy);color:#fff;font-size:max(12px,.68vw);font-weight:700;line-height:1;white-space:nowrap}
+  .wb-feedback-row:nth-child(even) .wb-feedback-source{background:var(--brand-green);color:var(--brand-navy)}
+  .wb-feedback-row .arrow{font-family:var(--sans);font-size:max(19px,1.4vw);font-weight:400;color:var(--brand-green);text-align:center}
+  .wb-feedback-row p{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.76vw);line-height:1.36;font-weight:600;color:var(--text-secondary)}
+  .wb-feedback-banner{padding:1.3vh 1.4vw;border:1px solid rgba(var(--accent-rgb),.5);border-radius:8px;background:rgba(var(--accent-rgb),.09);color:var(--brand-navy);font-family:var(--sans),var(--sans-zh);font-size:max(14px,.88vw);font-weight:700;line-height:1.32;text-align:center}
+
+  .wb-cycle{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.8vw;flex:1;min-height:0;margin-top:3.3vh;padding-bottom:var(--nav-safe-bottom);align-items:stretch}
+  .wb-cycle-step{position:relative;display:flex;flex-direction:column;min-width:0;padding:1.6vh 1vw;background:var(--grey-1);border-top:3px solid var(--brand-green)}
+  .wb-cycle-step::after{content:"→";position:absolute;right:-.72vw;top:50%;transform:translate(50%,-50%);font-family:var(--sans);font-size:max(17px,1.3vw);color:var(--brand-green);z-index:2}
+  .wb-cycle-step:last-child::after{display:none}
+  .wb-cycle-step .time{font-family:var(--mono);font-size:max(12px,.7vw);font-weight:600;letter-spacing:.1em;color:var(--brand-green)}
+  .wb-cycle-step h3{font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.23vw);line-height:1.14;font-weight:500;margin:1.6vh 0 .9vh}
+  .wb-cycle-step p{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.74vw);line-height:1.4;color:var(--text-secondary)}
+  .wb-cycle-step .owner{margin-top:auto;padding-top:1.1vh;border-top:1px solid var(--border-subtle);font-family:var(--mono);font-size:max(10px,.58vw);letter-spacing:.08em;color:var(--text-helper)}
+
+  .wb-value-layout{display:grid;grid-template-columns:minmax(190px,.42fr) minmax(0,1.58fr);gap:2.3vw;flex:1;min-height:0;margin-top:2.5vh;padding-bottom:var(--nav-safe-bottom)}
+  .wb-value-anchor{display:flex;flex-direction:column;justify-content:space-between;padding:2.2vh 1.5vw;background:var(--brand-navy);color:#fff;border-top:4px solid var(--brand-green)}
+  .wb-value-anchor strong{display:block;font-family:var(--sans);font-size:min(8.2vw,13.5vh);font-weight:200;line-height:.78;letter-spacing:-.06em;color:var(--brand-green)}
+  .wb-value-anchor h3{font-family:var(--sans),var(--sans-zh);font-size:min(2.35vw,4vh);line-height:1.1;font-weight:350;margin-top:1.8vh}
+  .wb-value-anchor p{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.76vw);line-height:1.42;color:rgba(255,255,255,.72)}
+  .wb-value-list{display:grid;grid-template-rows:repeat(5,minmax(0,1fr));min-height:0;border-top:1px solid var(--border-strong)}
+  .wb-value-row{display:grid;grid-template-columns:3.4vw minmax(150px,.62fr) minmax(0,1.38fr);gap:1vw;align-items:center;min-width:0;border-bottom:1px solid var(--border-subtle)}
+  .wb-value-row .num{font-family:var(--sans);font-size:min(2.8vw,4.6vh);font-weight:200;color:var(--brand-green)}
+  .wb-value-row h3{font-family:var(--sans),var(--sans-zh);font-size:max(17px,1.13vw);line-height:1.15;font-weight:500}
+  .wb-value-row p{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.76vw);line-height:1.35;color:var(--text-secondary)}
+
+  .wb-case-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:2.3vw;flex:1;min-height:0;margin-top:2.5vh;padding-bottom:var(--nav-safe-bottom)}
+  .wb-case-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:1vw;min-height:0}
+  .wb-case-kpi{display:flex;flex-direction:column;justify-content:space-between;min-width:0;padding:1.6vh 1.15vw;background:var(--grey-1);border-top:3px solid var(--brand-green)}
+  .wb-case-kpi strong{font-family:var(--sans);font-size:min(3.6vw,6vh);font-weight:250;line-height:.9;letter-spacing:-.045em;color:var(--brand-navy)}
+  .wb-case-kpi span{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.76vw);line-height:1.3;color:var(--text-helper)}
+  .wb-case-evidence{display:flex;flex-direction:column;min-width:0;min-height:0}
+  .wb-case-evidence-head{display:flex;justify-content:space-between;gap:1vw;padding-bottom:1vh;border-bottom:1px solid var(--border-strong);font-family:var(--mono);font-size:max(11px,.66vw);letter-spacing:.1em;color:var(--text-helper)}
+  .wb-account-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1.2vw;flex:1;min-height:0}
+  .wb-account{padding:1.45vh 0;border-bottom:1px solid var(--border-subtle)}
+  .wb-account h3{font-family:var(--sans);font-size:max(16px,1vw);line-height:1.15;font-weight:600;margin-bottom:.45vh}
+  .wb-account p{font-family:var(--sans),var(--sans-zh);font-size:max(12px,.72vw);line-height:1.35;color:var(--text-secondary)}
+  .wb-case-callout{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1vw;align-items:center;margin-top:1.2vh;padding:1.25vh 1.1vw;background:var(--brand-navy);color:#fff;border-left:4px solid var(--brand-green)}
+  .wb-case-callout strong{font-family:var(--sans);font-size:min(3.2vw,5.2vh);font-weight:250;color:var(--brand-green)}
+  .wb-case-callout span{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.76vw);line-height:1.38;color:rgba(255,255,255,.78)}
+
+  .wb-image-split{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:2.3vw;flex:1;min-height:0;margin-top:2.3vh;padding-bottom:var(--nav-safe-bottom)}
+  .wb-image-copy{display:flex;flex-direction:column;min-width:0;min-height:0}
+  .wb-compact-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1.1vw;border-top:1px solid var(--border-strong)}
+  .wb-compact-kpi{padding:1.35vh 0;border-bottom:1px solid var(--border-subtle)}
+  .wb-compact-kpi strong{display:block;font-family:var(--sans);font-size:min(3vw,5vh);font-weight:250;line-height:.9;color:var(--brand-navy)}
+  .wb-compact-kpi span{display:block;margin-top:.55vh;font-family:var(--sans),var(--sans-zh);font-size:max(12px,.7vw);line-height:1.3;color:var(--text-helper)}
+  .wb-diagnosis{margin-top:auto;padding:1.4vh 1.15vw;border-top:3px solid var(--brand-green);background:var(--grey-1)}
+  .wb-diagnosis h3{font-family:var(--sans),var(--sans-zh);font-size:max(17px,1.12vw);font-weight:500;line-height:1.15;margin-bottom:.55vh}
+  .wb-diagnosis p{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.76vw);line-height:1.4;color:var(--text-secondary)}
+  .wb-media-frame{display:flex;flex-direction:column;min-width:0;min-height:0;background:#050708;border-top:3px solid var(--brand-green);overflow:hidden}
+  .wb-media-frame.light{background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--brand-green)}
+  .wb-media-frame img{display:block;flex:1 1 0;width:100%;height:100%;min-height:0;object-fit:contain!important;object-position:center!important;background:inherit}
+  .wb-media-frame figcaption{flex:0 0 auto;padding:.8vh .85vw;font-family:var(--mono);font-size:max(10px,.58vw);line-height:1.25;letter-spacing:.07em;color:rgba(255,255,255,.66);border-top:1px solid rgba(255,255,255,.16)}
+  .wb-media-frame.light figcaption{color:var(--text-helper);border-top-color:var(--border-subtle)}
+
+  .wb-ds-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(190px,.55fr);gap:2vw;flex:1;min-height:0;margin-top:2.2vh;padding-bottom:var(--nav-safe-bottom)}
+  .wb-ds-copy{display:flex;flex-direction:column;min-width:0;min-height:0}
+  .wb-ds-total{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.9vw}
+  .wb-ds-total .wb-compact-kpi{padding:1.25vh .9vw;background:var(--grey-1);border-top:3px solid var(--brand-green);border-bottom:0}
+  .wb-region-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1vw;flex:1;min-height:0;margin-top:1.1vh}
+  .wb-region-card{display:flex;flex-direction:column;min-width:0;padding:1.45vh 1.1vw;border-top:1px solid var(--border-strong);border-bottom:1px solid var(--border-subtle)}
+  .wb-region-card h3{font-family:var(--sans);font-size:max(19px,1.35vw);font-weight:500;line-height:1.1}
+  .wb-region-card .region-metric{font-family:var(--sans);font-size:min(3.6vw,6vh);font-weight:250;line-height:.95;color:var(--brand-green);margin:1.25vh 0 .7vh}
+  .wb-region-card p{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.76vw);line-height:1.38;color:var(--text-secondary)}
+  .wb-region-card .signal{margin-top:auto;padding-top:1vh;border-top:1px solid var(--border-subtle);font-family:var(--mono);font-size:max(11px,.66vw);letter-spacing:.06em;color:var(--brand-navy)}
+  .wb-ds-note{margin-top:1.1vh;font-family:var(--sans),var(--sans-zh);font-size:max(11px,.66vw);line-height:1.35;color:var(--text-helper)}
+  .wb-ds-visual{display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--brand-green);overflow:hidden}
+  .wb-ds-visual img{display:block;width:100%;height:100%;min-height:0;object-fit:contain!important;object-position:center!important;background:#fff}
+
+  .wb-regional-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:2vw;flex:1;min-height:0;margin-top:1.8vh;padding-bottom:var(--nav-safe-bottom)}
+  .wb-region-table{display:grid;grid-template-rows:auto repeat(7,minmax(0,1fr));min-height:0;border-top:1px solid var(--border-strong)}
+  .wb-region-row{display:grid;grid-template-columns:minmax(100px,.9fr) 1.25fr 58px;gap:.9vw;align-items:center;min-width:0;border-bottom:1px solid var(--border-subtle)}
+  .wb-region-row.head{font-family:var(--mono);font-size:max(10px,.58vw);letter-spacing:.08em;color:var(--text-helper);padding:.7vh 0}
+  .wb-region-name{font-family:var(--sans),var(--sans-zh);font-size:max(13px,.78vw);line-height:1.2;color:var(--text-primary)}
+  .wb-rate-track{height:1.2vh;min-height:8px;background:#e5e9eb;overflow:hidden}
+  .wb-rate-track span{display:block;height:100%;background:var(--brand-navy)}
+  .wb-rate-value{font-family:var(--mono);font-size:max(11px,.64vw);text-align:right;color:var(--text-primary)}
+  .wb-strategy-stack{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:.8vh;min-height:0}
+  .wb-strategy{display:flex;flex-direction:column;justify-content:center;min-width:0;padding:1.35vh 1.1vw;background:var(--grey-1);border-left:4px solid var(--border-strong)}
+  .wb-strategy.scale{background:var(--brand-navy);border-color:var(--brand-green);color:#fff}
+  .wb-strategy.convert{border-color:var(--brand-green)}
+  .wb-strategy .t-meta{font-size:max(10px,.58vw);letter-spacing:.1em;color:var(--text-helper)}
+  .wb-strategy.scale .t-meta{color:var(--brand-green)}
+  .wb-strategy h3{font-family:var(--sans),var(--sans-zh);font-size:max(17px,1.1vw);line-height:1.15;font-weight:500;margin:.6vh 0 .45vh}
+  .wb-strategy p{font-family:var(--sans),var(--sans-zh);font-size:max(12px,.7vw);line-height:1.34;color:var(--text-secondary)}
+  .wb-strategy.scale p{color:rgba(255,255,255,.74)}
+
+  /* Marketing Role 插页：六步流程以独立箭头连接，不使用贯穿背景横线。 */
+  .marketing-role-page .brand-green-line{margin-bottom:1.6vh!important}
+  .marketing-role-page [data-anim="head"]{display:flex;flex-direction:column;gap:.65vh}
+  .marketing-role-page .page-title{font-size:min(3.55vw,5.9vh);line-height:1.01;max-width:29ch}
+  .marketing-role-layout{display:grid;grid-template-columns:minmax(0,1.56fr) minmax(230px,.44fr);gap:2.2vw;flex:1;min-height:0;margin-top:2.3vh;padding-bottom:var(--nav-safe-bottom)}
+  .marketing-role-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr) 1.05vw) minmax(0,1fr);align-items:stretch;min-width:0;min-height:0}
+  .marketing-role-step{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;padding:1.45vh .75vw 1.35vh;background:var(--grey-1);border-top:3px solid var(--border-strong);border-bottom:1px solid var(--border-subtle)}
+  .marketing-role-step .num{font-family:var(--mono);font-size:max(10px,.58vw);font-weight:600;line-height:1.25;letter-spacing:.08em;color:var(--text-helper)}
+  .marketing-role-step h3{position:absolute;top:50%;left:.75vw;right:.75vw;transform:translateY(-50%);text-align:center;font-family:var(--sans),var(--sans-zh);font-size:max(22px,1.65vw);font-weight:600;line-height:1.14;margin:0;color:var(--brand-navy)}
+  .marketing-role-step p{margin-top:auto;font-family:var(--sans),var(--sans-zh);font-size:max(14px,.78vw);font-weight:430;line-height:1.4;color:var(--text-secondary)}
+  .marketing-role-arrow{display:flex;align-items:center;justify-content:center;align-self:center;font-family:var(--sans);font-size:max(19px,1.55vw);font-weight:500;line-height:1;color:var(--brand-green);transform:translateY(-.2vh)}
+  .marketing-role-aside{display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:0;padding:2vh 1.45vw;background:var(--brand-navy);color:#fff;border-top:4px solid var(--brand-green)}
+  .marketing-role-aside .t-meta{color:var(--brand-green)}
+  .marketing-role-aside .big-line{font-family:var(--sans),var(--sans-zh);font-size:min(2.75vw,4.65vh);font-weight:250;line-height:1.08;letter-spacing:-.025em}
+  .marketing-role-aside strong{color:var(--brand-green);font-weight:700}
+  .marketing-role-aside p{font-family:var(--sans),var(--sans-zh);font-size:max(12px,.72vw);line-height:1.4;color:rgba(255,255,255,.75);padding-top:1.5vh;border-top:1px solid rgba(255,255,255,.24)}
+
+  /* Webinar 混剪视频页：视频占满舞台，保留极简页眉和可访问的全屏入口。 */
+  .webinar-video-page,.webinar-video-page .canvas-card{background:#000!important;color:#fff}
+  .webinar-video-page .canvas-card{padding:0}
+  .webinar-video-page .video-shell{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#000;overflow:hidden}
+  .webinar-video-page .video-shell video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
+  .webinar-video-page .video-chrome{position:absolute;inset:0;padding:3.2vh 4vw 3.2vh;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;color:rgba(255,255,255,.78);text-shadow:0 1px 3px rgba(0,0,0,.7)}
+  .webinar-video-page .video-chrome .t-meta{color:rgba(255,255,255,.76)}
+  .webinar-video-page .video-tools{position:absolute;right:4vw;bottom:4vh;display:flex;gap:.8vw;align-items:center;pointer-events:auto}
+  .webinar-video-page .video-tools button{border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.58);color:#fff;padding:.7vh .85vw;font:500 max(12px,.7vw) var(--sans),var(--sans-zh);cursor:pointer;backdrop-filter:blur(5px)}
+  .webinar-video-page .video-tools button:hover,.webinar-video-page .video-tools button:focus-visible{border-color:var(--brand-green);color:var(--brand-green);outline:none}
+  .webinar-video-page .video-play-fallback[hidden]{display:none}
+
+  /* Webinar GTM 复用总结：上层承接已验证打法，下层指向下一阶段复制。 */
+  .wb-gtm-reuse-page .brand-green-line{margin-bottom:1.4vh!important}
+  .wb-gtm-reuse-page .wb-reuse-head{gap:.45vh}
+  .wb-gtm-reuse-page .page-title{font-size:min(3.5vw,5.8vh);line-height:1.02}
+  .wb-gtm-reuse-page .page-desc{max-width:none;white-space:nowrap;font-size:max(14px,.84vw)}
+  .wb-reuse-body{display:grid;grid-template-rows:minmax(0,1.62fr) auto minmax(0,1fr);gap:1.25vh;flex:1;min-height:0;margin-top:1.7vh;padding-bottom:var(--nav-safe-bottom)}
+  .wb-reuse-plays,.wb-reuse-directions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.45vw;min-height:0}
+  .wb-reuse-play{display:flex;flex-direction:column;min-width:0;min-height:0;padding:1.35vh 1.25vw 1.25vh;background:var(--grey-1);border-top:3px solid var(--brand-green)}
+  .wb-reuse-play.is-navy{background:var(--brand-navy);color:#fff}
+  .wb-reuse-play .num{font-family:var(--sans);font-size:min(3.6vw,5.8vh);font-weight:250;line-height:.86;letter-spacing:-.045em;color:var(--brand-green)}
+  .wb-reuse-play .eyebrow,.wb-reuse-direction .eyebrow{font-family:var(--mono);font-size:max(10px,.6vw);font-weight:600;line-height:1.25;letter-spacing:.1em;color:var(--text-helper)}
+  .wb-reuse-play.is-navy .eyebrow{color:var(--brand-green)}
+  .wb-reuse-play h3{font-family:var(--sans),var(--sans-zh);font-size:min(2.35vw,3.9vh);font-weight:350;line-height:1.05;margin-top:.75vh;color:var(--brand-navy)}
+  .wb-reuse-play.is-navy h3{color:#fff}
+  .wb-reuse-play .evidence{margin-top:auto;padding-top:1vh;border-top:1px solid var(--border-subtle);font-family:var(--sans),var(--sans-zh);font-size:max(13px,.78vw);line-height:1.38;color:var(--text-secondary)}
+  .wb-reuse-play .evidence strong{font-weight:700;color:var(--brand-navy)}
+  .wb-reuse-play.is-navy .evidence{border-color:rgba(255,255,255,.24);color:rgba(255,255,255,.72)}
+  .wb-reuse-play.is-navy .evidence strong{color:#fff}
+  .wb-reuse-next-title{display:block;font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.2vw);font-weight:600;line-height:1.2;color:var(--brand-navy)}
+  .wb-reuse-direction{display:flex;flex-direction:column;justify-content:center;min-width:0;min-height:0;padding:1.1vh 1.2vw 1.2vh;border-top:3px solid var(--brand-green);border-bottom:1px solid var(--border-subtle);background:#fff}
+  .wb-reuse-direction h3{font-family:var(--sans),var(--sans-zh);font-size:max(19px,1.35vw);font-weight:450;line-height:1.15;margin-top:.75vh;color:var(--brand-navy)}
+  @media (max-width:900px){
+    .wb-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .webinar-summary-page .wb-kpi-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .wb-summary-shift{grid-template-columns:minmax(120px,.34fr) minmax(0,1.66fr)}
+    .wb-proof-grid,.wb-feedback-grid,.wb-case-grid,.wb-image-split,.wb-ds-layout,.wb-regional-layout{grid-template-columns:1fr}
+    .wb-chain{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .wb-cycle{grid-template-columns:repeat(5,minmax(0,1fr));overflow:auto}
+    .wb-value-layout{grid-template-columns:.42fr 1.58fr}
+    .wb-media-frame,.wb-ds-visual{min-height:26vh}
+  }
+
+  /* 本次结构调整新增页：沿用备份版本的瑞士网格、细线和荧光绿节奏。 */
+  .blank-page-body{display:grid;grid-template-columns:.9fr 1.1fr;gap:3vw;flex:1;min-height:0;align-items:stretch;margin-top:4vh}
+  .blank-page-copy{display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+  .blank-page-copy h3{font-family:var(--sans),var(--sans-zh);font-size:max(24px,2.2vw);font-weight:400;line-height:1.12;color:var(--text-primary)}
+  .blank-page-copy p{font-family:var(--sans),var(--sans-zh);font-size:max(16px,1vw);line-height:1.5;color:var(--text-secondary);max-width:42ch}
+  .blank-page-note{border-top:3px solid var(--brand-green);padding-top:1.5vh;font-family:var(--mono);font-size:13px;letter-spacing:.1em;color:var(--text-helper)}
+  .blank-page-frame{min-height:0;border:1px dashed var(--border-strong);background:linear-gradient(135deg,rgba(242,244,246,.78),rgba(255,255,255,.96));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .blank-page-frame::before,.blank-page-frame::after{content:"";position:absolute;background:var(--brand-green);opacity:.7}
+  .blank-page-frame::before{width:34%;height:2px;top:50%;left:33%}
+  .blank-page-frame::after{height:34%;width:2px;left:50%;top:33%}
+  .blank-page-frame span{position:relative;z-index:1;background:var(--paper);padding:1.2vh 1.2vw;border:1px solid var(--border-subtle);font-family:var(--mono);font-size:13px;letter-spacing:.12em;color:var(--text-helper)}
++  /* Webinar report runtime pages 7–8: copied verbatim from webinar report/index.html. */
+  .distill-page .page-title{font-size:min(3.65vw,6.1vh);line-height:1.02;max-width:27ch}
+  .distill-page .page-desc{font-size:max(14px,.82vw);line-height:1.38;max-width:78ch;color:var(--text-helper)}
+  .distill-page .brand-green-line{margin-bottom:1.6vh!important}
+  .distill-page .wb-footnote{font-size:max(11px,.64vw);line-height:1.3}
+  .distill-lowbridge .lowbridge-evidence{display:flex;flex:1;min-height:0;flex-direction:column;gap:1.15vh;margin-top:1.7vh;padding-bottom:var(--nav-safe-bottom)}
+  .lowbridge-funnel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7vw;flex:0 0 12.2vh;min-height:0}
+  .lowbridge-funnel article{display:flex;min-width:0;flex-direction:column;justify-content:center;padding:1.1vh 1vw;background:#eef3f6;border:1px solid #d8e0e7;border-top:3px solid var(--border-strong);border-radius:14px}
+  .lowbridge-funnel article.accent-card{background:var(--brand-navy);border-color:var(--brand-navy);border-top-color:var(--brand-green);color:#fff}
+  .lowbridge-funnel article.request-card{background:var(--brand-navy);border-color:var(--brand-navy);border-top-color:var(--brand-navy);color:#fff}
+  .lowbridge-funnel strong{display:block;font-family:var(--sans);font-size:min(2.9vw,4.8vh);font-weight:300;line-height:.9;letter-spacing:-.035em;color:var(--brand-navy)}
+  .lowbridge-funnel .accent-card strong,.lowbridge-funnel .request-card strong{color:var(--brand-green)}
+  .lowbridge-funnel span{display:block;margin-top:.65vh;font-family:var(--sans),var(--sans-zh);font-size:max(12px,.72vw);font-weight:600;line-height:1.2;color:var(--brand-navy)}
+  .lowbridge-funnel article.accent-card span,.lowbridge-funnel article.request-card span{color:#fff}
+  .lowbridge-funnel small{display:block;margin-top:.45vh;font-family:var(--sans),var(--sans-zh);font-size:max(10px,.6vw);line-height:1.2;color:var(--text-helper)}
+  .lowbridge-funnel article.accent-card small,.lowbridge-funnel article.request-card small{color:rgba(255,255,255,.68)}
+  .lowbridge-main-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.7fr);gap:1.15vw;flex:1;min-height:0}
+  .lowbridge-structure{display:flex;min-width:0;min-height:0;flex-direction:column;padding:1.5vh 1.2vw;background:#fbfcf7;border:1px solid #dce4c3;border-top:3px solid var(--brand-green);border-radius:14px}
+  .lowbridge-structure h3{font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.22vw);font-weight:600;line-height:1.1;color:var(--brand-navy)}
+  .lowbridge-blocks{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:.55vw;margin:1.7vh 0 1.35vh}
+  .lowbridge-blocks span{display:flex;align-items:center;justify-content:center;min-width:0;min-height:7.3vh;border-radius:13px;font-family:var(--sans);font-size:max(15px,1vw);font-weight:700;color:var(--brand-navy)}
+  .lowbridge-blocks .existing{background:#b8df0b}
+  .lowbridge-blocks .new-account{background:#19a6a2;color:#fff}
+  .lowbridge-blocks .expansion{background:var(--brand-navy);color:#fff}
+  .lowbridge-legend{display:flex;flex-wrap:wrap;gap:.7vw 1.3vw;align-items:center;padding-bottom:1.15vh;border-bottom:1px solid #dce4c3;font-family:var(--sans),var(--sans-zh);font-size:max(11px,.66vw);line-height:1.25;color:var(--brand-navy)}
+  .lowbridge-legend span{display:inline-flex;align-items:center;gap:.38em;white-space:nowrap}
+  .lowbridge-legend i{display:inline-block;width:12px;height:12px;border-radius:50%}
+  .lowbridge-legend i.existing{background:#b8df0b}.lowbridge-legend i.new-account{background:#19a6a2}.lowbridge-legend i.expansion{background:var(--brand-navy)}
+  .lowbridge-legend b{font-size:1.15em}
+  .lowbridge-value{margin-top:auto;padding:1.05vh 1vw;background:#f3f8e6;border:1px solid #dce4c3;border-radius:10px;font-family:var(--sans),var(--sans-zh);font-size:max(12px,.72vw);font-weight:600;line-height:1.35;color:var(--brand-navy)}
+  .lowbridge-accounts{display:flex;min-width:0;min-height:0;flex-direction:column;padding:1.5vh 1.25vw;background:var(--brand-navy);border-radius:14px;color:#fff}
+  .lowbridge-accounts h3{margin-bottom:1vh;font-family:var(--sans),var(--sans-zh);font-size:max(17px,1.05vw);font-weight:700;line-height:1.1;color:var(--brand-green)}
+  .lowbridge-account-row{display:grid;grid-template-columns:minmax(64px,.4fr) minmax(0,1fr);gap:.75vw;align-items:center;padding:1.05vh 0;border-bottom:1px solid rgba(255,255,255,.18)}
+  .lowbridge-account-row strong{font-family:var(--sans);font-size:max(14px,.88vw);font-weight:700;color:#fff}
+  .lowbridge-account-row span{font-family:var(--sans),var(--sans-zh);font-size:max(11px,.66vw);line-height:1.25;color:rgba(255,255,255,.72)}
+  .distill-lowbridge .lowbridge-evidence{flex:0 0 auto;padding-bottom:0}
+  .distill-lowbridge .lowbridge-main-grid{display:block;flex:0 0 auto}
+  .distill-lowbridge .lowbridge-structure{min-height:0}
+  .distill-lowbridge .lowbridge-value{margin-top:1.25vh}
+  .distill-lowbridge .lowbridge-accounts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7vw;align-items:stretch;margin-top:1.35vh;padding:1.05vh 0 0;background:transparent;border:0;border-top:1px solid #dce4c3;border-radius:0;color:var(--brand-navy)}
+  .distill-lowbridge .lowbridge-accounts h3{grid-column:1/-1;margin:0;color:var(--brand-navy);font-size:max(12px,.72vw);letter-spacing:.04em}
+  .distill-lowbridge .lowbridge-account-row{display:block;padding:.65vh .7vw;border:0;border-left:1px solid #dce4c3}
+  .distill-lowbridge .lowbridge-account-row:first-of-type{border-left:0;padding-left:0}
+  .distill-lowbridge .lowbridge-account-row strong{display:block;color:var(--brand-navy);font-size:max(13px,.78vw)}
+  .distill-lowbridge .lowbridge-account-row span{display:block;margin-top:.35vh;color:var(--text-helper);font-size:max(10px,.6vw)}
+
+  .distill-anz [data-anim="head"]>.t-meta{align-self:flex-start;padding:0;background:transparent;color:var(--brand-green);font-size:max(13px,.72vw);font-weight:600;letter-spacing:.12em}
+  .distill-anz .page-title{max-width:none;font-size:min(3.4vw,5.7vh)}
+  .distill-anz .page-desc{color:rgba(255,255,255,.72)}
+  .anz-ppt-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.72fr);gap:1.35vw;flex:1;min-height:0;margin-top:1.8vh}
+  .anz-funnel-column{display:flex;min-width:0;min-height:0;flex-direction:column}
+  .anz-budget-strip{display:flex;flex-wrap:wrap;gap:.7vw;margin-bottom:1.25vh}
+  .anz-budget-strip span{display:inline-flex;align-items:center;min-height:3.8vh;padding:.55vh 1vw;border-radius:999px;background:var(--brand-green);font-family:var(--mono);font-size:max(10px,.58vw);font-weight:700;letter-spacing:.05em;color:var(--brand-navy)}
+  .anz-budget-strip span+span{background:#1aa6a2;color:#fff}
+  .anz-funnel{display:flex;flex:1;min-height:0;flex-direction:column;justify-content:center;gap:1.15vh}
+  .funnel-step{display:flex;align-items:center;justify-content:space-between;min-width:0;min-height:8.4vh;padding:1.1vh 1.25vw;border-radius:15px;color:#fff}
+  .funnel-step strong{font-family:var(--sans);font-size:min(3.35vw,5.55vh);font-weight:300;line-height:.9;letter-spacing:-.045em;white-space:nowrap}
+  .funnel-step span{margin-left:1vw;font-family:var(--sans),var(--sans-zh);font-size:max(14px,.9vw);font-weight:600;line-height:1.2;white-space:nowrap}
+  .step-reach{width:100%;background:#245581}
+  .step-audience{width:88%;background:#1b6f8a}
+  .step-register{width:76%;background:#1ca6a5}
+  .step-attend{width:64%;background:var(--brand-green);color:var(--brand-navy)}
+  .step-attend strong{font-size:min(3.05vw,5.05vh)}
+  .anz-result-card{display:flex;min-width:0;min-height:0;flex-direction:column;padding:1.8vh 1.35vw;background:#eef4f5;border:1px solid #cbd9dc;border-top:4px solid var(--brand-green);border-radius:14px;color:var(--brand-navy)}
+  .anz-result-card h3{font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.25vw);font-weight:650;line-height:1.1;color:var(--brand-navy)}
+  .anz-result-row{display:grid;flex:1;grid-template-columns:minmax(92px,.7fr) minmax(0,1.3fr);gap:.8vw;align-items:center;min-height:0;padding:1.25vh 0;border-bottom:1px solid #cbd9dc}
+  .anz-result-row strong{font-family:var(--sans);font-size:min(3vw,5vh);font-weight:300;line-height:.92;letter-spacing:-.04em;white-space:nowrap;color:var(--brand-navy)}
+  .anz-result-row span{font-family:var(--sans),var(--sans-zh);font-size:max(12px,.75vw);font-weight:600;line-height:1.28;color:#58707e}
+  .anz-demo-note{display:flex;align-items:flex-end;justify-content:space-between;gap:1vw;margin-top:auto;padding-top:1.1vh;border-top:2px solid var(--brand-green);font-family:var(--sans),var(--sans-zh);font-size:max(11px,.64vw);line-height:1.2;color:#72848c}
+  .anz-demo-note strong{font-family:var(--sans);font-size:max(15px,.95vw);font-weight:500;letter-spacing:-.02em;color:#72848c}
+  .anz-next-step{margin-top:1.15vh;padding:1.25vh 1.25vw;background:var(--brand-green);border-radius:13px;font-family:var(--sans),var(--sans-zh);font-size:max(14px,.84vw);font-weight:650;line-height:1.3;text-align:center;color:var(--brand-navy)}
+  .distill-anz .wb-footnote{margin-top:1vh;padding-top:.85vh;border-top-color:rgba(255,255,255,.18);color:rgba(255,255,255,.54)}
+  @media (max-width:900px){
+    .lowbridge-main-grid{grid-template-columns:minmax(0,1.25fr) minmax(230px,.75fr)}
+    .lowbridge-blocks{gap:.45vw}
+    .lowbridge-blocks span{min-height:6.8vh}
+    .anz-ppt-layout{grid-template-columns:1fr;flex:0 0 auto;gap:1.4vh}
+    .anz-funnel-column{min-height:38vh}
+    .anz-result-card{min-height:27vh}
+  }
+
+  .editor-toolbar{position:fixed;right:2vw;top:2vh;z-index:180;display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid rgba(16,42,77,.22);background:rgba(255,255,255,.94);box-shadow:0 8px 24px rgba(16,42,77,.12);font-family:var(--sans),var(--sans-zh);font-size:13px;color:var(--brand-navy);backdrop-filter:blur(8px)}
+  .editor-toolbar button{border:1px solid var(--brand-navy);background:var(--paper);color:var(--brand-navy);padding:6px 10px;font:inherit;cursor:pointer}
+  .editor-toolbar button.primary{background:var(--brand-navy);color:#fff}
+  .editor-toolbar button:hover,.editor-toolbar button:focus-visible{background:var(--brand-green);color:var(--brand-navy);outline:none}
+  .editor-toolbar .editor-status{min-width:84px;color:var(--text-helper);font-size:12px}
+  body:not(.editor-open) .editor-toolbar .editor-action{display:none}
+  body.editor-open [data-editable]{outline:1px dashed rgba(171,205,1,.9);outline-offset:4px;cursor:text}
+  body.editor-open [data-editable]:focus{outline:2px solid var(--brand-green);outline-offset:4px;background:rgba(171,205,1,.08)}
+  body.editor-open .editor-toolbar{border-color:var(--brand-green)}
+  @media (max-width:900px){.blank-page-body{grid-template-columns:1fr;gap:2vh}.blank-page-frame{min-height:30vh}.editor-toolbar{right:1vw;top:1vh;transform:scale(.9);transform-origin:top right}}
 
 </style>
 </head>
@@ -1914,7 +2345,7 @@
      页面骨架参考 references/layouts-swiss.md
      主题色配置参考 references/themes-swiss.md
      ============================================================ -->
-<section class="slide accent hero" data-layout="S01" data-animate="hero">
+<section class="slide accent hero" data-sequence="cover" data-layout="S01" data-animate="hero">
   <div class="canvas-card">
     <canvas class="ascii-bg" aria-hidden="true"></canvas>
     <div class="chrome-min"><div class="l brand-lockup" aria-label="Streamax 与 Salesforce">
@@ -1935,41 +2366,89 @@
   </div>
 </section>
 
-<section class="slide light" data-layout="S19" data-animate="four-cards">
+<section class="slide light webinar-page marketing-role-page" data-sequence="marketing-role-flow" data-layout="WB-MR01" data-animate="four-cards">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">01 · 管理层结论</div><div class="r">02 / 17</div></div>
-    <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
-    <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="t-meta">管理层结论</div><h2 class="page-title">数字营销已从单点触达<br>走向客户旅程经营</h2></div>
-    <div class="capability-grid" data-anim="up" aria-label="四项数字营销能力">
-      <article class="capability-card"><div class="num">01</div><h3>EDM<br>触达底座</h3><p>已形成订阅邀请、Welcome 培育和战区触达的持续运营能力。</p></article>
-      <article class="capability-card"><div class="num">02</div><h3>AI Agent<br>需求理解</h3><p>让官网从信息展示渠道，逐步变成理解客户问题的业务入口。</p></article>
-      <article class="capability-card"><div class="num">03</div><h3>归因与<br>线索筛查</h3><p>让来源可判断、信息可补全、线索可交付，减少营销到销售的断点。</p></article>
-      <article class="capability-card"><div class="num">04</div><h3>市场情报<br>持续输入</h3><p>把竞争对手、潜在客户和真实痛点反哺给战区、产品线与内容营销。</p></article>
+    <div class="chrome-min"><div class="l">01 / MARKETING ROLE</div><div class="r">02 / 32</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head">
+      <div class="t-meta" data-edit-key="marketing-role-meta-v1">BRAND &amp; MARKETING / ROLE IN GTM</div>
+      <h2 class="page-title" data-edit-key="marketing-role-title-v1">Brand &amp; Marketing正在贯穿客户从认知到商机的完整路径</h2>
     </div>
-    <div data-anim="note" class="decision-bar summary-bar">核心判断：当前阶段的重点，是把已经跑通的触达能力沉淀为可识别、可承接、可复盘的客户信号。</div>
+    <div class="marketing-role-layout" data-anim="up">
+      <div class="marketing-role-flow" aria-label="Brand and Marketing 前端GTM六步路径">
+        <article class="marketing-role-step"><div class="num" data-edit-key="marketing-role-step-1-num-v1">01 / INSIGHT</div><h3 data-edit-key="marketing-role-step-1-title-v1">市场判断</h3><p data-edit-key="marketing-role-step-1-copy-v1">痛点、区域反馈，目标账户与机会</p></article>
+        <div class="marketing-role-arrow" aria-hidden="true">→</div>
+        <article class="marketing-role-step"><div class="num" data-edit-key="marketing-role-step-2-num-v1">02 / GTM</div><h3 data-edit-key="marketing-role-step-2-title-v1">GTM与内容</h3><p data-edit-key="marketing-role-step-2-copy-v1">定位、价值主张，区域化内容</p></article>
+        <div class="marketing-role-arrow" aria-hidden="true">→</div>
+        <article class="marketing-role-step"><div class="num" data-edit-key="marketing-role-step-3-num-v1">03 / EDUCATION</div><h3 data-edit-key="marketing-role-step-3-title-v1">客户教育</h3><p data-edit-key="marketing-role-step-3-copy-v1">Webinar、Launch与Campaign触达</p></article>
+        <div class="marketing-role-arrow" aria-hidden="true">→</div>
+        <article class="marketing-role-step"><div class="num" data-edit-key="marketing-role-step-4-num-v1">04 / SIGNAL</div><h3 data-edit-key="marketing-role-step-4-title-v1">需求信号</h3><p data-edit-key="marketing-role-step-4-copy-v1">问题、反馈与Demo意向</p></article>
+        <div class="marketing-role-arrow" aria-hidden="true">→</div>
+        <article class="marketing-role-step"><div class="num" data-edit-key="marketing-role-step-5-num-v1">05 / NURTURE</div><h3 data-edit-key="marketing-role-step-5-title-v1">持续运营</h3><p data-edit-key="marketing-role-step-5-copy-v1">EDM、客户分类与Salesforce</p></article>
+        <div class="marketing-role-arrow" aria-hidden="true">→</div>
+        <article class="marketing-role-step"><div class="num" data-edit-key="marketing-role-step-6-num-v1">06 / PIPELINE</div><h3 data-edit-key="marketing-role-step-6-title-v1">商业转化</h3><p data-edit-key="marketing-role-step-6-copy-v1">销售跟进与Opportunity / Pipeline</p></article>
+      </div>
+      <aside class="marketing-role-aside">
+        <div class="t-meta" data-edit-key="marketing-role-output-meta-v1">GTM OUTPUT</div>
+        <div class="big-line" data-edit-key="marketing-role-output-title-v1">形成可复制的<br><strong>前端GTM方法</strong></div>
+        <p data-edit-key="marketing-role-output-copy-v1">把高质量客户信号交给后续运营。<br>EDM与Lead运营持续经营客户。</p>
+      </aside>
+    </div>
   </div>
 </section>
 
-<section class="slide accent hero module-divider" data-layout="S09" data-animate="manifesto">
+<section class="slide dark webinar-video-page" data-sequence="webinar-video" data-layout="WB-VIDEO01" data-animate="none">
+  <div class="canvas-card">
+    <div class="video-shell" aria-label="Webinar 混剪视频">
+      <video id="webinar-video" preload="auto" playsinline controls>
+        <source src="images/Webinar混剪V02.mov" type="video/mp4">
+        当前浏览器不支持该视频格式，请使用桌面版 Chrome 或 Edge 打开。
+      </video>
+      <div class="video-chrome" aria-hidden="true">
+        <div class="t-meta">WEBINAR / HIGHLIGHTS</div>
+        <div class="t-meta">VIDEO · FULL FRAME</div>
+      </div>
+      <div class="video-tools">
+        <button id="webinar-video-play" class="video-play-fallback" type="button" hidden>点击播放</button>
+        <button id="webinar-video-fullscreen" type="button" aria-label="全屏播放视频">全屏播放</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide light summary-three-card-page" data-sequence="summary-three-cards" data-layout="S19" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">01 · 汇报总结</div><div class="r">02 / 17</div></div>
+    <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
+    <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="t-meta">管理层结论</div><h2 class="page-title">我们已经验证触达价值<br>下一步把客户流入变成可经营、可归因、可承接的业务信号</h2></div>
+    <div class="capability-grid" data-anim="up" aria-label="三项数字营销重点">
+      <article class="capability-card"><div class="num">01</div><h3>已验证的<br>阶段性成果</h3><p>Webinar 验证活动触达和需求承接；EDM 验证订阅沉淀和持续用户经营。</p></article>
+      <article class="capability-card"><div class="num">02</div><h3>下一阶段<br>建设</h3><p>对外 AI Agent 扩大需求入口，归因与线索管理让客户信号可解释、可承接、可复盘。</p></article>
+      <article class="capability-card"><div class="num">03</div><h3>组织能力<br>建设</h3><p>新增四项专业能力，补齐市场判断、内容增长、系统运营和销售承接的组织缺口。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="slide accent hero module-divider" data-sequence="module1" data-layout="S09" data-animate="manifesto">
   <div class="canvas-card">
     <canvas class="ascii-bg" aria-hidden="true"></canvas>
-    <div class="chrome-min"><div class="l">模块一 · EDM 用户经营</div><div class="r">03 / 17</div></div>
+    <div class="chrome-min"><div class="l">模块一 · 阶段性成果</div><div class="r">02 / 19</div></div>
     <div class="module-divider-body" data-anim="line">
       <div class="module-divider-index">01</div>
       <div class="module-divider-copy">
         <div class="brand-green-line" aria-hidden="true"></div>
-        <div class="t-meta">EDM / Salesforce Pardot</div>
-        <h1 class="module-divider-title">EDM<br><span>用户经营</span></h1>
-        <p>从订阅沉淀开始，把一次触达变成持续经营。</p>
+        <div class="t-meta">WEBINAR / EDM</div>
+        <h1 class="module-divider-title">从一次触达<br><span>走向持续经营</span></h1>
+        <p>Webinar 验证活动触达和需求承接，EDM 验证订阅沉淀和持续用户经营。</p>
       </div>
     </div>
-    <div class="module-divider-foot" data-anim="up"><span>本章重点</span><span>成效复盘 · 场景扩展</span></div>
+    <div class="module-divider-foot" data-anim="up"><span>模块一</span><span>Webinar · EDM</span></div>
   </div>
 </section>
 
-<section class="slide dark" data-layout="S20" data-animate="stacked-ledger">
+<section class="slide dark" data-sequence="edm-content-1" data-layout="S20" data-animate="stacked-ledger">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">模块一 · EDM 用户经营</div><div class="r">04 / 17</div></div>
+    <div class="chrome-min"><div class="l">模块一 · 1.2 EDM 用户经营</div><div class="r">06 / 20</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
     <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="brand-context"><span class="salesforce-logo-frame"><img class="salesforce-logo" src="images/salesforce-logo-cloud.png" alt="Salesforce" data-image-slot="brand-salesforce-edm"></span><span>PARDOT / EDM 成效复盘</span></div><h2 class="page-title s20-title">EDM一阶段：用户沉淀</h2></div>
     <div class="s20-main-grid">
@@ -2008,9 +2487,9 @@
   </div>
 </section>
 
-<section class="slide light" data-layout="S16" data-animate="field-notes">
+<section class="slide light" data-sequence="edm-content-2" data-layout="S16" data-animate="field-notes">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">03 · EDM 下一阶段</div><div class="r">05 / 17</div></div>
+    <div class="chrome-min"><div class="l">模块一 · 1.2 EDM 下一阶段</div><div class="r">07 / 20</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
     <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh"><div class="t-meta">下一阶段场景</div><h2 class="page-title">从“发出去”走向<br>“带着业务场景触达”</h2></div>
     <div class="edm-grid edm-focus-grid" data-anim="up">
@@ -2020,9 +2499,9 @@
           <button class="edm-card-flip-back zoom-trigger" type="button" aria-label="点击放大线下展会邀请邮件"><img src="images/04-email-01.png" alt="线下展会邀请邮件完整截图" data-image-slot="s16-email-preview"></button>
         </div>
       </div>
-      <div class="edm-card-flip" tabindex="0" aria-label="02 · 新联系人邮件预览">
+      <div class="edm-card-flip" tabindex="0" aria-label="02 · 市场教育邮件预览">
         <div class="edm-card-flip-inner">
-          <article class="edm-card edm-card-flip-front"><div class="num">02 · 新建联系人</div><h3>新联系人自动进入订阅培育</h3><p>针对新建且尚未订阅的联系人，自动发送邀请；确认后进入 3 封 Welcome 流程。</p><div class="result">输出：新数据自动进入持续触达，不再依赖人工提醒。</div></article>
+          <article class="edm-card edm-card-flip-front"><div class="num" data-edit-key="edm-market-education-num-v2">02 · 市场教育</div><h3 data-edit-key="edm-market-education-title-v2">每两周围绕官网内容开展主题教育</h3><p data-edit-key="edm-market-education-copy-v2">从现有官网文章中提炼统一大选题，围绕车队运营提效、事故预防、盲区安全等方向进行系列内容制作。</p><div class="result" data-edit-key="edm-market-education-result-v2">输出：面向全量订阅用户持续开展定期市场教育。</div></article>
           <button class="edm-card-flip-back zoom-trigger" type="button" aria-label="点击放大新联系人订阅邀请邮件"><img src="images/04-email-02.png" alt="新联系人订阅邀请邮件完整截图" data-image-slot="s16-email-preview-contact"></button>
         </div>
       </div>
@@ -2037,29 +2516,29 @@
   </div>
 </section>
 
-<section class="slide accent hero module-divider" data-layout="S09" data-animate="manifesto">
+<section class="slide accent hero module-divider module2-divider" data-sequence="module2" data-layout="S09" data-animate="manifesto">
   <div class="canvas-card">
     <canvas class="ascii-bg" aria-hidden="true"></canvas>
-    <div class="chrome-min"><div class="l">模块二 · 官网 AI Agent</div><div class="r">06 / 17</div></div>
+    <div class="chrome-min"><div class="l">模块二 · 客户流入与归因</div><div class="r">08 / 19</div></div>
     <div class="module-divider-body" data-anim="line">
       <div class="module-divider-index">02</div>
       <div class="module-divider-copy">
         <div class="brand-green-line" aria-hidden="true"></div>
-        <div class="t-meta">AI Agent</div>
-        <h1 class="module-divider-title">官网 AI Agent<br><span>需求理解</span></h1>
-        <p>从信息展示入口，走向需求理解与销售承接。</p>
+        <div class="t-meta">CUSTOMER ENTRY / ATTRIBUTION / ROI</div>
+        <h1 class="module-divider-title">让客户需求<br><span>更好、更早被看见</span></h1>
+        <p>对内归因与线索管理让客户信号可解释、可承接、可复盘。</p>
       </div>
     </div>
-    <div class="module-divider-foot" data-anim="up"><span>本章重点</span><span>需求理解 · 销售承接</span></div>
+    <div class="module-divider-foot" data-anim="up"><span>模块二</span><span>需求入口 · 归因 · 交付</span></div>
   </div>
 </section>
 
-<section class="slide split" data-layout="S03" data-animate="split-statement">
+<section class="slide split" data-sequence="ai-content-1" data-layout="S03" data-animate="split-statement">
   <div class="canvas-card">
     <div class="split-half">
       <div class="half b-accent" style="padding:5.6vh 3.6vw 4.4vh;justify-content:space-between;position:relative;overflow:hidden">
         <canvas class="ascii-bg" aria-hidden="true"></canvas>
-        <div class="chrome-min" style="margin-bottom:0;position:relative;z-index:1"><div class="l">模块二 · 官网 AI Agent</div><div class="r">07 / 17</div></div>
+    <div class="chrome-min" style="margin-bottom:0;position:relative;z-index:1"><div class="l">模块二 · 2.2 官网 AI Agent</div><div class="r">14 / 20</div></div>
         <div data-anim="manifesto" style="display:flex;flex-direction:column;gap:2vh;position:relative;z-index:1"><div class="t-meta">AI Agent</div><h2 style="font-family:var(--sans),var(--sans-zh);font-size:min(7.2vw,12.8vh);line-height:.94;letter-spacing:-.035em;font-weight:200;color:#fff">客户不会<br>按你的<br><span style="font-style:italic;font-weight:300">栏目找答案</span></h2><p style="font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.12vw);line-height:1.55;color:rgba(255,255,255,.82);font-weight:400;max-width:30ch">网站有内容，不代表客户能快速找到与自己业务相关的答案。</p></div>
       </div>
       <div class="half" style="padding:5.6vh 3.6vw 4.4vh;justify-content:space-between;position:relative;background:var(--paper)">
@@ -2075,7 +2554,7 @@
   </div>
 </section>
 
-<section class="slide dark" data-layout="S05" data-animate="sub-stack">
+<section class="slide dark" data-sequence="ai-content-2" data-layout="S05" data-animate="sub-stack">
   <div class="canvas-card">
     <div class="chrome-min"><div class="l">05 · AI Agent 项目范围</div><div class="r">08 / 17</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
@@ -2089,7 +2568,7 @@
   </div>
 </section>
 
-<section class="slide light" data-layout="S15" data-animate="matrix-fill">
+<section class="slide light" data-sequence="ai-content-3" data-layout="S15" data-animate="matrix-fill">
   <div class="canvas-card">
     <div class="chrome-min"><div class="l">06 · AI Agent 经营输出</div><div class="r">09 / 17</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
@@ -2105,26 +2584,56 @@
   </div>
 </section>
 
-<section class="slide accent hero module-divider" data-layout="S09" data-animate="manifesto">
+<section class="slide accent hero module-divider" data-sequence="attr-home" data-layout="S09" data-animate="manifesto">
   <div class="canvas-card">
     <canvas class="ascii-bg" aria-hidden="true"></canvas>
-    <div class="chrome-min"><div class="l">模块三 · 线索归因与筛查</div><div class="r">10 / 17</div></div>
+    <div class="chrome-min"><div class="l">模块二 · 2.1 Salesforce 线索归因</div><div class="r">09 / 20</div></div>
     <div class="module-divider-body" data-anim="line">
-      <div class="module-divider-index">03</div>
+      <div class="module-divider-index submodule-divider-index">02.1</div>
       <div class="module-divider-copy">
         <div class="brand-green-line" aria-hidden="true"></div>
-        <div class="t-meta">Salesforce / 线索归因</div>
+        <div class="t-meta">SALESFORCE / LEAD MANAGEMENT</div>
         <h1 class="module-divider-title">线索归因<br><span>与有效交付</span></h1>
-        <p>让来源、转化路径和交付质量真正可见。</p>
+        <p>先看清客户从哪里来、转化到哪，再把有效线索交给销售承接。</p>
       </div>
     </div>
-    <div class="module-divider-foot" data-anim="up"><span>本章重点</span><span>来源识别 · 线索筛查 · 销售承接</span></div>
+    <div class="module-divider-foot" data-anim="up"><span>模块 2.1 / Salesforce</span><span>来源识别 · 转化观察 · 有效交付</span></div>
   </div>
 </section>
 
-<section class="slide light attribution-current-page" data-layout="S08" data-animate="duo-mirror">
+<section class="slide light salesforce-function-page" data-sequence="salesforce-function" data-layout="S19" data-animate="four-cards">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">模块三 · Salesforce 线索归因与筛查</div><div class="r">11 / 17</div></div>
+    <div class="chrome-min"><div class="l">模块二 · 2.1 Salesforce 线索功能</div><div class="r">10 / 21</div></div>
+    <div class="brand-green-line" data-anim="line" style="margin-bottom:2.4vh"></div>
+    <div data-anim="head" style="display:flex;flex-direction:column;gap:1.1vh">
+      <div class="t-meta">SALESFORCE / LEAD MANAGEMENT</div>
+      <h2 class="page-title">现在的 Salesforce 线索功能<br>从收集走向分配与跟进</h2>
+      <p class="page-desc">海外模式已经验证，国内版本正在完成本地化上线，并向各战区推广。</p>
+    </div>
+    <div class="salesforce-function-grid" data-anim="up" aria-label="Salesforce 海外与国内线索功能">
+      <article class="salesforce-region-card">
+        <div class="t-meta"><span>01 / 海外</span><span>上线日期 · 2025/11</span></div>
+        <h3>官网留资已进入可持续跟进</h3>
+        <p class="salesforce-region-stat">1,200+ <span>官网留资表单线索</span></p>
+        <p>上线至今收获官网留资表单线索 1,200+；过往三季度每季度至少收获 200+ 线索。</p>
+        <p>现有分配跟进模式获得战总认可度高，大部分销售愿意及时跟进并了解客户信息。</p>
+        <p class="salesforce-region-foot">已验证 · 分配 · 跟进 · 反馈</p>
+      </article>
+      <article class="salesforce-region-card">
+        <div class="t-meta"><span>02 / 国内</span><span>本周四上线推广</span></div>
+        <h3>从海外经验复制到国内业务体系</h3>
+        <p class="salesforce-region-stat">100+ <span>官网 6 月上线后收集线索</span></p>
+        <p>基于海外现有分配流转模式，已开发适配国内业务体系的流转和跟进规范，将于本周四上线并推广给各战区。</p>
+        <p>后续还将针对客服流入线索、活动线索、协会和展车管理，在 Salesforce 上做专门的功能开发和优化。</p>
+        <p class="salesforce-region-foot">正在推进 · 本地化 · 推广 · 扩展</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="slide light attribution-current-page" data-sequence="attr-detail-1" data-layout="S08" data-animate="duo-mirror">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块二 · 2.1 Salesforce 线索归因与筛查</div><div class="r">11 / 21</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
     <div data-anim="head" style="display:flex;flex-direction:column;gap:1.2vh"><div class="t-meta">当前局面</div><h2 class="page-title">线索进入了，但结果<br>仍然不可见</h2></div>
     <div class="attribution-current-grid" data-anim="up">
@@ -2136,14 +2645,38 @@
         </div>
         <div class="attribution-current-note">当前断点：只有“线索流入”记录，没有把“首触主体—渠道来源—转化结果”串成可复盘链路。</div>
       </div>
-      <figure class="frame-img fit-contain current-tree-figure" data-anim="img"><img class="placeholder-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-asset-src="images/08-attribution-decision-tree.png" alt="渠道归因决策树图片" data-image-slot="s15-grid-21x9"><figcaption class="img-cap">渠道归因决策树 · 当前业务判断路径</figcaption></figure>
+      <div class="attribution-visual-stack" id="attribution-visual-stack" data-anim="img" role="button" tabindex="0" aria-pressed="false" aria-label="点击切换活动归因漏斗与原始渠道归因决策树">
+        <figure class="roi-funnel-figure attribution-stack-card stack-front" aria-label="活动归因三层漏斗">
+          <div class="roi-funnel-head"><span class="t-meta">ACTIVITY ATTRIBUTION</span><strong class="roi-funnel-title">三层活动归因与 ROI 核算</strong></div>
+          <div class="roi-funnel-stack">
+            <article class="roi-funnel-card top">
+              <div class="roi-funnel-copy"><span class="t-meta">01 / 上层 · 品牌型</span><h3>品牌相关活动</h3><p>品牌片 · 广义市场教育</p></div>
+              <span class="roi-funnel-status">广泛影响<br>建立认知</span>
+            </article>
+            <article class="roi-funnel-card middle">
+              <div class="roi-funnel-copy"><span class="t-meta">02 / 中层 · 行业型</span><h3>展会、峰会</h3><p>标记行业及新老客户 · 活动后当年统计客户下单数量</p></div>
+              <span class="roi-funnel-status">客户标记<br>年度核算</span>
+            </article>
+            <article class="roi-funnel-card bottom">
+              <div class="roi-funnel-copy"><span class="t-meta">03 / 下层 · 精准型</span><h3>产品解决方案 Webinar</h3><p>关联具体产品 · 合理周期内统计参会人员订单数量</p></div>
+              <span class="roi-funnel-status">产品关联<br>精准核算</span>
+            </article>
+          </div>
+          <figcaption class="roi-funnel-caption"><span>影响范围由泛到精</span><strong>核算精度逐层提升 ↓</strong></figcaption>
+        </figure>
+        <figure class="attribution-tree-card attribution-stack-card stack-back" aria-label="原始渠道归因决策树">
+          <div class="attribution-tree-head"><span class="t-meta">ATTRIBUTION DECISION TREE</span><strong class="attribution-tree-title">原始渠道归因决策树</strong></div>
+          <div class="attribution-tree-image"><img class="placeholder-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-asset-src="images/08-attribution-decision-tree.png" alt="原始渠道归因决策树图片" data-image-slot="stack-attribution-tree"></div>
+          <figcaption class="attribution-tree-caption"><span>用于后续复盘与迭代</span></figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="slide light attribution-outcome-page" data-layout="S08" data-animate="duo-mirror">
+<section class="slide light attribution-outcome-page" data-sequence="attr-detail-2" data-layout="S08" data-animate="duo-mirror">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">模块三 · Salesforce 线索归因与筛查</div><div class="r">12 / 17</div></div>
+    <div class="chrome-min"><div class="l">模块二 · 2.1 Salesforce 线索归因与筛查</div><div class="r">12 / 21</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
     <div data-anim="head" style="display:flex;flex-direction:column;gap:1.1vh"><div class="t-meta">上线后的归因内容</div><h2 class="page-title">从“知道有线索”走向<br>“知道谁、从哪来、转化到哪”</h2><p class="page-desc">把首触主体、线索转化和潜在商机来源分类接到同一条数据链路。</p></div>
     <div class="attribution-outcome-grid" data-anim="up">
@@ -2185,26 +2718,26 @@
   </div>
 </section>
 
-<section class="slide accent hero module-divider capacity-module-divider" data-layout="S09" data-animate="manifesto">
+<section class="slide accent hero module-divider capacity-module-divider" data-sequence="module3" data-layout="S09" data-animate="manifesto">
   <div class="canvas-card">
     <canvas class="ascii-bg" aria-hidden="true"></canvas>
-    <div class="chrome-min"><div class="l">模块四 · 营销经营能力建设</div><div class="r">13 / 17</div></div>
+    <div class="chrome-min"><div class="l">模块三 · 组织能力建设</div><div class="r">16 / 20</div></div>
     <div class="module-divider-body" data-anim="line">
-      <div class="module-divider-index">04</div>
+      <div class="module-divider-index">03</div>
       <div class="module-divider-copy">
         <div class="brand-green-line" aria-hidden="true"></div>
-        <div class="t-meta">模块四 / 能力建设</div>
-        <h1 class="module-divider-title">从线索经营<br><span>到市场判断</span></h1>
-        <p>新增两项专职能力，让每条线索有人经营，让每项活动有据可判。</p>
+        <div class="t-meta">CAPABILITY BUILD / FOUR ROLES</div>
+        <h1 class="module-divider-title">让前两个模块<br><span>持续运行</span></h1>
+        <p>新增四项专业能力，补齐从市场判断、内容增长、系统运营到销售承接的组织缺口。</p>
       </div>
     </div>
-    <div class="module-divider-foot" data-anim="up"><span>本章重点</span><span>两项新增能力</span></div>
+    <div class="module-divider-foot" data-anim="up"><span>模块三</span><span>市场判断 · 内容增长 · 系统运营 · 销售承接</span></div>
   </div>
 </section>
 
-<section class="slide light capacity-page lead-management-page" data-layout="S11" data-animate="field-notes">
+<section class="slide light capacity-page lead-management-page" data-sequence="support-1" data-layout="S11" data-animate="field-notes">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">模块四 · 营销经营能力建设</div><div class="r">14 / 17</div></div>
+    <div class="chrome-min"><div class="l">模块三 · 3.1 所需支持</div><div class="r">17 / 20</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
     <div class="capacity-head lead-management-head" data-anim="head">
       <div><div class="t-meta">01 / Lead Management 岗位</div><h2 class="page-title">让每条新线索<br>有人经营</h2></div>
@@ -2226,31 +2759,80 @@
   </div>
 </section>
 
-<section class="slide dark capacity-page market-research-page" data-layout="S11" data-animate="field-notes">
+<section class="slide dark capacity-page martech-page" data-sequence="support-martech" data-layout="S11" data-animate="field-notes">
   <div class="canvas-card">
-    <div class="chrome-min"><div class="l">模块四 · 营销经营能力建设</div><div class="r">15 / 17</div></div>
+    <div class="chrome-min"><div class="l">模块三 · 3.2 所需支持</div><div class="r">26 / 30</div></div>
     <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
-    <div class="capacity-head" data-anim="head">
-      <div><div class="t-meta">02 / Market Research 岗位</div><h2 class="page-title">让市场活动<br>有依据地发生</h2></div>
+    <div class="capacity-head role-outcome-head" data-anim="head">
+      <div><div class="t-meta">02 / Marketing Technology &amp; Marketing Operations 岗位</div><h2 class="page-title">让系统、数据与<br>自动化持续运行</h2></div>
     </div>
     <div class="capacity-body" data-anim="up">
       <div class="capacity-request">
-        <div><div class="t-meta">岗位请求</div><h3>配置专职<br>Market Research</h3><div class="capacity-role-tags" aria-label="岗位职责标签"><span class="capacity-role-tag">竞品与客户情报</span><span class="capacity-role-tag">活动判断支持</span><span class="capacity-role-tag">战区洞察同步</span></div></div>
-        <div class="request-foot">岗位配置 / MARKET RESEARCH</div>
+        <div><div class="t-meta">岗位请求</div><h3>配置专职<br>Marketing Technology &amp;<br>Marketing Operations</h3><div class="capacity-role-tags" aria-label="岗位职责标签"><span class="capacity-role-tag">Pardot 运营</span><span class="capacity-role-tag">AI Agent 运营</span><span class="capacity-role-tag">MarTech 与自动化</span></div></div>
+        <div class="request-foot">岗位配置 / MARKETING TECHNOLOGY &amp; OPERATIONS</div>
       </div>
-      <div class="market-research-right">
-        <p class="market-research-summary">新增专职 Market Research，把竞争、客户和真实用户痛点转成<br>市场部可直接使用的判断依据，并第一时间同步战区。</p>
-        <div class="market-impact" aria-label="Market Research 业务价值">
-          <article class="market-impact-row"><div class="num">市场部</div><div><h3>活动判断更有依据</h3><p>用竞争变化、客户需求和真实痛点支撑活动主题、内容重点与目标市场选择。</p></div></article>
-          <article class="market-impact-row"><div class="num">战区</div><div><h3>市场洞察第一时间到达</h3><p>将最新竞品变化、潜客需求和用户痛点及时同步战区，支持本地客户沟通与跟进。</p></div></article>
-          <article class="market-impact-row"><div class="num">闭环</div><div><h3>让洞察持续进入下一轮动作</h3><p>沉淀为可复用的市场洞察，结合活动与线索反馈，持续更新下一轮市场动作。</p></div></article>
+      <div class="role-outcome-right">
+        <p class="capacity-lead role-summary">新增专职 Marketing Technology &amp; Marketing Operations，连接营销系统、数据与自动化流程，<br>让客户触达、培育、洞察和销售协同形成可持续的运营机制。</p>
+        <div class="capacity-outcomes" aria-label="Marketing Technology and Operations 业务输出">
+          <article class="capacity-outcome"><div class="num">01 / CAMPAIGN</div><div><h3>运营自动化营销活动</h3><p>运营 Salesforce Pardot / Marketing Cloud Account Engagement，执行 Email Campaign、Audience Segmentation、Automation Rules、Lead Nurturing Workflow 与 A/B Testing。</p></div></article>
+          <article class="capacity-outcome"><div class="num">02 / AI AGENT</div><div><h3>持续优化对外 AI Agent</h3><p>维护产品、解决方案和 FAQ 知识库，优化 Prompt、内容准确性与用户体验，让客户问题持续获得可信承接。</p></div></article>
+          <article class="capacity-outcome"><div class="num">03 / MARTECH</div><div><h3>打通系统、数据与流程</h3><p>协同运营 Salesforce CRM、Pardot、BI 与 AI Agent，推进数据治理、流程设计、系统集成、数据互通及营销流程自动化。</p></div></article>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="slide split next-step-summary-page" data-layout="S10" data-animate="split-statement">
+<section class="slide light capacity-page content-growth-page" data-sequence="support-content-growth" data-layout="S11" data-animate="field-notes">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块三 · 3.3 所需支持</div><div class="r">27 / 30</div></div>
+    <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
+    <div class="capacity-head role-outcome-head" data-anim="head">
+      <div><div class="t-meta">03 / Global Content &amp; Growth Marketing 岗位</div><h2 class="page-title">让专业能力转化为<br>全球增长内容</h2></div>
+    </div>
+    <div class="capacity-body" data-anim="up">
+      <div class="capacity-request">
+        <div><div class="t-meta">岗位请求</div><h3>配置专职<br>Global Content &amp;<br>Growth Marketing</h3><div class="capacity-role-tags" aria-label="岗位职责标签"><span class="capacity-role-tag">GTM 与核心信息</span><span class="capacity-role-tag">全球内容策略</span><span class="capacity-role-tag">增长与项目负责</span></div></div>
+        <div class="request-foot">岗位配置 / GLOBAL CONTENT &amp; GROWTH</div>
+      </div>
+      <div class="role-outcome-right">
+        <p class="capacity-lead role-summary">新增专职 Global Content &amp; Growth Marketing，把产品与技术能力转化为<br>全球市场能理解、能传播并能持续带来流量与线索的内容资产。</p>
+        <div class="capacity-outcomes" aria-label="Global Content and Growth Marketing 业务输出">
+          <article class="capacity-outcome"><div class="num">01 / 新品发布与 GTM</div><div><h3>支撑新品发布与全球 GTM</h3><p>参与全球新品发布及重点 GTM 项目，协助梳理核心信息、价值主张、内容结构、发布计划与区域本地化。</p></div></article>
+          <article class="capacity-outcome"><div class="num">02 / 内容体系</div><div><h3>建设全球 B2B 内容体系</h3><p>建设官网、LinkedIn、YouTube 与行业媒体的内容体系，将复杂的产品功能、技术能力、行业方案和客户案例转化为线上研讨会、落地页、行业洞察、产品内容及销售赋能内容。</p></div></article>
+          <article class="capacity-outcome"><div class="num">03 / 增长闭环</div><div><h3>把内容接入增长与项目闭环</h3><p>建设内容 → 流量 → 线索 → 销售跟进链路，结合数据优化营销活动；协同产品、销售、战区、设计和视频团队，逐步独立负责全球或区域项目。</p></div></article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide dark capacity-page market-research-page" data-sequence="support-2" data-layout="S11" data-animate="field-notes">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块三 · 3.4 所需支持</div><div class="r">28 / 30</div></div>
+    <div class="brand-green-line" data-anim="line" style="margin-bottom:3vh"></div>
+    <div class="capacity-head" data-anim="head">
+      <div><div class="t-meta" data-edit-key="support-2-role-index-v2">04 / Market Research 岗位</div><h2 class="page-title">让市场活动<br>有依据地发生</h2></div>
+    </div>
+    <div class="capacity-body" data-anim="up">
+      <div class="capacity-request">
+        <div><div class="t-meta">岗位请求</div><h3>配置专职<br>Market Research</h3><div class="capacity-role-tags" aria-label="岗位职责标签"><span class="capacity-role-tag">竞品与客户情报</span><span class="capacity-role-tag">活动判断支持</span><span class="capacity-role-tag">战区洞察同步</span><span class="capacity-role-tag">法规与内容合规</span></div></div>
+        <div class="request-foot">岗位配置 / MARKET RESEARCH</div>
+      </div>
+      <div class="market-research-right">
+        <p class="market-research-summary">新增专职负责【市场调研分析 &amp; 合规管控】，把竞争、客户和真实用户痛点转化为<br>市场部可直接使用的判断依据，并第一时间同步战区。</p>
+        <div class="market-impact is-four-rows" aria-label="Market Research 业务价值">
+          <article class="market-impact-row"><div class="num">市场部</div><div><h3>活动判断更有依据</h3><p>用竞争变化、客户需求和真实痛点支撑活动主题、内容重点与目标市场选择。</p></div></article>
+          <article class="market-impact-row"><div class="num">战区</div><div><h3>市场洞察第一时间到达</h3><p>将最新竞品变化、潜客需求和用户痛点及时同步战区，支持本地客户沟通与跟进。</p></div></article>
+          <article class="market-impact-row"><div class="num">闭环</div><div><h3>让洞察持续进入下一轮动作</h3><p>沉淀为可复用的市场洞察，结合活动与线索反馈，持续更新下一轮市场动作。</p></div></article>
+          <article class="market-impact-row"><div class="num">合规</div><div><h3>让海外内容有基础合规保障</h3><p>持续跟踪各区域法规、行业标准及政策变化，对海外对外内容进行事实、数据来源、法规适用性及高风险表述的基础审核；建立并持续维护全球行业、竞品、法规及商业机会情报数据库。</p></div></article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide split next-step-summary-page" data-skip="true" data-layout="S10" data-animate="split-statement">
   <div class="canvas-card">
     <div class="split-half">
       <div class="half b-accent" style="padding:5.6vh 3.6vw 4.4vh;justify-content:space-between;position:relative;overflow:hidden">
@@ -2273,7 +2855,7 @@
             <div class="next-step-group-head"><span>能力补齐</span><span>重点配置方向</span></div>
             <div class="next-step-resource-grid">
               <article class="next-step-resource"><div class="resource-kicker">01 / 官网 AI Agent</div><h3>首期建设投入</h3><p>用于建设官网问答机器人，完成售前、售后需求的初步排摸，让客户问题和项目意向形成可承接的信息。</p></article>
-              <article class="next-step-resource"><div class="resource-kicker">02 / 团队能力建设</div><h3>两项专职能力配置</h3><p>分别承担 Lead Management 与 Market Research，补齐线索经营、市场判断和战区洞察能力。</p></article>
+              <article class="next-step-resource"><div class="resource-kicker">02 / 团队能力建设</div><h3>四项专职能力配置</h3><p>补齐 Lead Management、Marketing Technology &amp; Operations、Global Content &amp; Growth 与 Market Research，形成线索经营、系统运营、内容增长和市场合规能力。</p></article>
             </div>
           </div>
         </div>
@@ -2283,10 +2865,10 @@
   </div>
 </section>
 
-<section class="slide accent hero" data-layout="S09" data-animate="manifesto">
+<section class="slide accent hero" data-sequence="thanks" data-layout="S09" data-animate="manifesto">
   <div class="canvas-card">
     <canvas class="ascii-bg" aria-hidden="true"></canvas>
-    <div class="chrome-min" style="margin-bottom:0"><div class="l">17 / 17</div><div class="r">提问交流</div></div>
+    <div class="chrome-min" style="margin-bottom:0"><div class="l">20 / 20</div><div class="r">提问交流</div></div>
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;padding:0 0 4vh">
       <div data-anim="line" style="display:flex;flex-direction:column;gap:1.8vh">
         <div class="brand-green-line" style="margin-bottom:1.2vh"></div>
@@ -2300,6 +2882,274 @@
     </div>
   </div>
 </section>
+
+<!-- Webinar 板块：从阶段结论到区域复盘，所有案例采用业务事实表述，不出现敏感人物信息。 -->
+<section class="slide light webinar-page webinar-summary-page" data-sequence="webinar-summary" data-layout="WB01" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar</div><div class="r">03 / 28</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head"><div class="t-meta">阶段结论 / EXECUTIVE READOUT</div><h2 class="page-title">我们不再只是交付活动<br>增长闭环已经开始运转</h2><p class="page-desc">Webinar 已从单次线上活动，走向区域化触达、需求识别、销售承接与复盘反馈。</p></div>
+    <div class="wb-kpi-grid" data-anim="up" aria-label="Webinar 核心数据">
+      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-1">4</strong><h3>战区参与协同</h3></article>
+      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-2">9</strong><h3>区域及语言场次</h3></article>
+      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-3">360</strong><h3>累计报名人次</h3></article>
+      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-4">235</strong><h3>正式参会人次</h3></article>
+      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-5">≈186h</strong><h3>客户集中教育时长</h3><p>按各场观看数据计算</p></article>
+      <article class="wb-kpi"><strong data-edit-key="wb-summary-kpi-6">¥150,671</strong><h3>已知外部投入</h3><p>投放与已提供制作费用</p></article>
+    </div>
+    <div class="wb-summary-shift" data-anim="up" aria-label="Webinar 最大变化">
+      <div class="wb-summary-shift-label"><div class="t-meta">THE BIGGEST CHANGE</div><strong>最大的变化</strong></div>
+      <div class="wb-summary-shift-copy"><h3>GTM与内容开始<strong>发起增长</strong>，而不是被动接收营销任务。</h3><p>前端GTM与内容负责发起增长；数字营销与线索运营负责持续经营、销售承接与价值验证。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide light webinar-page" data-sequence="webinar-growth-chain" data-layout="WB02" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar / 增长链</div><div class="r">04 / 28</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head"><div class="t-meta">增长链定位 / GROWTH CHAIN</div><h2 class="page-title">Webinar 的价值不止在现场<br>而在于把客户信号带入下一步</h2><p class="page-desc">从市场判断到销售推进，Webinar 是教育客户、捕获需求和形成反馈的连接器。</p></div>
+    <div class="wb-chain" data-anim="up" aria-label="Webinar 五步业务链">
+      <article class="wb-chain-step"><div class="num">01 / INPUT</div><h3 data-edit-key="wb-chain-step-1-title-v2">业务问题</h3><p data-edit-key="wb-chain-step-1-copy-v2">来自区域、销售、客户与产品反馈</p></article>
+      <article class="wb-chain-step active"><div class="num">02 / GTM</div><h3 data-edit-key="wb-chain-step-2-title-v2">GTM与内容</h3><p data-edit-key="wb-chain-step-2-copy-v2">目标受众、价值主张、演示、页面与 Sales Kit</p></article>
+      <article class="wb-chain-step"><div class="num">03 / EDUCATION</div><h3 data-edit-key="wb-chain-step-3-title-v2">集中教育</h3><p data-edit-key="wb-chain-step-3-copy-v2">直播讲解、场景演示、Q&amp;A 与行为数据</p></article>
+      <article class="wb-chain-step active"><div class="num">04 / SIGNAL</div><h3 data-edit-key="wb-chain-step-4-title-v2">需求信号</h3><p data-edit-key="wb-chain-step-4-copy-v2">客户分类、问题主题、Demo 与下一步意向</p></article>
+      <article class="wb-chain-step"><div class="num">05 / HANDOFF</div><h3 data-edit-key="wb-chain-step-5-title-v2">运营交接</h3><p data-edit-key="wb-chain-step-5-copy-v2">进入 EDM、Lead 管理、Salesforce 与销售跟进</p></article>
+    </div>
+    <div class="wb-chain-evaluation"><div class="label">评价标准</div><p data-edit-key="wb-chain-evaluation-v2">到场只是中间指标，最终要看可跟进账户、Demo / POC、销售推进和区域反馈。</p></div>
+  </div>
+</section>
+
+<section class="slide light webinar-page" data-sequence="webinar-market-feedback" data-layout="WB03" data-animate="manifesto">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar / 市场反馈</div><div class="r">05 / 28</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head"><div class="t-meta">产品与市场协同 / MARKET FEEDBACK</div><h2 class="page-title">让真实市场声音<br>持续校准产品表达</h2><p class="page-desc wb-feedback-one-line">Webinar 把客户问题、会中互动和区域反馈带回内容与产品沟通，减少反复解释和信息偏差。</p></div>
+    <div class="wb-feedback-grid" data-anim="up">
+      <div class="wb-feedback-main">
+        <div class="wb-feedback-statement"><div><strong>4</strong><h3 data-edit-key="wb-feedback-summary-title-v2">类信号进入<br>同一条反馈链</h3></div><p data-edit-key="wb-feedback-summary-copy-v2">四类一线问题通过 Webinar 被统一教育、验证和结构化回传，再沉淀为可复用内容与销售协同资产。</p></div>
+        <div class="wb-feedback-flow" aria-label="四类市场反馈校准机制">
+          <article class="wb-feedback-row"><div class="num">01</div><h3 data-edit-key="wb-feedback-row-1-topic-v2"><span class="wb-feedback-source">客户</span><span>场景价值不够直观</span></h3><div class="arrow">→</div><p data-edit-key="wb-feedback-row-1-copy-v2">集中讲解并即时答疑</p></article>
+          <article class="wb-feedback-row"><div class="num">02</div><h3 data-edit-key="wb-feedback-row-2-topic-v2"><span class="wb-feedback-source">产品</span><span>区域理解不一致</span></h3><div class="arrow">→</div><p data-edit-key="wb-feedback-row-2-copy-v2">统一定位、演示与问答</p></article>
+          <article class="wb-feedback-row"><div class="num">03</div><h3 data-edit-key="wb-feedback-row-3-topic-v2"><span class="wb-feedback-source">销售</span><span>销售重复进行基础教育</span></h3><div class="arrow">→</div><p data-edit-key="wb-feedback-row-3-copy-v2">直播、回放与 Sales Kit 复用</p></article>
+          <article class="wb-feedback-row"><div class="num">04</div><h3 data-edit-key="wb-feedback-row-4-topic-v2"><span class="wb-feedback-source">组织</span><span>一线反馈容易丢失</span></h3><div class="arrow">→</div><p data-edit-key="wb-feedback-row-4-copy-v2">问题与异议结构化回传</p></article>
+        </div>
+      </div>
+      <div class="wb-feedback-banner" data-edit-key="wb-feedback-banner-v2">可复用资产 + 统一销售教育 + 直接客户声音 = 更低的信息摩擦与更快的下一步判断</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide light webinar-page" data-sequence="webinar-operating-model" data-layout="WB04" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar / 30天机制</div><div class="r">06 / 28</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head"><div class="t-meta">运营机制 / 30-DAY OPERATING MODEL</div><h2 class="page-title">把一次直播<br>变成30天经营周期</h2><p class="page-desc">活动前明确对象和假设，活动中识别信号，活动后形成责任人、下一步和区域反馈。</p></div>
+    <div class="wb-cycle" data-anim="up" aria-label="Webinar 30天运营周期">
+      <article class="wb-cycle-step"><div class="time">T−4W</div><h3>选题与目标客户</h3><p>明确业务假设、目标账户和客户需要解决的问题。</p><div class="owner">MARKETING + SALES</div></article>
+      <article class="wb-cycle-step"><div class="time">T−3W</div><h3>GTM 与内容准备</h3><p>完成价值主张、推广素材、产品内容和 Sales Kit。</p><div class="owner">MARKETING + PRODUCT</div></article>
+      <article class="wb-cycle-step"><div class="time">LIVE</div><h3>教育与信号识别</h3><p>通过演示、问答和互动捕捉兴趣点与潜在需求。</p><div class="owner">ALL FUNCTIONS</div></article>
+      <article class="wb-cycle-step"><div class="time">T+48H–7D</div><h3>分类与交付</h3><p>补齐客户背景、负责人、Demo意向和明确下一步。</p><div class="owner">OPS + SALES</div></article>
+      <article class="wb-cycle-step"><div class="time">T+30D</div><h3>回看与复盘</h3><p>更新推进状态、机会、阻塞点与区域市场反馈。</p><div class="owner">MARKETING + BD</div></article>
+    </div>
+    <div class="wb-footnote">评价标准从“办完一场”转向“可跟进客户、Demo、机会、反馈和可复用资产”。</div>
+  </div>
+</section>
+
+<section class="slide light webinar-page webinar-case-page wb-case-v2 distill-page distill-lowbridge" data-sequence="low-bridge-v2" data-layout="WB14" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">05 / LOW BRIDGE</div><div class="r">07 / 11</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head">
+      <div class="t-meta">SOLUTION ACTIVATION / LOW BRIDGE</div>
+      <h2 class="page-title">矮桥：6家老客户讨论新方案，3家新客户进入推进</h2>
+      <p class="page-desc">23,264元投入后，12个BD回填账户中10个仍在推进。这场战役同时完成拉新与存量激活。</p>
+    </div>
+    <div class="lowbridge-evidence" data-anim="up" aria-label="Low Bridge 业务证据">
+      <div class="lowbridge-funnel" aria-label="Low Bridge 过程指标">
+        <article><strong>27 / 18</strong><span>注册 / 正式出席</span><small>平均观看 41 分钟</small></article>
+        <article class="accent-card"><strong>12 / 10</strong><span>BD回填 / 持续推进</span><small>30天推进率 83.3%</small></article>
+        <article><strong>¥2,326</strong><span>每个推进账户投入</span><small>¥23,264 ÷ 10，非CAC</small></article>
+        <article class="request-card"><strong>2</strong><span>直接Demo / Expert请求</span><small>会中明确提出下一步</small></article>
+      </div>
+      <div class="lowbridge-main-grid">
+        <section class="lowbridge-structure" aria-label="10个持续推进账户的业务结构">
+          <h3>10个持续推进账户的业务结构</h3>
+          <div class="lowbridge-blocks" aria-label="10个账户分类">
+            <span class="existing">1</span><span class="existing">2</span><span class="existing">3</span><span class="existing">4</span><span class="existing">5</span><span class="existing">6</span><span class="new-account">7</span><span class="new-account">8</span><span class="new-account">9</span><span class="expansion">10</span>
+          </div>
+          <div class="lowbridge-legend"><span><i class="existing"></i><b>6</b> 现有客户 · 新方案</span><span><i class="new-account"></i><b>3</b> 新客户账户</span><span><i class="expansion"></i><b>1</b> 现有业务扩展</span></div>
+          <p class="lowbridge-value">模式价值：Webinar既能打开新账户，也能把已有关系转成新的方案讨论。</p>
+          <div class="lowbridge-accounts" aria-label="30天商业证据">
+            <h3>30天商业证据</h3>
+            <div class="lowbridge-account-row"><strong>Ctrack</strong><span>新客户 · NDA已签</span></div>
+            <div class="lowbridge-account-row"><strong>SURE</strong><span>老客户新方案 · POC已排期</span></div>
+            <div class="lowbridge-account-row"><strong>Brigade</strong><span>老客户新方案 · 技术集成讨论</span></div>
+            <div class="lowbridge-account-row"><strong>Exeros</strong><span>小批量已交付 · 扩展讨论</span></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide dark webinar-page webinar-case-page distill-page distill-anz" data-sequence="anz-v2" data-layout="WB15" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">06 / ANZ</div><div class="r">08 / 11</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head">
+      <div class="t-meta">MARKET EDUCATION / ANZ BUS WEBINAR</div>
+      <h2 class="page-title">ANZ：为新市场建立第一轮认知与投放基线</h2>
+      <p class="page-desc">这场战役验证了目标受众、内容响应和真实问题，为后续账户经营建立起点。</p>
+    </div>
+    <div class="anz-ppt-layout" data-anim="up" aria-label="ANZ 市场教育结果">
+      <div class="anz-funnel-column">
+        <div class="anz-budget-strip"><span>PRODUCTION&nbsp; ¥0</span><span>PAID MEDIA&nbsp; ¥23,000</span></div>
+        <div class="anz-funnel" aria-label="ANZ 投放与参会漏斗">
+          <div class="funnel-step step-reach"><strong>77,673</strong><span>广告曝光</span></div>
+          <div class="funnel-step step-audience"><strong>16,790</strong><span>触达人数</span></div>
+          <div class="funnel-step step-register"><strong>22</strong><span>注册</span></div>
+          <div class="funnel-step step-attend"><strong>13</strong><span>正式出席</span></div>
+        </div>
+      </div>
+      <aside class="anz-result-card" aria-label="首轮市场教育结果">
+        <h3>首轮市场教育结果</h3>
+        <div class="anz-result-row"><strong>8家</strong><span>可识别参会企业</span></div>
+        <div class="anz-result-row"><strong>26 min</strong><span>平均观看</span></div>
+        <div class="anz-result-row"><strong>4 / 4</strong><span>反馈 / 问题</span></div>
+        <div class="anz-demo-note"><span>当前商业快照</span><strong>0 Demo</strong></div>
+      </aside>
+    </div>
+    <div class="anz-next-step">下一轮重点：把目标账户选择和会后承接前置，在保持市场教育的同时提高可转化信号。</div>
+  </div>
+</section>
+
+
+
+
+
+<section class="slide light webinar-page webinar-case-page" data-sequence="webinar-ds100" data-layout="WB08" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar / DS100</div><div class="r">10 / 28</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head"><div class="t-meta">案例三 / DS100 PRODUCT LAUNCH</div><h2 class="page-title">同一产品叙事<br>完成跨区域复制</h2><p class="page-desc">两轮Launch覆盖7个区域及语言场次，验证了规模化复制能力，也需要统一Demo信号与实际完成口径。</p></div>
+    <div class="wb-ds-layout" data-anim="up">
+      <div class="wb-ds-copy">
+        <div class="wb-ds-total" aria-label="DS100 总体数据">
+          <article class="wb-compact-kpi"><strong data-edit-key="wb-ds-kpi-1">311</strong><span>报名人次</span></article>
+          <article class="wb-compact-kpi"><strong data-edit-key="wb-ds-kpi-2">204</strong><span>参会人次</span></article>
+          <article class="wb-compact-kpi"><strong data-edit-key="wb-ds-kpi-3">65.6%</strong><span>整体到会率</span></article>
+          <article class="wb-compact-kpi"><strong data-edit-key="wb-ds-kpi-4">¥104,406.87</strong><span>已知外部投入</span></article>
+        </div>
+        <div class="wb-region-split">
+          <article class="wb-region-card"><h3>APAC</h3><div class="region-metric">220 / 142</div><p>报名 / 参会，覆盖5个区域及语言场次。</p><div class="signal">25 DEMO SIGNALS</div></article>
+          <article class="wb-region-card"><h3>LATAM</h3><div class="region-metric">91 / 62</div><p>报名 / 参会，覆盖2个区域及语言场次。</p><div class="signal">27 DEMO SIGNALS</div></article>
+        </div>
+        <div class="wb-ds-note">52个Demo意向信号与11家已完成Demo公司属于不同口径，不能直接等同；其中视频制作投入为 ¥52,600。</div>
+      </div>
+      <figure class="wb-ds-visual"><img src="images/email-style-screenshots/ds100-product-launch-webinar.png" alt="DS100 Webinar 邀请邮件完整长图，未裁切" data-image-slot="webinar-ds100-email"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide light webinar-page" data-sequence="webinar-regional-readout" data-layout="WB09" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar / 区域复盘</div><div class="r">11 / 28</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head"><div class="t-meta">区域复盘 / REGIONAL READOUT</div><h2 class="page-title">不追求一套打法覆盖所有市场<br>按区域信号决定下一步</h2><p class="page-desc">到会率说明触达效率，Demo意向与后续推进决定应当放大、转化还是优化。</p></div>
+    <div class="wb-regional-layout" data-anim="up">
+      <div class="wb-region-table" aria-label="DS100 各区域到会率">
+        <div class="wb-region-row head"><span>区域</span><span>到会率</span><span>数值</span></div>
+        <div class="wb-region-row"><span class="wb-region-name">Southeast Asia</span><div class="wb-rate-track"><span style="width:83.9%"></span></div><span class="wb-rate-value">83.9%</span></div>
+        <div class="wb-region-row"><span class="wb-region-name">Thailand</span><div class="wb-rate-track"><span style="width:77.4%"></span></div><span class="wb-rate-value">77.4%</span></div>
+        <div class="wb-region-row"><span class="wb-region-name">Indonesia</span><div class="wb-rate-track"><span style="width:73.8%"></span></div><span class="wb-rate-value">73.8%</span></div>
+        <div class="wb-region-row"><span class="wb-region-name">LATAM ES</span><div class="wb-rate-track"><span style="width:69.7%"></span></div><span class="wb-rate-value">69.7%</span></div>
+        <div class="wb-region-row"><span class="wb-region-name">Brazil</span><div class="wb-rate-track"><span style="width:64%"></span></div><span class="wb-rate-value">64.0%</span></div>
+        <div class="wb-region-row"><span class="wb-region-name">Vietnam</span><div class="wb-rate-track"><span style="width:56.8%"></span></div><span class="wb-rate-value">56.8%</span></div>
+        <div class="wb-region-row"><span class="wb-region-name">South Asia</span><div class="wb-rate-track"><span style="width:45.2%"></span></div><span class="wb-rate-value">45.2%</span></div>
+      </div>
+      <div class="wb-strategy-stack" aria-label="区域下一步策略">
+        <article class="wb-strategy scale"><div class="t-meta">SCALE / 放大</div><h3>Vietnam · LATAM Spanish</h3><p>优先验证重点客户信号、测试与商业条件；LATAM Spanish 的24个Demo信号优先承接。</p></article>
+        <article class="wb-strategy convert"><div class="t-meta">CONVERT / 转化</div><h3>Indonesia · Southeast Asia</h3><p>触达效率较高，重点把参会与意向转成明确负责人、Demo和下一步。</p></article>
+        <article class="wb-strategy"><div class="t-meta">OPTIMIZE / 优化</div><h3>South Asia · Thailand · Brazil</h3><p>分别优化报名质量、需求承接与区域化内容，再决定下一轮投入。</p></article>
+      </div>
+    </div>
+    <div class="wb-footnote">注：Vietnam 的Demo信号在不同记录中存在 5 与 17 两种口径，本页暂不展示该数值，待复核后统一。</div>
+  </div>
+</section>
+
+<section class="slide light webinar-page wb-gtm-reuse-page" data-sequence="webinar-gtm-reuse" data-layout="WB10" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar / GTM 复用</div><div class="r">12 / 31</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div class="wb-reuse-head" data-anim="head">
+      <div class="t-meta" data-edit-key="wb-reuse-meta-v1">可复用打法 / REUSABLE GTM PLAYS</div>
+      <h2 class="page-title" data-edit-key="wb-reuse-title-v1">前端 GTM 已经形成三种可复用打法</h2>
+      <p class="page-desc" data-edit-key="wb-reuse-desc-v1">不同战役不再用同一套指标硬比较，而是根据业务目标选择证据与下一步。</p>
+    </div>
+    <div class="wb-reuse-body">
+      <div class="wb-reuse-plays" data-anim="up" aria-label="三种可复用 GTM 打法">
+        <article class="wb-reuse-play"><div class="num" data-edit-key="wb-reuse-play-1-num-v1">01</div><div class="eyebrow" data-edit-key="wb-reuse-play-1-type-v1">SOLUTION ACTIVATION</div><h3 data-edit-key="wb-reuse-play-1-name-v1">Low Bridge</h3><div class="evidence" data-edit-key="wb-reuse-play-1-evidence-v1">拉新 + 老客户新方案激活<br><strong>10 个账户持续推进</strong></div></article>
+        <article class="wb-reuse-play is-navy"><div class="num" data-edit-key="wb-reuse-play-2-num-v1">02</div><div class="eyebrow" data-edit-key="wb-reuse-play-2-type-v1">MARKET EDUCATION</div><h3 data-edit-key="wb-reuse-play-2-name-v1">ANZ</h3><div class="evidence" data-edit-key="wb-reuse-play-2-evidence-v1">新市场认知与投放基线<br><strong>8 家可识别参会企业</strong></div></article>
+        <article class="wb-reuse-play"><div class="num" data-edit-key="wb-reuse-play-3-num-v1">03</div><div class="eyebrow" data-edit-key="wb-reuse-play-3-type-v1">PRODUCT LAUNCH</div><h3 data-edit-key="wb-reuse-play-3-name-v1">DS100</h3><div class="evidence" data-edit-key="wb-reuse-play-3-evidence-v1">统一叙事 + 区域化复制<br><strong>7 场活动 · 52 个意向信号</strong></div></article>
+      </div>
+      <div class="wb-reuse-next-title" data-edit-key="wb-reuse-next-title-v1">下一阶段复制方向</div>
+      <div class="wb-reuse-directions" data-anim="up" aria-label="下一阶段复制方向">
+        <article class="wb-reuse-direction"><div class="eyebrow" data-edit-key="wb-reuse-direction-1-type-v1">PRODUCT GTM</div><h3 data-edit-key="wb-reuse-direction-1-copy-v1">Sentinel · ESS 2.0</h3></article>
+        <article class="wb-reuse-direction"><div class="eyebrow" data-edit-key="wb-reuse-direction-2-type-v1">SOLUTION GTM</div><h3 data-edit-key="wb-reuse-direction-2-copy-v1">Forklift · OD</h3></article>
+        <article class="wb-reuse-direction"><div class="eyebrow" data-edit-key="wb-reuse-direction-3-type-v1">MEASUREMENT</div><h3 data-edit-key="wb-reuse-direction-3-copy-v1">统一活动、Demo 与 Pipeline 口径</h3></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide light edm-overview-page" data-sequence="edm-home" data-layout="S19" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · 1.2 EDM</div><div class="r">05 / 20</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head" style="display:flex;flex-direction:column">
+      <div class="t-meta">EDM / 用户经营</div>
+      <h2 class="page-title" data-edit-key="edm-home-title-v2"><strong>邮件营销：</strong>从订阅沉淀走向持续用户经营</h2>
+    </div>
+    <div class="edm-launch-band" data-anim="note" aria-label="邮件营销上线概况">
+      <p class="edm-launch-statement" data-edit-key="edm-home-launch-statement-v2">经过一个半月的敏捷开发，在总投入 <strong>20 万元</strong>的情况下，邮件营销已运行一个月。</p>
+      <div class="edm-launch-metrics">
+        <div class="edm-launch-metric" data-edit-key="edm-home-metric-build-v2"><strong>1.5 个月</strong><span>敏捷开发周期</span></div>
+        <div class="edm-launch-metric" data-edit-key="edm-home-metric-cost-v2"><strong>20 万元</strong><span>10 万 License + 10 万开发费</span></div>
+        <div class="edm-launch-metric" data-edit-key="edm-home-metric-run-v2"><strong>1 个月</strong><span>正式运行时间</span></div>
+      </div>
+    </div>
+    <div class="edm-journey-label"><span>USER JOURNEY / 用户旅程</span></div>
+    <div class="edm-journey-flow" data-anim="up" aria-label="邮件营销四步用户旅程">
+      <article class="edm-journey-step capability-card" data-step="01"><div class="num" data-edit-key="edm-home-step-1-num-v2">01</div><h3 data-edit-key="edm-home-step-1-title-v2">订阅邀请</h3><p data-edit-key="edm-home-step-1-copy-v2">把一次性联系人转化为可持续触达的订阅用户资产。</p></article>
+      <div class="edm-journey-arrow" aria-hidden="true">→</div>
+      <article class="edm-journey-step capability-card" data-step="02"><div class="num" data-edit-key="edm-home-step-2-num-v2">02</div><h3 data-edit-key="edm-home-step-2-title-v2">Welcome 培育</h3><p data-edit-key="edm-home-step-2-copy-v2">通过连续邮件建立用户旅程，减少一次性群发带来的触达浪费。</p></article>
+      <div class="edm-journey-arrow" aria-hidden="true">→</div>
+      <article class="edm-journey-step capability-card" data-step="03"><div class="num" data-edit-key="edm-home-step-3-num-v2">03</div><h3 data-edit-key="edm-home-step-3-title-v2">场景扩展</h3><p data-edit-key="edm-home-step-3-copy-v2">连接展会、产品主题、公司新闻和战区重点，持续运营不同用户场景。</p></article>
+      <div class="edm-journey-arrow" aria-hidden="true">→</div>
+      <article class="edm-journey-step capability-card" data-step="04"><div class="num" data-edit-key="edm-home-step-4-num-v2">04</div><h3 data-edit-key="edm-home-step-4-title-v2">用户资产</h3><p data-edit-key="edm-home-step-4-copy-v2">将触达结果沉淀为后续 Webinar、展会和市场调研可以使用的用户资产。</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- AI Agent 在模块二中后置，先完成 Salesforce 线索归因，再回到需求入口。 -->
+<section class="slide accent hero module-divider" data-sequence="ai-home" data-layout="S09" data-animate="manifesto">
+  <div class="canvas-card">
+    <canvas class="ascii-bg" aria-hidden="true"></canvas>
+    <div class="chrome-min"><div class="l">模块二 · 2.2 AI Agent</div><div class="r">12 / 20</div></div>
+    <div class="module-divider-body" data-anim="line">
+      <div class="module-divider-index submodule-divider-index">02.2</div>
+      <div class="module-divider-copy">
+        <div class="brand-green-line" aria-hidden="true"></div>
+        <div class="t-meta">AI AGENT / 需求理解</div>
+        <h1 class="module-divider-title">官网 AI Agent<br><span>让问题先被理解</span></h1>
+        <p>在客户填写表单之前理解客户的问题，再把高意向需求带着上下文交给销售。</p>
+      </div>
+    </div>
+    <div class="module-divider-foot" data-anim="up"><span>模块 2.2 / AI Agent</span><span>需求入口 · 意向识别 · 系统协同</span></div>
+  </div>
+</section>
+
 </div>
 
 <div id="image-lightbox" aria-hidden="true">
@@ -2567,11 +3417,203 @@ addEventListener('swiss-low-power-change', e=>{e.detail.on ? stopGrid() : startG
 
 // =============== 导航 ===============
 const deck=document.getElementById('deck');
+/* 运行时按汇报叙事重排，保留备份版本的页面组件和视觉样式。 */
+const presentationOrder = [
+  'cover',
+  'module1',
+  'marketing-role-flow',
+  'webinar-video',
+  'webinar-summary',
+  'webinar-growth-chain',
+  'webinar-market-feedback',
+  'webinar-operating-model',
+  'low-bridge-v2',
+  'anz-v2',
+  'webinar-ds100',
+  'webinar-regional-readout',
+  'webinar-gtm-reuse',
+  'edm-home',
+  'edm-content-1',
+  'edm-content-2',
+  'module2',
+  'attr-home',
+  'salesforce-function',
+  'attr-detail-1',
+  'attr-detail-2',
+  'ai-home',
+  'ai-content-1',
+  'ai-content-2',
+  'ai-content-3',
+  'module3',
+  'support-1',
+  'support-martech',
+  'support-content-growth',
+  'support-2',
+  'summary-three-cards',
+  'thanks'
+];
+const slideBySequence = new Map([...deck.querySelectorAll('.slide')].map(slide=>[slide.dataset.sequence, slide]));
+presentationOrder.forEach(sequence=>{
+  const slide = slideBySequence.get(sequence);
+  if(slide) deck.appendChild(slide);
+});
+[...deck.querySelectorAll('.slide')].filter(slide=>!presentationOrder.includes(slide.dataset.sequence)).forEach(slide=>slide.remove());
 const slides=deck.querySelectorAll('.slide');
+/* 页面完成重排后统一刷新页码，避免旧模板编号造成章节判断错误。 */
+slides.forEach((slide,index)=>{
+  slide.querySelectorAll('.chrome-min .l,.chrome-min .r').forEach(el=>{
+    if(/^\d+\s*\/\s*\d+$/.test(el.textContent.trim())) el.textContent=`${String(index+1).padStart(2,'0')} / ${slides.length}`;
+  });
+});
+const attributionVisualStack=document.getElementById('attribution-visual-stack');
+function toggleAttributionVisual(){
+  if(!attributionVisualStack || document.body.classList.contains('editor-open')) return;
+  const showTree=attributionVisualStack.classList.toggle('show-tree');
+  attributionVisualStack.setAttribute('aria-pressed',String(showTree));
+}
+attributionVisualStack?.addEventListener('click',event=>{event.stopPropagation();toggleAttributionVisual();});
+attributionVisualStack?.addEventListener('keydown',event=>{
+  if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();toggleAttributionVisual();}
+});
 const nav=document.getElementById('nav');
 let idx=0,total=slides.length,lock=false;
 
+/* Webinar 视频页：翻入即尝试播放，空格键只控制播放状态，播放完成后自动进入下一页。 */
+const webinarVideo = document.getElementById('webinar-video');
+const webinarVideoSlideIndex = [...slides].findIndex(slide => slide.dataset.sequence === 'webinar-video');
+const webinarVideoFallback = document.getElementById('webinar-video-play');
+const webinarVideoFullscreen = document.getElementById('webinar-video-fullscreen');
+let webinarVideoCompleted = false;
+function isWebinarVideoActive(){
+  return webinarVideo && idx === webinarVideoSlideIndex;
+}
+function revealWebinarVideoFallback(){
+  if(webinarVideoFallback) webinarVideoFallback.hidden = false;
+}
+function hideWebinarVideoFallback(){
+  if(webinarVideoFallback) webinarVideoFallback.hidden = true;
+}
+function playWebinarVideo(){
+  if(!webinarVideo) return;
+  const promise = webinarVideo.play();
+  if(promise && typeof promise.catch === 'function') promise.then(hideWebinarVideoFallback).catch(revealWebinarVideoFallback);
+}
+function syncWebinarVideo(nextIndex){
+  if(!webinarVideo) return;
+  if(nextIndex === webinarVideoSlideIndex){
+    webinarVideoCompleted = false;
+    try{ webinarVideo.currentTime = 0; }catch{}
+    hideWebinarVideoFallback();
+    playWebinarVideo();
+  }else{
+    webinarVideo.pause();
+    try{ webinarVideo.currentTime = 0; }catch{}
+    webinarVideoCompleted = false;
+    hideWebinarVideoFallback();
+  }
+}
+function toggleWebinarVideo(){
+  if(!isWebinarVideoActive()) return false;
+  if(webinarVideo.paused) playWebinarVideo();
+  else webinarVideo.pause();
+  return true;
+}
+window.__videoBlocksAdvance = ()=>isWebinarVideoActive() && !webinarVideoCompleted;
+window.__toggleWebinarVideo = toggleWebinarVideo;
+webinarVideo?.addEventListener('ended',()=>{
+  webinarVideoCompleted = true;
+  hideWebinarVideoFallback();
+  if(isWebinarVideoActive()){
+    lock = false;
+    go(webinarVideoSlideIndex + 1);
+  }
+});
+webinarVideoFallback?.addEventListener('click',()=>playWebinarVideo());
+webinarVideoFullscreen?.addEventListener('click',()=>{
+  const target = webinarVideo;
+  if(document.fullscreenElement){
+    document.exitFullscreen?.();
+    return;
+  }
+  target?.requestFullscreen?.().catch(()=>{});
+});
+
+/* =============== 在线编辑模式 ===============
+   编辑内容保存在当前浏览器的 localStorage，也可导出一份新的 HTML。 */
+const EDITOR_KEY='streamax-digital-marketing-backup-edits-v3';
+const editorStatus=document.getElementById('editor-status');
+const editorToggle=document.getElementById('editor-toggle');
+const editorTargets=[];
+const EDITABLE_SELECTOR=[
+  '.slide h1','.slide h2','.slide h3','.slide p','.slide .t-meta',
+  '.slide .lead','.slide .brand-label','.slide .cover-tagline',
+  '.slide .decision-bar','.slide .ledger-label','.slide .ledger-note',
+  '.slide .layer-ttl','.slide .layer-desc','.slide .layer-tag',
+  '.slide .img-cap','.slide .request-foot','.slide .capacity-lead',
+  '.slide .resource-kicker','.slide .dashboard-head h3','.slide .dashboard-head span',
+  '.slide [data-edit-key]'
+].join(',');
+slides.forEach((slide,slideIndex)=>{
+  slide.querySelectorAll(EDITABLE_SELECTOR).forEach((el,elementIndex)=>{
+    if(el.closest('.editor-toolbar')) return;
+    /* 使用稳定的页面标识，页面增删或重排后不会把旧文字套到另一页。 */
+    if(!el.dataset.editKey){
+      const sequence=slide.dataset.sequence||`slide-${slideIndex+1}`;
+      el.dataset.editKey=`${sequence}-text-${elementIndex+1}`;
+    }
+    editorTargets.push(el);
+  });
+});
+function readEditorState(){
+  try{return JSON.parse(localStorage.getItem(EDITOR_KEY)||'{}')||{};}catch{return {};}
+}
+function applyEditorState(){
+  const state=readEditorState();
+  editorTargets.forEach(el=>{if(Object.prototype.hasOwnProperty.call(state,el.dataset.editKey)) el.innerHTML=state[el.dataset.editKey];});
+}
+function setEditorStatus(text){if(editorStatus) editorStatus.textContent=text;}
+function setEditorMode(on){
+  document.body.classList.toggle('editor-open',on);
+  editorTargets.forEach(el=>{if(on) el.setAttribute('contenteditable','true'); else el.removeAttribute('contenteditable');});
+  if(editorToggle) editorToggle.textContent=on?'退出编辑':'编辑文字';
+  setEditorStatus(on?'编辑中':'浏览模式');
+}
+function saveEditorState(){
+  const state={};
+  editorTargets.forEach(el=>{state[el.dataset.editKey]=el.innerHTML;});
+  localStorage.setItem(EDITOR_KEY,JSON.stringify(state));
+  setEditorStatus('已保存');
+}
+applyEditorState();
+editorToggle?.addEventListener('click',()=>setEditorMode(!document.body.classList.contains('editor-open')));
+document.getElementById('editor-save')?.addEventListener('click',saveEditorState);
+document.getElementById('editor-reset')?.addEventListener('click',()=>{
+  if(confirm('恢复为默认文字？浏览器中保存的修改会被清除。')){localStorage.removeItem(EDITOR_KEY);location.reload();}
+});
+document.getElementById('editor-export')?.addEventListener('click',()=>{
+  saveEditorState();
+  const copy=document.documentElement.cloneNode(true);
+  copy.querySelector('#editor-toolbar')?.remove();
+  copy.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));
+  const blob=new Blob(['<!doctype html>\n'+copy.outerHTML],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const link=document.createElement('a');link.href=url;link.download='digital-marketing-report-edited.html';link.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  setEditorStatus('已导出');
+});
+
 deck.style.width=(total*100)+'vw';
+
+/* 页码由运行时统一生成，避免重排后沿用旧页码。 */
+slides.forEach((slide,i)=>{
+  const pageText = `${String(i+1).padStart(2,'0')} / ${total}`;
+  const walker = document.createTreeWalker(slide, NodeFilter.SHOW_TEXT);
+  const textNodes=[];
+  while(walker.nextNode()) textNodes.push(walker.currentNode);
+  textNodes.forEach(node=>{
+    node.nodeValue = node.nodeValue.replace(/\b\d{1,2}\s*\/\s*(17|19|20)\b/g, pageText);
+  });
+});
 
 slides.forEach((s,i)=>{
   const b=document.createElement('button');
@@ -2580,8 +3622,8 @@ slides.forEach((s,i)=>{
   nav.appendChild(b);
 });
 
-function go(n){
-  if(lock)return;
+function go(n,options={}){
+  if(lock&&!options.force)return;
   idx=Math.max(0,Math.min(total-1,n));
   window.__currentSlideIndex = idx;
   deck.style.transform=`translateX(${-idx*100}vw)`;
@@ -2590,7 +3632,9 @@ function go(n){
   const isDark = el.classList.contains('dark') || el.classList.contains('accent');
   document.body.classList.toggle('dark-bg', isDark);
   darkMode = isDark;
+  syncWebinarVideo(idx);
   if(window.__playSlide) setTimeout(()=>window.__playSlide(idx), 450);
+  document.dispatchEvent(new CustomEvent('presentation:slidechange',{detail:{index:idx,total,slide:el,noteKey:el.dataset.noteKey,broadcast:options.broadcast!==false}}));
   lock=true;setTimeout(()=>lock=false,700);
 }
 
@@ -2635,6 +3679,7 @@ function toggleOverview(){
 }
 
 addEventListener('keydown',e=>{
+  if(document.body.classList.contains('editor-open') && e.target.closest('[contenteditable="true"]')) return;
   if(e.key==='Escape'){e.preventDefault();toggleOverview();return;}
   if(e.key && e.key.toLowerCase()==='b' && !e.metaKey && !e.ctrlKey && !e.altKey){
     e.preventDefault();
@@ -2642,7 +3687,13 @@ addEventListener('keydown',e=>{
     return;
   }
   if(overviewOn)return;
+  if(e.key===' ' && isWebinarVideoActive()){
+    e.preventDefault();
+    if(!e.repeat) toggleWebinarVideo();
+    return;
+  }
   if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '||e.key==='ArrowDown'){
+    if(window.__videoBlocksAdvance && window.__videoBlocksAdvance()) return;
     if(window.__pipeAdvance && window.__pipeAdvance()) return;
     go(idx+1);
     return;
@@ -2656,6 +3707,10 @@ let wheelTO=null,wheelAcc=0;
 addEventListener('wheel',e=>{
   wheelAcc+=e.deltaY+e.deltaX;
   if(Math.abs(wheelAcc)>50){
+    if(wheelAcc>0 && window.__videoBlocksAdvance && window.__videoBlocksAdvance()){
+      wheelAcc=0;
+      return;
+    }
     if(wheelAcc>0 && window.__pipeAdvance && window.__pipeAdvance()){
       wheelAcc=0;
     }else{
@@ -2671,6 +3726,7 @@ addEventListener('touchend',e=>{
   const dx=(e.changedTouches[0].clientX-tx);
   const dy=(e.changedTouches[0].clientY-ty);
   if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){
+    if(dx<0 && window.__videoBlocksAdvance && window.__videoBlocksAdvance()) return;
     if(dx<0 && window.__pipeAdvance && window.__pipeAdvance()) return;
     go(idx+(dx<0?1:-1));
   }
@@ -2678,13 +3734,29 @@ addEventListener('touchend',e=>{
 
 const initialSlideParam = new URLSearchParams(location.search).get('slide');
 const initialSlide = initialSlideParam ? Number(initialSlideParam) - 1 : 0;
-go(Number.isFinite(initialSlide) ? initialSlide : 0);
 </script>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-<script>lucide.createIcons();</script>
+<script src="./assets/presenter-tools.js"></script>
+<script>
+if(window.__speakerMode){
+  idx=Math.max(0,Math.min(total-1,Number.isFinite(initialSlide)?initialSlide:0));
+  window.__currentSlideIndex=idx;
+  window.__presenterAPI.open();
+}else{
+  go(Number.isFinite(initialSlide) ? initialSlide : 0);
+}
+</script>
+<script>
+if(!window.__speakerMode){
+  const lucideScript=document.createElement('script');
+  lucideScript.src='https://unpkg.com/lucide@latest/dist/umd/lucide.min.js';
+  lucideScript.addEventListener('load',()=>window.lucide?.createIcons());
+  document.head.appendChild(lucideScript);
+}
+</script>
 
 <!-- Motion One 动效引擎 (与原模板一致) -->
 <script type="module">
+if(!window.__speakerMode){
 let motion;
 try {
   motion = await import('./assets/motion.min.js');
@@ -3392,9 +4464,11 @@ if(motion){
 
   playSlide(window.__currentSlideIndex || 0);
 }
+}
 </script>
 
 <script>
+if(!window.__speakerMode){
 /* ============== ASCII 点阵呼吸场 · Streamax 深色封面/封底专用 ==============
    sin/cos 二维噪声场驱动字符显隐,营造工业仪表板的"涌动呼吸"质感.
    纯 canvas 2D, mix-blend-mode:screen 让字符在深海军蓝底色上自然发亮.
@@ -3497,6 +4571,7 @@ if(motion){
   addEventListener('swiss-low-power-change', e=>{e.detail.on ? stop() : start();});
   start();
 })();
+}
 </script>
 </body>
 </html>

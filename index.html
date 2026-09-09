@@ -2187,6 +2187,85 @@
   .wb-reuse-next-title{display:block;font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.2vw);font-weight:600;line-height:1.2;color:var(--brand-navy)}
   .wb-reuse-direction{display:flex;flex-direction:column;justify-content:center;min-width:0;min-height:0;padding:1.1vh 1.2vw 1.2vh;border-top:3px solid var(--brand-green);border-bottom:1px solid var(--border-subtle);background:#fff}
   .wb-reuse-direction h3{font-family:var(--sans),var(--sans-zh);font-size:max(19px,1.35vw);font-weight:450;line-height:1.15;margin-top:.75vh;color:var(--brand-navy)}
+
+  /* Webinar ROI 插页：只作用于新增的三页，延续 Streamax 的瑞士网格与证据链表达。 */
+  .webinar-roi-page .brand-green-line{margin-bottom:1.4vh!important}
+  .webinar-roi-page [data-anim="head"]{display:flex;flex-direction:column;gap:.55vh}
+  .webinar-roi-page .page-title{font-size:min(3.65vw,6.1vh);line-height:1.02}
+  .webinar-roi-page .page-desc{font-size:max(14px,.82vw);line-height:1.38;max-width:78ch}
+
+  .roi-overview-table-wrap{display:flex;flex:1;min-height:0;flex-direction:column;margin-top:2.25vh;padding-bottom:var(--nav-safe-bottom)}
+  .roi-overview-table{width:100%;height:100%;table-layout:fixed;border-collapse:collapse;border-top:1px solid var(--border-strong);font-family:var(--sans),var(--sans-zh);color:var(--text-primary)}
+  .roi-overview-table col.campaign{width:13%}
+  .roi-overview-table col.spend{width:11%}
+  .roi-overview-table col.attendance{width:12%}
+  .roi-overview-table col.result{width:31%}
+  .roi-overview-table col.efficiency{width:17%}
+  .roi-overview-table col.verdict{width:16%}
+  .roi-overview-table th{padding:1.05vh .9vw;text-align:left;background:var(--brand-navy);color:#fff;font-family:var(--mono);font-size:max(11px,.66vw);font-weight:600;line-height:1.15;letter-spacing:.06em;white-space:nowrap}
+  .roi-overview-table td{padding:1.05vh .9vw;border-bottom:1px solid var(--border-subtle);font-size:max(13px,.78vw);line-height:1.3;vertical-align:middle;overflow-wrap:anywhere}
+  .roi-overview-table tbody tr:nth-child(even){background:var(--grey-1)}
+  .roi-overview-table tbody tr:hover{background:#edf5d3}
+  .roi-overview-table td:first-child{font-weight:600;color:var(--brand-navy)}
+  .roi-overview-table td:nth-child(2),.roi-overview-table td:nth-child(3),.roi-overview-table td:nth-child(5){font-family:var(--mono);white-space:nowrap}
+  .roi-overview-table td:last-child{font-weight:600;color:var(--brand-navy)}
+  .roi-overview-table .roi-signal{color:var(--brand-green);font-weight:700}
+  .roi-overview-note{margin-top:1.1vh;padding-top:.8vh;border-top:1px solid var(--border-subtle);font-family:var(--sans),var(--sans-zh);font-size:max(11px,.64vw);line-height:1.3;color:var(--text-helper)}
+
+  .roi-maturity-map{position:relative;flex:1;min-height:0;margin-top:1.25vh;padding:0 1.8vw 0 6.5vw}
+  .roi-map-axis{position:absolute;top:3%;right:2%;bottom:12%;left:7%;border-bottom:1px solid var(--border-strong);border-left:1px solid var(--border-strong)}
+  .roi-map-axis::before{content:"";position:absolute;top:50%;right:0;left:0;border-top:1px dashed var(--grey-2)}
+  .roi-map-axis::after{content:"";position:absolute;top:0;bottom:0;left:50%;border-left:1px dashed var(--grey-2)}
+  .roi-map-x-label{position:absolute;right:3%;bottom:3.2%;font-family:var(--sans),var(--sans-zh);font-size:max(13px,.8vw);color:var(--text-helper)}
+  .roi-map-y-label{position:absolute;top:35%;left:.1%;transform:rotate(-90deg);transform-origin:left top;font-family:var(--sans),var(--sans-zh);font-size:max(13px,.8vw);color:var(--text-helper);white-space:nowrap}
+  .roi-map-quad{position:absolute;font-family:var(--mono);font-size:max(11px,.66vw);line-height:1.2;letter-spacing:.06em;color:var(--text-placeholder)}
+  .roi-map-quad.tl{top:7%;left:14%}
+  .roi-map-quad.tr{top:7%;right:5%}
+  .roi-map-quad.bl{bottom:15%;left:13%}
+  .roi-map-quad.br{right:7%;bottom:15%}
+  .roi-map-node{position:absolute;display:flex;align-items:flex-start;gap:.65vw;min-width:12vw;max-width:18vw;color:var(--brand-navy)}
+  .roi-map-node .marker{width:16px;height:16px;flex:0 0 16px;margin-top:.2vh;border:3px solid var(--brand-navy);background:#fff}
+  .roi-map-node h3{font-family:var(--sans),var(--sans-zh);font-size:max(16px,1vw);font-weight:600;line-height:1.12;margin:0;color:var(--brand-navy)}
+  .roi-map-node p{margin-top:.45vh;font-family:var(--sans),var(--sans-zh);font-size:max(11px,.66vw);line-height:1.28;color:var(--text-secondary)}
+  .roi-map-node.apac{top:18%;left:66%}
+  .roi-map-node.latam{top:27%;left:30%}
+  .roi-map-node.eu{top:51%;left:38%}
+  .roi-map-node.anz{top:73%;left:18%}
+  .roi-map-node.lowbridge{top:59%;left:74%}
+  .roi-map-node.latam .marker{border-color:#7a8997;background:var(--grey-1)}
+  .roi-map-node.eu .marker{border-color:var(--brand-green);background:var(--brand-green)}
+  .roi-map-node.anz .marker{border-color:var(--grey-3);background:var(--grey-2)}
+  .roi-map-node.lowbridge .marker{border-color:var(--brand-green);background:var(--brand-green)}
+  .roi-map-node.lowbridge h3{color:#6b8700}
+  .roi-map-conclusion{margin-top:.65vh;padding:1.05vh 1.15vw;border-left:4px solid var(--brand-green);background:var(--grey-1);font-family:var(--sans),var(--sans-zh);font-size:max(13px,.78vw);line-height:1.35;color:var(--brand-navy)}
+  .roi-map-conclusion strong{font-weight:700}
+
+  .roi-retro-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.8vw;flex:1;min-height:0;margin-top:2.2vh;padding-bottom:1vh}
+  .roi-retro-column{display:flex;min-width:0;min-height:0;flex-direction:column}
+  .roi-retro-column.is-break{border-left:1px solid var(--border-strong);padding-left:2.35vw}
+  .roi-retro-heading{padding:.35vh 0 .7vh .85vw;border-left:4px solid var(--brand-green);font-family:var(--sans),var(--sans-zh);font-size:max(20px,1.42vw);font-weight:600;line-height:1.15;color:var(--brand-navy)}
+  .roi-retro-column.is-break .roi-retro-heading{border-color:#e45757}
+  .roi-retro-list{display:grid;grid-template-rows:repeat(4,minmax(0,1fr));flex:1;min-height:0;margin-top:.65vh}
+  .roi-retro-item{display:grid;grid-template-columns:1.1em minmax(0,1fr);gap:.5vw;align-items:start;padding:1.05vh 0;border-top:1px solid var(--border-subtle)}
+  .roi-retro-item:last-child{border-bottom:1px solid var(--border-subtle)}
+  .roi-retro-item .bullet{font-size:max(18px,1.15vw);line-height:1.05;color:var(--brand-green)}
+  .roi-retro-column.is-break .roi-retro-item .bullet{color:#e45757}
+  .roi-retro-item p{font-family:var(--sans),var(--sans-zh);font-size:max(14px,.86vw);line-height:1.42;color:var(--text-secondary)}
+  .roi-retro-flow{display:flex;align-items:stretch;gap:.45vw;min-height:7.2vh;margin-top:1.15vh;padding:1.7vh 1.1vw;background:var(--brand-navy);border-top:3px solid var(--brand-green);color:#fff}
+  .roi-flow-step{display:flex;flex:1;min-width:0;align-items:center;justify-content:center;text-align:center;font-family:var(--sans),var(--sans-zh);font-size:max(14px,.84vw);font-weight:600;line-height:1.16;color:rgba(255,255,255,.92)}
+  .roi-flow-step.is-focus{color:var(--brand-green)}
+  .roi-flow-arrow{display:flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--brand-green);font-size:max(16px,1vw)}
+  .roi-retro-footnote{margin-top:.75vh;font-family:var(--sans),var(--sans-zh);font-size:max(11px,.64vw);line-height:1.28;color:var(--text-helper)}
+  @media (max-width:900px){
+    .roi-overview-table th,.roi-overview-table td{padding-left:.55vw;padding-right:.55vw}
+    .roi-overview-table td{font-size:max(11px,.72vw)}
+    .roi-map-node{min-width:18vw;max-width:24vw}
+    .roi-map-node.apac{left:62%}.roi-map-node.lowbridge{left:69%}
+    .roi-retro-layout{gap:1.4vw}
+    .roi-retro-column.is-break{padding-left:1.25vw}
+    .roi-retro-item p{font-size:max(12px,.78vw)}
+    .roi-flow-step{font-size:max(13px,.78vw)}
+  }
   @media (max-width:900px){
     .wb-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .webinar-summary-page .wb-kpi-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -3145,6 +3224,103 @@
   </div>
 </section>
 
+<section class="slide light webinar-page webinar-roi-page webinar-roi-overview-page" data-sequence="webinar-roi-overview" data-layout="WB-ROI01" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar / ROI 总览</div><div class="r">15 / 36</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head">
+      <div class="t-meta">WEBINAR ROI / HISTORICAL READOUT</div>
+      <h2 class="page-title">历史 Webinar ROI 总览</h2>
+      <p class="page-desc">用统一口径比较历史战役的投入、需求信号与商业推进结果。</p>
+    </div>
+    <div class="roi-overview-table-wrap" data-anim="up">
+      <table class="roi-overview-table" aria-label="历史 Webinar ROI 总览">
+        <colgroup><col class="campaign"><col class="spend"><col class="attendance"><col class="result"><col class="efficiency"><col class="verdict"></colgroup>
+        <thead>
+          <tr><th scope="col">Campaign</th><th scope="col">已知投入</th><th scope="col">注册 / 出席</th><th scope="col">关键结果</th><th scope="col">效率指标</th><th scope="col">ROI 判断</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>矮桥</td><td>¥23,264</td><td>27 / 18</td><td>10家持续推进；7家6个月内潜在机会</td><td>¥2,326 / 推进账户</td><td>A ｜ 商业闭环</td></tr>
+          <tr><td>DS100 APAC</td><td>¥64,682</td><td>220 / 142</td><td>29家开发账户；5家Demo阶段；70,000台预测</td><td>¥456 / 出席</td><td>A− ｜ 规模潜力</td></tr>
+          <tr><td>DS100 LATAM</td><td>¥33,150</td><td>91 / 62</td><td>27条Demo信号；西语场贡献89%</td><td>¥1,228 / Demo信号</td><td>B+ ｜ 高意向需求</td></tr>
+          <tr><td>ANZ Bus</td><td>¥23,000</td><td>22 / 13</td><td>8家目标企业到场；客户回访待补</td><td>¥2,875 / 到场企业</td><td>C ｜ 新市场验证</td></tr>
+          <tr><td>DS100 Europe</td><td>¥6,575+</td><td>58 / 待开播</td><td>16国；49家公司；多人 / 高级别账户注册</td><td>¥113 / 注册</td><td>预评估 ｜ 账户质量</td></tr>
+        </tbody>
+      </table>
+      <div class="roi-overview-note">统一口径保留已知投入、可观察需求信号与商业推进证据，未把不同阶段的信号直接等同为财务 ROI。</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide light webinar-page webinar-roi-page webinar-roi-maturity-page" data-sequence="webinar-roi-maturity" data-layout="WB-ROI02" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar / ROI 成熟度</div><div class="r">16 / 36</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head">
+      <div class="t-meta">WEBINAR ROI / MATURITY MAP</div>
+      <h2 class="page-title">历史 Webinar ROI 成熟度地图</h2>
+      <p class="page-desc">横轴看商业闭环成熟度，纵轴看规模 / 需求效率。</p>
+    </div>
+    <div class="roi-maturity-map" data-anim="up" aria-label="历史 Webinar ROI 成熟度地图">
+      <div class="roi-map-axis" aria-hidden="true"></div>
+      <div class="roi-map-y-label">规模 / 需求效率</div>
+      <div class="roi-map-x-label">商业推进成熟度</div>
+      <div class="roi-map-quad tl">高规模<br>待闭环</div>
+      <div class="roi-map-quad tr">高规模<br>高闭环</div>
+      <div class="roi-map-quad bl">试点验证</div>
+      <div class="roi-map-quad br">商业化复制</div>
+
+      <div class="roi-map-node apac"><span class="marker" aria-hidden="true"></span><div><h3>DS100 APAC</h3><p>规模受众强</p></div></div>
+      <div class="roi-map-node latam"><span class="marker" aria-hidden="true"></span><div><h3>DS100 LATAM</h3><p>需求信号最强</p></div></div>
+      <div class="roi-map-node eu"><span class="marker" aria-hidden="true"></span><div><h3>DS100 EU</h3><p>开播前账户质量<br>正式ROI待核</p></div></div>
+      <div class="roi-map-node anz"><span class="marker" aria-hidden="true"></span><div><h3>ANZ Bus</h3><p>新市场验证<br>承接待补</p></div></div>
+      <div class="roi-map-node lowbridge"><span class="marker" aria-hidden="true"></span><div><h3>矮桥</h3><p>商业闭环最完整<br>POC / 集成 / 商务 / 出货</p></div></div>
+    </div>
+    <div class="roi-map-conclusion" data-anim="note"><strong>结论：</strong>Webinar 已验证四类不同的 GTM 路径——解决方案驱动、产品驱动、本地语言驱动和新市场进入。下一阶段应根据各路径的商业成熟度与增长潜力进行差异化投入，而非平均分配资源。</div>
+  </div>
+</section>
+
+<section class="slide light webinar-page webinar-roi-page webinar-roi-retrospective-page" data-sequence="webinar-roi-retrospective" data-layout="WB-ROI03" data-animate="four-cards">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · 1.1 Webinar / 复盘洞察</div><div class="r">17 / 36</div></div>
+    <div class="brand-green-line" data-anim="line"></div>
+    <div data-anim="head">
+      <div class="t-meta">Webinar ROI / 复盘洞察</div>
+      <h2 class="page-title">复盘洞察｜做对了什么，断点在哪里</h2>
+      <p class="page-desc">把经验沉淀为下一轮可执行的 GTM 管理动作。</p>
+    </div>
+    <div class="roi-retro-layout" data-anim="up">
+      <section class="roi-retro-column" aria-label="已被验证的能力">
+        <h3 class="roi-retro-heading">已被验证的能力</h3>
+        <div class="roi-retro-list">
+          <div class="roi-retro-item"><span class="bullet" aria-hidden="true">•</span><p>复杂方案教育可以通过 Webinar 前置，降低销售首轮解释成本</p></div>
+          <div class="roi-retro-item"><span class="bullet" aria-hidden="true">•</span><p>产品发布内容可跨区域复制，形成统一叙事与本地语言落地</p></div>
+          <div class="roi-retro-item"><span class="bullet" aria-hidden="true">•</span><p>本地语言显著提升需求表达，LATAM西语场最典型</p></div>
+          <div class="roi-retro-item"><span class="bullet" aria-hidden="true">•</span><p>精准内容与投放能自主带入高价值战略账户，Ctrack为关键案例</p></div>
+        </div>
+      </section>
+      <section class="roi-retro-column is-break" aria-label="当前主要断点">
+        <h3 class="roi-retro-heading">当前主要断点</h3>
+        <div class="roi-retro-list">
+          <div class="roi-retro-item"><span class="bullet" aria-hidden="true">•</span><p>不同区域BD回填不一致，导致Demo信号与账户机会无法完全对齐</p></div>
+          <div class="roi-retro-item"><span class="bullet" aria-hidden="true">•</span><p>活动后7天内没有统一客户跟进时限（SLA），客户热度容易衰减</p></div>
+          <div class="roi-retro-item"><span class="bullet" aria-hidden="true">•</span><p>Salesforce Opportunity、客户阶段、下一步动作尚未统一强制字段，客户生态管理仍然任重道远</p></div>
+          <div class="roi-retro-item"><span class="bullet" aria-hidden="true">•</span><p>部分新市场需要行业长周期视角，不能只按即时Demo判断</p></div>
+        </div>
+      </section>
+    </div>
+    <div class="roi-retro-flow" data-anim="note" aria-label="Webinar GTM 证据链流程">
+      <div class="roi-flow-step">市场洞察</div><div class="roi-flow-arrow">→</div>
+      <div class="roi-flow-step">内容资产</div><div class="roi-flow-arrow">→</div>
+      <div class="roi-flow-step">Webinar 教育</div><div class="roi-flow-arrow">→</div>
+      <div class="roi-flow-step is-focus">需求信号</div><div class="roi-flow-arrow is-focus">→</div>
+      <div class="roi-flow-step is-focus">BD 跟进</div><div class="roi-flow-arrow">→</div>
+      <div class="roi-flow-step">销售管道</div>
+    </div>
+    <div class="roi-retro-footnote">注：本报告使用“投入效率—需求质量—商业推进—规模复制”管理ROI路径，不作为财务ROI或确认Pipeline口径。</div>
+  </div>
+</section>
+
 <section class="slide light edm-overview-page" data-sequence="edm-home" data-layout="S19" data-animate="four-cards">
   <div class="canvas-card">
     <div class="chrome-min"><div class="l">模块一 · 1.2 EDM</div><div class="r">05 / 20</div></div>
@@ -3642,6 +3818,9 @@ const presentationOrder = [
   'webinar-ds100',
   'webinar-regional-readout',
   'webinar-gtm-reuse',
+  'webinar-roi-overview',
+  'webinar-roi-maturity',
+  'webinar-roi-retrospective',
   'edm-home',
   'edm-content-1',
   'edm-content-2',

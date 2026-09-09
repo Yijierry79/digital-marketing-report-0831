@@ -2301,6 +2301,31 @@
   body.editor-open .editor-toolbar{border-color:var(--brand-green)}
   @media (max-width:900px){.blank-page-body{grid-template-columns:1fr;gap:2vh}.blank-page-frame{min-height:30vh}.editor-toolbar{right:1vw;top:1vh;transform:scale(.9);transform-origin:top right}}
 
+  /* Excel viewer: the sheet keeps its native proportions inside a fixed viewport. */
+  .excel-followup-slide{background:var(--brand-navy);color:#fff}
+  .excel-followup-slide .canvas-card{background:var(--brand-navy);color:#fff;padding:2.2vh 2.2vw 2.6vh;gap:1.1vh;overflow:hidden}
+  .excel-followup-slide .chrome-min{flex:0 0 auto;margin-bottom:.15vh;color:rgba(255,255,255,.74)}
+  .excel-viewer-shell{display:flex;flex:1;min-width:0;min-height:0;flex-direction:column;gap:.65vh}
+  .excel-viewer-toolbar{display:flex;align-items:center;justify-content:space-between;gap:1vw;min-height:32px;color:rgba(255,255,255,.78);font-family:var(--mono);font-size:13px;letter-spacing:.05em}
+  .excel-viewer-toolbar .excel-viewer-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .excel-viewer-toolbar .excel-viewer-hint{font-size:12px;letter-spacing:.02em;color:rgba(255,255,255,.58);white-space:nowrap}
+  .excel-zoom-controls{display:flex;align-items:center;gap:5px;flex:0 0 auto}
+  .excel-zoom-controls button{width:30px;height:27px;padding:0;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.06);color:#fff;font:600 17px/1 var(--sans);cursor:pointer}
+  .excel-zoom-controls button:hover,.excel-zoom-controls button:focus-visible{background:var(--brand-green);border-color:var(--brand-green);color:var(--brand-navy);outline:none}
+  .excel-zoom-value{min-width:54px;text-align:center;font-size:12px;color:#fff}
+  .excel-sheet-viewport{position:relative;flex:1;min-width:0;min-height:0;overflow:auto;overscroll-behavior:contain;touch-action:none;cursor:grab;border:1px solid rgba(255,255,255,.23);background:#d9dee3;box-shadow:inset 0 0 0 1px rgba(16,42,77,.12)}
+  .excel-sheet-viewport.is-dragging{cursor:grabbing;user-select:none}
+  .excel-sheet-space{position:relative;display:block}
+  .excel-sheet{position:absolute;top:0;left:0;transform-origin:top left;background:#fff;color:#111827}
+  .excel-sheet-table{border-collapse:collapse;table-layout:fixed;width:max-content;max-width:none;background:#fff;color:#111827;font-family:Arial,"Microsoft YaHei",sans-serif}
+  .excel-sheet-table td{box-sizing:border-box;min-width:0;padding:3px 5px;border:1px solid #dfe4e8;white-space:pre-line;word-break:break-word;overflow-wrap:anywhere;line-height:1.22;vertical-align:top}
+  .excel-sheet-table td.excel-nowrap{white-space:pre}
+  @media (max-width:900px){
+    .excel-followup-slide .canvas-card{padding:1.6vh 2.2vw 2vh}
+    .excel-viewer-toolbar .excel-viewer-hint{display:none}
+    .excel-viewer-toolbar{font-size:12px}
+  }
+
 </style>
 </head>
 <body class="canvas-mode">
@@ -2412,6 +2437,23 @@
         <button id="webinar-video-play" class="video-play-fallback" type="button" hidden>点击播放</button>
         <button id="webinar-video-fullscreen" type="button" aria-label="全屏播放视频">全屏播放</button>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide excel-followup-slide" data-sequence="excel-7day-followup" data-layout="EXCEL01">
+  <div class="canvas-card">
+    <div class="chrome-min"><div class="l">模块一 · DS100 7-Day Follow-up</div><div class="r">05 / 33</div></div>
+    <div class="excel-viewer-shell" aria-label="7-Day Follow-up Excel 工作表查看器">
+      <div class="excel-viewer-toolbar">
+        <span class="excel-viewer-label">滚轮上下 · Shift+滚轮左右 · 拖动查看 · Ctrl/Cmd+滚轮缩放</span>
+        <div class="excel-zoom-controls" aria-label="表格缩放">
+          <button type="button" data-excel-zoom="out" aria-label="缩小表格">−</button>
+          <span class="excel-zoom-value" aria-live="polite">100%</span>
+          <button type="button" data-excel-zoom="in" aria-label="放大表格">＋</button>
+        </div>
+      </div>
+      <div class="excel-sheet-viewport" tabindex="0" aria-label="可滚动的 7-Day Follow-up 表格区域"></div>
     </div>
   </div>
 </section>
@@ -3265,6 +3307,173 @@
   })();
 </script>
 
+<script src="./assets/7-day-follow-up-data.js"></script>
+<script>
+/* Build the 7-Day Follow-up view once from the preprocessed workbook data. */
+(function(){
+  const data=window.__sevenDayFollowUpData;
+  const viewport=document.querySelector('.excel-sheet-viewport');
+  if(!data || !viewport) return;
+  const table=document.createElement('table');
+  table.className='excel-sheet-table';
+  table.setAttribute('aria-label','7-Day Follow-up');
+  const colgroup=document.createElement('colgroup');
+  const ptToPx=96/72;
+  const widthPx=(width)=>Math.max(34,Math.round(width*7));
+  data.colWidths.forEach(width=>{
+    const col=document.createElement('col');
+    col.style.width=widthPx(width)+'px';
+    colgroup.appendChild(col);
+  });
+  table.appendChild(colgroup);
+
+  const mergeMap=new Map();
+  data.merges.forEach(([row,col,rowspan,colspan])=>{
+    for(let r=row;r<row+rowspan;r++) for(let c=col;c<col+colspan;c++){
+      if(r===row && c===col) mergeMap.set(r+':'+c,{rowspan,colspan,anchor:true});
+      else mergeMap.set(r+':'+c,{anchor:false});
+    }
+  });
+  const borderStyle=side=>{
+    if(!side || !side.style) return '';
+    const width=side.style==='thick'?'3px':side.style==='medium'?'2px':'1px';
+    const line=side.style==='double'?'double':side.style==='dashed'?'dashed':side.style==='dotted'?'dotted':'solid';
+    return width+' '+line+' '+(side.color||'#9ca3af');
+  };
+  const applyStyle=(cell,style)=>{
+    if(!style) return;
+    const font=style.font||{};
+    const fill=style.fill||{};
+    const align=style.align||{};
+    if(font.family) cell.style.fontFamily='"'+String(font.family).replace(/"/g,'')+'", Arial, "Microsoft YaHei", sans-serif';
+    if(font.size) cell.style.fontSize=Math.max(10,Number(font.size)*1.333)+'px';
+    if(font.bold) cell.style.fontWeight='700';
+    if(font.italic) cell.style.fontStyle='italic';
+    if(font.underline) cell.style.textDecoration='underline';
+    if(font.strike) cell.style.textDecoration=(cell.style.textDecoration ? cell.style.textDecoration+' ' : '')+'line-through';
+    if(font.color) cell.style.color=font.color;
+    if(fill.type==='solid' && fill.color) cell.style.backgroundColor=fill.color;
+    if(align.h) cell.style.textAlign=align.h;
+    if(align.v) cell.style.verticalAlign=align.v==='center'?'middle':align.v;
+    if(align.wrap===false) cell.classList.add('excel-nowrap');
+    if(align.indent) cell.style.paddingLeft=(5+Number(align.indent)*8)+'px';
+    ['top','right','bottom','left'].forEach(edge=>{
+      const border=borderStyle((style.border||{})[edge]);
+      if(border) cell.style['border-'+edge]=border;
+    });
+  };
+  const tbody=document.createElement('tbody');
+  data.cells.forEach((row,rowIndex)=>{
+    const tr=document.createElement('tr');
+    tr.style.height=Math.max(18,Number(data.rowHeightsPt[rowIndex]||15)*ptToPx)+'px';
+    row.forEach((entry,colIndex)=>{
+      const merge=mergeMap.get(rowIndex+':'+colIndex);
+      if(merge && !merge.anchor) return;
+      const td=document.createElement('td');
+      const value=entry[0];
+      if(value!==null && value!==undefined) td.textContent=String(value);
+      if(merge){
+        td.rowSpan=merge.rowspan;
+        td.colSpan=merge.colspan;
+      }
+      const style=data.styles[entry[1]];
+      applyStyle(td,style);
+      if(rowIndex>=8 && rowIndex<data.rows && colIndex<25 && style?.fill?.type==='solid' && String(style.fill.color||'').toUpperCase()==='#000000'){
+        const text=String(value??'').trim();
+        let fallback='#FFFFFF';
+        if([3,4,10,11].includes(colIndex)) fallback='#FAFAFA';
+        if(colIndex===12) fallback=text ? '#FBE2D5' : '#FAFAFA';
+        td.style.backgroundColor=fallback;
+        if(colIndex===4 && text==='LinkedIn SP_DS100_Webinar') td.style.backgroundColor='#DAF2D0';
+        if(colIndex===10 && text.toUpperCase()==='S'){
+          td.style.backgroundColor='#FFC7CE';
+          td.style.color='#9C0006';
+        }
+      }
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  const sheet=document.createElement('div');
+  sheet.className='excel-sheet';
+  sheet.appendChild(table);
+  const space=document.createElement('div');
+  space.className='excel-sheet-space';
+  space.appendChild(sheet);
+  viewport.appendChild(space);
+
+  let naturalWidth=0,naturalHeight=0,scale=1;
+  const shell=viewport.closest('.excel-viewer-shell');
+  const zoomValue=shell?.querySelector('.excel-zoom-value');
+  const setSpace=()=>{
+    naturalWidth=Math.max(table.offsetWidth,Math.round(data.colWidths.reduce((sum,width)=>sum+widthPx(width),0)));
+    naturalHeight=Math.max(table.offsetHeight,Math.round(data.rowHeightsPt.reduce((sum,height)=>sum+Number(height||15)*ptToPx,0)));
+    sheet.style.width=naturalWidth+'px';
+    sheet.style.height=naturalHeight+'px';
+    space.style.width=Math.ceil(naturalWidth*scale)+'px';
+    space.style.height=Math.ceil(naturalHeight*scale)+'px';
+    sheet.style.transform='scale('+scale+')';
+    if(zoomValue) zoomValue.textContent=Math.round(scale*100)+'%';
+  };
+  const clampScale=value=>Math.max(.6,Math.min(2,Math.round(value*20)/20));
+  const setScale=(next,anchorX,anchorY)=>{
+    const old=scale;
+    const x=anchorX==null ? viewport.clientWidth/2 : anchorX;
+    const y=anchorY==null ? viewport.clientHeight/2 : anchorY;
+    const contentX=(viewport.scrollLeft+x)/old;
+    const contentY=(viewport.scrollTop+y)/old;
+    scale=clampScale(next);
+    setSpace();
+    viewport.scrollLeft=Math.max(0,contentX*scale-x);
+    viewport.scrollTop=Math.max(0,contentY*scale-y);
+  };
+  setSpace();
+  shell?.querySelector('[data-excel-zoom="out"]')?.addEventListener('click',()=>setScale(scale-.1));
+  shell?.querySelector('[data-excel-zoom="in"]')?.addEventListener('click',()=>setScale(scale+.1));
+
+  viewport.addEventListener('wheel',event=>{
+    event.preventDefault();
+    event.stopPropagation();
+    const rect=viewport.getBoundingClientRect();
+    if(event.ctrlKey || event.metaKey){
+      const direction=event.deltaY<0 ? 1 : -1;
+      setScale(scale+direction*.1,event.clientX-rect.left,event.clientY-rect.top);
+      return;
+    }
+    if(event.shiftKey){
+      viewport.scrollLeft+=event.deltaX || event.deltaY;
+      return;
+    }
+    viewport.scrollLeft+=event.deltaX;
+    viewport.scrollTop+=event.deltaY;
+  },{passive:false});
+
+  let drag=null;
+  viewport.addEventListener('pointerdown',event=>{
+    if(event.button!==undefined && event.button!==0) return;
+    drag={id:event.pointerId,x:event.clientX,y:event.clientY,left:viewport.scrollLeft,top:viewport.scrollTop};
+    viewport.classList.add('is-dragging');
+    viewport.setPointerCapture?.(event.pointerId);
+  });
+  viewport.addEventListener('pointermove',event=>{
+    if(!drag || event.pointerId!==drag.id) return;
+    event.preventDefault();
+    viewport.scrollLeft=drag.left-(event.clientX-drag.x);
+    viewport.scrollTop=drag.top-(event.clientY-drag.y);
+  });
+  const endDrag=event=>{
+    if(!drag || event.pointerId!==drag.id) return;
+    drag=null;
+    viewport.classList.remove('is-dragging');
+    viewport.releasePointerCapture?.(event.pointerId);
+  };
+  viewport.addEventListener('pointerup',endDrag);
+  viewport.addEventListener('pointercancel',endDrag);
+  addEventListener('resize',()=>requestAnimationFrame(setSpace),{passive:true});
+})();
+</script>
+
 <div id="nav"></div>
 
 <script>
@@ -3423,6 +3632,7 @@ const presentationOrder = [
   'module1',
   'marketing-role-flow',
   'webinar-video',
+  'excel-7day-followup',
   'webinar-summary',
   'webinar-growth-chain',
   'webinar-market-feedback',
